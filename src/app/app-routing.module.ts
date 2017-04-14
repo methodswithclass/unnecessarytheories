@@ -1,7 +1,6 @@
 
 
-import { NgModule } from '@angular/core';
-// import { ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes, Router, NavigationStart } from '@angular/router';
 
 
@@ -12,9 +11,6 @@ const routes: Routes = [
 	{ path: '', redirectTo: '/construction', pathMatch: 'full' },
     { path: '**', redirectTo: '/construction', pathMatch: 'full' }
 ];
-
-
-// export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
 
 
 @NgModule({

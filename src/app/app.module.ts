@@ -6,18 +6,18 @@ import { RouterModule, Router, Routes, NavigationStart, RouterOutletMap } from "
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
-// import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from './app.component';
 import { ConstructionComponent } from './components/construction/construction.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
-const routes: Routes = [
-  { path: 'construction', component: ConstructionComponent },
-  { path: '', redirectTo: '/construction', pathMatch: 'full' },
-  { path: '**', redirectTo: '/page-not-found', pathMatch: 'full' }
-];
+// const routes: Routes = [
+//   { path: 'construction', component: ConstructionComponent },
+//   { path: '', redirectTo: '/construction', pathMatch: 'full' },
+//   { path: '**', redirectTo: '/page-not-found', pathMatch: 'full' }
+// ];
 
 
 @NgModule({
@@ -30,8 +30,8 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     // NgbModule.forRoot(),
-    // AppRoutingModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule,
+    // RouterModule.forRoot(routes)
   ],
   // providers: [
   //   RouterOutletMap
