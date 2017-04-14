@@ -3,15 +3,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router, Routes, NavigationStart, RouterOutletMap } from "@angular/router";
-
-// import { HttpModule } from '@angular/http';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { AppRoutingModule } from "./app-routing.module";
 
+
+// import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from './app.component';
 import { ConstructionComponent } from './components/construction/construction.component';
-import { PageNotFoundComponent } from './page-not-found/components/page-not-found.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -28,11 +27,10 @@ const routes: Routes = [
     PageNotFoundComponent
   ],
   imports: [
-    // AppRoutingModule,
-    // NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
-    // HttpModule,
+    // NgbModule.forRoot(),
+    // AppRoutingModule,
     RouterModule.forRoot(routes)
   ],
   // providers: [
