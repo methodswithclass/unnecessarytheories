@@ -4,9 +4,7 @@ import { ViewEncapsulation, Component, OnInit } from '@angular/core';
 	selector: 'app-construction',
 	templateUrl: './construction.component.html',
 	styleUrls: [
-		'./construction.component.css',
-		'../../assets/css/museo/museo300.css',
-		'./../../assets/css/styles.css'
+		'./construction.component.css'
 	]
 	// styleUrls:["http://code.methodswithclass.com/api/classes.css"],
 	// encapsulation: ViewEncapsulation.None,

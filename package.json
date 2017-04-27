@@ -10,11 +10,18 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod",
-    "deploy":"git push bitbucket master && git push heroku master"
+    "deploy":"git push bitbucket master && git push heroku master",
+    "deploy-dev":"git push development master"
   },
   "engines": {
     "node": "6.9.2",
     "npm": "3.10.9"
+  },
+  "defaults": {
+    "serve": {
+      "port": 4400,
+      "host": "localhost"
+    }
   },
   "private": true,
   "dependencies": {
