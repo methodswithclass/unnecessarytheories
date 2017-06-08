@@ -13,7 +13,7 @@
     "deploy":"git push bitbucket master && git push heroku master",
     "commit-deploy":"git add * && git commit -m update && git push heroku master",
     "deploy-dev":"git push development master",
-    "commit-deploy":"git add * && git commit -m update && git push development master"
+    "commit-deploy-dev":"git add * && git commit -m update && git push development master"
   },
   "engines": {
     "node": "6.9.2",
