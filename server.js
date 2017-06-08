@@ -2,6 +2,11 @@ const express = require("express");
 const app = express();
 
 
+var refreshPages = [
+"docs"
+]
+
+
 // // If an incoming request uses
 // // a protocol other than HTTPS,
 // // redirect that request to the
@@ -17,9 +22,29 @@ const forceSSL = function() {
     next();
   }
 }
-// // Instruct the app
-// // to use the forceSSL
-// // middleware
+
+
+var refresh = function () {
+
+	return function (req, res, next) {
+
+		console.log(req.url);
+
+		var urlArray = req.url.split("/");
+
+		for (var i in refreshPages) {
+			if (urlArray[1] == refreshPages[i]) {
+				return res.redirect(['http://', req.get('Host')].join(''));
+			}
+		}
+
+		next();
+
+	}
+}
+
+
+app.use(refresh());
 if (process.env.NODE_ENV == "production") app.use(forceSSL());
 else {console.log("environment development")}
 
