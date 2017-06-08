@@ -4,14 +4,16 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "NODE_ENV=production node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod",
     "deploy":"git push bitbucket master && git push heroku master",
-    "deploy-dev":"git push development master"
+    "commit-deploy":"git add * && git commit -m update && git push heroku master",
+    "deploy-dev":"git push development master",
+    "commit-deploy":"git add * && git commit -m update && git push development master"
   },
   "engines": {
     "node": "6.9.2",
