@@ -3,7 +3,7 @@ const app = express();
 
 
 var refreshPages = [
-"docs"
+"construction"
 ]
 
 
