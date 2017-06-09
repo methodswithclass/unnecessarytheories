@@ -1,4 +1,4 @@
-var app = angular.module('blog', ['sharedModule', 'consoleModule', 'stateModule', 'blogModule', "ngRoute", "ui.router"]);
+var app = angular.module('blog', ['sharedModule', 'consoleModule', 'stateModule', 'blogModule', "ui.router"]);
 
 
 var checking = "/checking";
@@ -8,7 +8,7 @@ var credits = "/credits";
 
 
 
-app.config(['runtime.stateProvider', '$locationProvider', '$routeProvider', function (runtimeProvider, $locationProvider, $routeProvider) {
+app.config(['runtime.stateProvider', '$locationProvider', function (runtimeProvider, $locationProvider) {
 
 	$locationProvider.html5Mode(true);
 

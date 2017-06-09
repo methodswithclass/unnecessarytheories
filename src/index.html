@@ -4,87 +4,38 @@
 
     <title>Gentle Phrasing, a blog</title>
 
-    <?php
-        error_reporting(E_ALL);
-        // I don't know if you need to wrap the 1 inside of double quotes.
-        ini_set("display_startup_errors",1);
-        ini_set("display_errors",1);
 
-        $SITE_ROOT = "http://www.gentlephrasing.com/data.json";
-
-        if (isset($_GET['b'])) {
-            $id = $_GET['b'];
-        } else {
-            $id = "home";
-        };
-
-        $jsonData = getData($SITE_ROOT);
-        makePage($jsonData, $id);
-
-        function getData($siteRoot) {
-            
-            $rawData = file_get_contents($siteRoot);
-
-            return json_decode($rawData, true);
-        }
-
-        function makePage($data, $blog) {
-        ?>
-
-            <meta property='fb:app_id' content='696572137111194'/>
-            <meta property='og:url' content=<?php 
-
-                    $base = "http://www.gentlephrasing.com";
-
-                    $param = "";
-
-                    if ($blog != "home") {
-                        $param = "/?b=".$blog;
-                    }
-
-                    echo $base . $param;
-
-                ?> 
-            />
-
-            <meta property="og:type" content=<?php  
-
-                    if ($blog != "home") {
-
-                        echo "article";
-                    }
-                    else {
-                        echo "website";
-                    }
-
-                ?> 
-            />
-
-            <meta property='og:site_name' content="Gentle Phrasing"/>
-            <meta property='og:title' content=<?php echo $data[$blog]["title"] ?> />
-            <meta property='og:description' content=<?php echo $data[$blog]["description"] ?> />
-            <meta property='og:image' content=<?php echo $data[$blog]["image"] ?> />
-            <meta property="og:image:width" content=<?php echo $data[$blog]["size"]["width"] ?> />
-            <meta property="og:image:height" content=<?php echo $data[$blog]["size"]["height"] ?> />
-
-        <?php
-        }
-    
-    ?>
-
-  	<link rel="stylesheet" href="css/museo/museo300.css" type="text/css" charset="utf-8">
-    <link rel="stylesheet" href="http://code.methodswithclass.com/api/classes.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://code.methodswithclass.com/api/classes.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-    
-    <script src="libs/jquery-1.11.3.min.js"></script>
+    <!-- inject:css -->
+
+  	<link rel="stylesheet" href="css/museo/museo300.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- endinject -->
+
+
+    <!-- <script src="libs/jquery-1.11.3.min.js"></script>
     <script src="libs/jquery.scrollto.js"></script>
     <script src="libs/hammer.js"></script>
     <script src="libs/angular.min.js"></script>
     <script src="libs/angular-route.min.js"></script>
     <script src="libs/angular.ui-router.min.js"></script>
-    <script src="libs/jquery.hammer.js"></script>
+    <script src="libs/jquery.hammer.js"></script> -->
+
+
+    <!-- inject:head:js -->
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/jquery.scrollTo/jquery.scrollTo.js"></script>
+    <script src="../bower_components/hammerjs/hammer.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- endinject -->
+
+
 
     <script>
 
@@ -143,9 +94,6 @@
     <div id="fb-root"></div>
     
 
-    <!-- App -->
-    
-    <script src="features/app/app.js"></script>
 
     <!-- Shared -->
 
@@ -156,15 +104,25 @@
 
     <script src="http://code.methodswithclass.com/api/console-1.js"></script>
 
+    
+    <!-- Parallax -->
+
+    <script src="http://code.methodswithclass.com/api/parallax-2.1.js"></script>
+
+
+
+    <!-- inject:js -->
+
+    <!-- App -->
+    
+    <script src="features/app/app.js"></script>
+
     <!-- State -->
 
     <script src="features/state/stateModule.js"></script>
     <script src="features/state/states.js"></script>
     <script src="features/state/runtimeState.js"></script>
 
-    <!-- Parallax -->
-
-    <script src="http://code.methodswithclass.com/api/parallax-2.1.js"></script>
 
     <!-- Badges -->
 
@@ -195,6 +153,9 @@
     <script src="features/data/dataModule.js"></script>
     <script src="features/data/data.service.js"></script>
     <script src="features/data/file.service.js"></script>
+
+
+    <!-- endinject -->
 
 
   </body>

@@ -19,7 +19,7 @@ blogModule.directive("section", ['global', 'events', function (g, events) {
 					view = "d.section.html";
 				}
 
-	            return 'features/views/' + view;
+	            return 'assets/views/' + view;
 	        }
 			
 		}

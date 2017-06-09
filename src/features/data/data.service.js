@@ -10,7 +10,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 	var prod = {
 		test:false,
-		url:'http://www.gentlephrasing.com',
+		url:'http://www.methodswc.com',
 		id:'696572137111194'
 	}
 
@@ -31,7 +31,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 		meta:{
 			name:"home",
 			title:"gentle phrasing",
-			image:"img/landscape"
+			image:"assets/img/landscape"
 		},
 		share:{
 			description:"no worries, the sharp phrasing will be gentle"
@@ -51,8 +51,8 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				color:"black",
 				sfont:"font-50"
 			},
-			image:'img/machine',
-			file:"files/intelligence.txt",
+			image:'assets/img/machine',
+			file:"assets/files/intelligence.txt",
 			published:published.intelligence
 		},
 		button:{
@@ -73,8 +73,8 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				color:"black",
 				sfont:"font-50"
 			},
-			image:'img/corridor',
-			file:"files/prison.txt",
+			image:'assets/img/corridor',
+			file:"assets/files/prison.txt",
 			published:published.prison
 		},
 		button:{
@@ -95,8 +95,8 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				color:"black",
 				sfont:"font-50"
 			},
-			image:'img/relativity',
-			file:"files/scale_time.txt",
+			image:'assets/img/relativity',
+			file:"assets/files/scale_time.txt",
 			published:published.scale_time
 		},
 		button:{
@@ -117,8 +117,8 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				color:"black",
 				sfont:"font-50"
 			},
-			image:'img/space',
-			file:"files/meaning_god.txt",
+			image:'assets/img/space',
+			file:"assets/files/meaning_god.txt",
 			published:published.meaning_god
 		},
 		button:{
@@ -139,8 +139,8 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				color:"black",
 				sfont:"font-50"
 			},
-			image:'img/cavemen',
-			file:"files/vaseoftheworld.txt",
+			image:'assets/img/cavemen',
+			file:"assets/files/vaseoftheworld.txt",
 			published:published.vase
 		},
 		button:{
@@ -161,8 +161,8 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				color:"black",
 				sfont:"font-50"
 			},
-			image:'img/online-date',
-			file:"files/online-date.txt",
+			image:'assets/img/online-date',
+			file:"assets/files/online-date.txt",
 			published:published.online_dating
 		},
 		button:{
@@ -183,8 +183,8 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				color:"black",
 				sfont:"font-50"
 			},
-			image:'img/girl',
-			file:"files/girl_on_path.txt",
+			image:'assets/img/girl',
+			file:"assets/files/girl_on_path.txt",
 			published:published.girl
 		},
 		button:{
@@ -205,8 +205,8 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				color:"black",
 				sfont:"font-30"
 			},
-			image:'img/contact',
-			file:"files/alien_contact2.txt",
+			image:'assets/img/contact',
+			file:"assets/files/alien_contact2.txt",
 			published:published.contact
 		},
 		button:{
@@ -227,8 +227,8 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				color:"black",
 				sfont:"font-50"
 			},
-			image:'img/dust',
-			file:"files/mote.txt",
+			image:'assets/img/dust',
+			file:"assets/files/mote.txt",
 			published:published.perspective
 		},
 		button:{

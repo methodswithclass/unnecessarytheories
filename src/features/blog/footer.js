@@ -4,7 +4,7 @@ blogModule.directive("footer", ['global', 'events', 'states', function (g, event
 		restrict:'E',
 		scope:{},
 		replace:true,
-		templateUrl:"features/views/g.footer.html",
+		templateUrl:"assets/views/g.footer.html",
 		link:function ($scope, element, attr) {
 
 

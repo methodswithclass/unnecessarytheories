@@ -60,8 +60,8 @@ gulp.task('scripts', ['vendor'], function() {
 	            "src/features/data/dataModule.js",
 	            "src/features/state/stateModule.js",
 	            "src/features/blog/blogModule.js",
-	            "!src/features/FBui/FBui.module.js",
-	            "!src/features/badges/badgesModule.js",
+	            "src/features/FBui/FBui.module.js",
+	            "src/features/badges/badgesModule.js",
 	            "src/features/**/*.js",
 	            "src/features/app/app.js"
 	            ])
@@ -112,8 +112,13 @@ gulp.task('fonts', function () {
 
 gulp.task("misc", function () {
 
-	return gulp.src(["./favicon.ico", "src/data.json", "src/assets/files/**/*.*"])
+	var toRoot = gulp.src(["./favicon.ico", "src/data.json"])
 	.pipe(gulp.dest("dist"));
+
+	var files = gulp.src("src/assets/files/**/*.*")
+	.pipe(gulp.dest("dist/assets/files"));
+
+	return merge(toRoot, files);
 })
 
 gulp.task('index', ["styles", "scripts", 'html', "fonts", "images", "misc"], function () {

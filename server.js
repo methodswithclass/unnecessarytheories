@@ -8,8 +8,8 @@ const bodyParser = require("body-parser");
 
 
 var refreshPages = [
-"home",
-"blog"
+"home"
+// "blog"
 ]
 
 
@@ -43,7 +43,7 @@ var refresh = function () {
 }
 
 
-app.use("/", bot.router);
+// app.use("/", bot.router);
 
 app.use(bot.middleware);
 
@@ -60,6 +60,7 @@ app.use("/dist/assets/css", express.static(path.join(__dirname, "dist/assets/css
 app.use("/dist/assets/css/museo", express.static(path.join(__dirname, "dist/assets/css/museo")));
 app.use("/dist/assets/js", express.static(path.join(__dirname, "dist/assets/js")));
 app.use("/", express.static(path.join(__dirname, "dist")));
+app.use("/blog/*", express.static(path.join(__dirname, "dist")));
 
 
 var listener = app.listen(process.env.PORT || 8080, function () {

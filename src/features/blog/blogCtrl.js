@@ -38,7 +38,7 @@ blogModule.controller("blogCtrl", ['$scope', 'data.service', 'runtime.state', 's
 			view = "d.home.html";
 		}
 
-        return 'features/views/' + view;
+        return 'assets/views/' + view;
     }
 
     

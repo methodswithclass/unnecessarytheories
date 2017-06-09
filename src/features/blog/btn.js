@@ -22,7 +22,7 @@ blogModule.directive("btn", ['$location', 'global', 'data.service', 'states', fu
 					view = "d.btn.html";
 				}
 
-	            return 'features/views/' + view;
+	            return 'assets/views/' + view;
 	        }
 
 

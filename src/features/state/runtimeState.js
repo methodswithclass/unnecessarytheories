@@ -31,7 +31,7 @@ stateModule.provider("runtime.state", function ($stateProvider) {
                     view = "d.blog.html";
                 }
 
-                return 'features/views/' + view;
+                return 'assets/views/' + view;
             }
 
             $scope.url = data.env().url + '/?b=' + $scope.blog.meta.name;

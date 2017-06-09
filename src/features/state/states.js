@@ -1,4 +1,4 @@
-stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'data.service', 'send', 'events', 'global', '$location', function ($q, runtime, $state, $rootScope, data, send, events, g, $location) {
+stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'data.service', 'send', 'events', 'global', '$location', "$transitions", function ($q, runtime, $state, $rootScope, data, send, events, g, $location, $transitions) {
 
 	var modalTime = 1000;
 
@@ -61,7 +61,7 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
 		var url = absurl.split("/");
 
-		if (url.length > 1) {
+		if (url.length > 5) {
 
 			// var pairs = url[1].split("&");
 
@@ -71,7 +71,7 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
 			// 	pairArray = pairs[i].split("=");
 
-				obj = url[2];
+				obj = url[4];
 
 			// }
 
@@ -88,15 +88,15 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 		return $state.current.name;
 	}
 
-	$transition.onStart({}, function($trans) {
+	$transitions.onStart({}, function($trans) {
 
 		//console.log(toState);	  
 
 		events.dispatch("stateChange");
 
-		prevState = fromState;
+		prevState = $trans.$from().name;
 
-		console.log("to state", toState);
+		console.log("to state", $trans.$to().name);
 	})
 
 	// $rootScope.$on('$stateChangeSuccess', 
@@ -128,7 +128,7 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
 	var checkInbound = function() {
 
-		console.log("check inbound");
+		console.log("check inbound", $location.absUrl());
 
 		var blog = getParams($location.absUrl());
 
