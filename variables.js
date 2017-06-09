@@ -1,8 +1,8 @@
 module.exports = {
 	url:{
 		local:"localhost:8080",
-		dev:"http://gentlephrasing.herokuapp.com",
-		prod:"http://www.gentlephrasing.com"
+		dev:"http://blog-app-m.herokuapp.com",
+		prod:"http://www.methodswc.com"
 	},
 	FBappID:'696572137111194'
 }
