@@ -23,7 +23,7 @@ var parseUrl = function (url) {
 
 	console.log(urlArray);
 
-	return meta[urlArray[2]];
+	return meta[urlArray[4]];
 
 }
 
