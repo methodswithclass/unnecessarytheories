@@ -65,13 +65,15 @@ var botRoute = function(req, res, next) {
 var botMiddleware = function(req,res,next) {
 	var ua = req.headers['user-agent'];
 
-	if (/^(facebookexternalhit)|(Twitterbot)|(Pinterest)/gi.test(ua)) {
-		console.log(ua,' is a bot');
-		botRoute(req,res,next);
-	}
-	else {
-		next();
-	}
+	botRoute(req,res,next);
+
+	// if (/^(facebookexternalhit)|(Twitterbot)|(Pinterest)/gi.test(ua)) {
+	// 	console.log(ua,' is a bot');
+	// 	botRoute(req,res,next);
+	// }
+	// else {
+	// 	next();
+	// }
 
 }
 
