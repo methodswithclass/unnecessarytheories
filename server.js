@@ -43,7 +43,7 @@ var refresh = function () {
 }
 
 
-app.use("/", bot.router(app));
+app.use("/", bot.router);
 
 app.use(bot.middleware);
 

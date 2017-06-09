@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const botRouter = express().Router();
+const botRouter = express.Router();
 const fs = require('fs');
 
 const variables = require("./variables");
@@ -15,7 +15,7 @@ var meta = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 // 	});
 // }
 
-getMetaData();
+// getMetaData();
 
 var parseUrl = function (url) {
 
@@ -78,7 +78,7 @@ var botMiddleware = function(req,res,next) {
 
 module.exports = {
 
-	router:function (app) {
+	router:function () {
 		botRouter.get("/", botRoute);
 	},
 	middleware:botMiddleware
