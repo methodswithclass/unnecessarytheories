@@ -1,0 +1,29 @@
+
+<div class="relative width">
+
+	<div class="relative width80 hcenter" ng-repeat="paragraph in section">
+		
+		<div ng-if="paragraph.para == 'para'" class="relative width">
+			<div class="relative width font-40 line-height-80">{{paragraph.text}}</div>
+		</div>
+
+		<div ng-if="paragraph.para == 'list'" class="relative width">
+			<table>
+				<tr>
+					<td class="relative width10 table-cell cell-top"></td>
+					<td class="relative width10 font-40 line-height-80 table-cell cell-top">
+						<div class="relative width height-60"><div class="absolute center">&bull;</div></div>
+					</td>
+					<td class="relative width75 font-40 line-height-80 table-cell cell-top">{{paragraph.text}}</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="relative width height-100 white-back"></div>
+
+	</div>
+
+	<div class="relative width60 margin-bottom-100 hcenter border-bottom"></div>
+
+</div>
+

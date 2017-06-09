@@ -1,0 +1,67 @@
+<div class="relative width height">
+
+	<div class="relative width height-600 cutoff">
+
+		<img class="absolute height120 width-auto center" src="{{blog.meta.image + '_thumb.jpg'}}"/>
+
+		<div class="absolute width height-400 left0 vcenter">
+
+			<div class="absolute width-300 height-100 top0 left-minus-20">
+				<back font="font-50"></back>
+			</div>
+
+			<div class="absolute width50 height-200 bottom0 left-minus-20">
+				<div class="absolute width height rounded20 black-back opacity80 border-white"></div>
+				<div class="absolute center white font-70">{{blog.meta.title.s}}</div>
+			</div>
+			
+			<div class="absolute width40 height-200 right0 bottom0">
+				<div class="absolute width80 height left0">
+					<div class="absolute width height rounded20 black-back opacity80 border-white"></div>
+					<div class="absolute width50 height left0 vcenter">
+						<share type="fb" name="{{blog.meta.name}}"></share>
+					</div>
+
+					<div class="absolute width50 height right0 vcenter">
+						<share type="twitter" name="{{blog.meta.name}}"></share>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="relative width padding-top10" id="blog-content">
+
+		<div class="relative width80 hcenter padding-v-100 font-40">
+			<div class="relative width80">
+				{{blog.meta.title.l}}
+			</div>
+		</div>
+
+		<div class="relative width80 hcenter height-200">
+
+			<div class="relative corner font-italic font-30">{{blog.meta.date | date:'longDate'}}</div>
+			<div class="relative corner top-20 font-italic font-30">{{blog.meta.by}}</div>
+
+		</div>
+
+		<div class="relative width">
+
+			<div ng-repeat="section in blog.content">
+				<section></section>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="relative width height-200"></div>
+
+	<div class="fb-comments center" data-href={{url}} data-width="300" data-numposts="100"></div>
+
+	<div class="relative width height-200"></div>
+
+</div>

@@ -1,0 +1,65 @@
+<div class="relative width height">
+
+	<div class="relative width height-800 cutoff" parallax scroll="body" top="true" src="{{blog.meta.image + '.jpg'}}">
+
+		<div class="absolute width height-300 left0 bottom0">
+
+			<div class="absolute width-300 height-50 left-minus-20">
+				<back font="font-30"></back>
+			</div>
+
+			<div class="absolute width50 height-100 vcenter left-minus-20">
+				<div class="absolute width height rounded10 black-back opacity80 border-white"></div>
+				<div class="absolute center white {{blog.meta.title.sfont}}">{{blog.meta.title.s}}</div>
+			</div>
+			
+			<div class="absolute width30 height-100 right0 vcenter">
+				<div class="absolute width80 height left0">
+					<div class="absolute width height rounded10 black-back opacity80 border-white"></div>
+					<div class="absolute width50 height left0 vcenter">
+						<share type="fb" name="{{blog.meta.name}}"></share>
+					</div>
+
+					<div class="absolute width50 height right0 vcenter">
+						<share type="twitter" name="{{blog.meta.name}}"></share>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="relative width padding-top10" id="blog-content">
+
+		<div class="relative width60 hcenter padding-v-50 font-25">
+			<div class="relative width80">
+				{{blog.meta.title.l}}
+			</div>
+		</div>
+
+		<div class="relative width60 hcenter height-100">
+
+			<div class="absolute top-10 left0 font-italic">{{blog.meta.date | date:'longDate'}}</div>
+			<div class="absolute top-40 left0 font-italic">{{blog.meta.by}}</div>
+
+		</div>
+
+		<div class="relative width">
+
+			<div ng-repeat="section in blog.content">
+				<section></section>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="relative width height-200"></div>
+
+	<div class="fb-comments center" fbparse data-href={{url}} data-width="800" data-numposts="100"></div>
+
+	<div class="relative width height-200"></div>
+
+</div>

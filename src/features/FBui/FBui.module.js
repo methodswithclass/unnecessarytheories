@@ -1,0 +1,1 @@
+var FBuiModule = angular.module("FBui.module", ['sharedModule']);

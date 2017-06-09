@@ -1,0 +1,62 @@
+
+body {
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+.museo {
+	font-family:'museo300'
+}
+
+.bodyHeight {
+	/* Firefox */
+	height: -moz-calc(100% - 200px);
+	/* WebKit */
+	height: -webkit-calc(100% - 200px);
+	/* Opera */
+	height: -o-calc(100% - 200px);
+	/* Standard */
+	height: calc(100% - 200px);
+}
+
+.mBodyHeight {
+	/* Firefox */
+	height: -moz-calc(100% - 100px);
+	/* WebKit */
+	height: -webkit-calc(100% - 100px);
+	/* Opera */
+	height: -o-calc(100% - 100px);
+	/* Standard */
+	height: calc(100% - 100px);
+}
+
+.bodyWidth {
+	/* Firefox */
+	width: -moz-calc(100% - 200px);
+	/* WebKit */
+	width: -webkit-calc(100% - 200px);
+	/* Opera */
+	width: -o-calc(100% - 200px);
+	/* Standard */
+	width: calc(100% - 200px);
+}
+
+.mLandWidth {
+	/* Firefox */
+	width: -moz-calc(100% - 100px);
+	/* WebKit */
+	width: -webkit-calc(100% - 100px);
+	/* Opera */
+	width: -o-calc(100% - 100px);
+	/* Standard */
+	width: calc(100% - 100px);
+}
+
+.fb:hover {
+    color: #507cbe;
+}
+.twitter:hover {
+    color: #62cdf2;
+}
