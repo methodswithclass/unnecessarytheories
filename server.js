@@ -7,11 +7,10 @@ const app = express();
 const bot = require("./server/bot");
 const middleware = require("./server/middleware");
 
-var refreshPages = [
-"home"
-]
+
 
 app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, '/server'));
 
 app.use(bot.middleware);
 app.use(middleware.refresh());

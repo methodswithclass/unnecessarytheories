@@ -5,6 +5,8 @@ const fs = require('fs');
 
 const variables = require("./variables");
 
+var debugCrawler = true;
+
 var meta = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
 
@@ -12,9 +14,15 @@ var parseUrl = function (url) {
 
 	var urlArray = url.split("/");
 
-	console.log(urlArray);
+	// console.log(urlArray);
 
-	return meta[urlArray[2]];
+	if (urlArray > 1) {
+
+		return meta[urlArray[2]];
+	}
+	else {
+		return meta["home"];
+	}
 
 }
 
@@ -33,7 +41,7 @@ var getMetaData = function (req) {
 
 	var data = parseUrl(req.url);
 
-	console.log(data); 
+	console.log("data", data); 
 
 	return { 
 		appID:variables.FBappID,
@@ -49,16 +57,16 @@ var getMetaData = function (req) {
 
 var botRoute = function(req, res, next) {
 
-	res.render('bot', getMetaData(req));
+	res.render('./views/bot', getMetaData(req));
 }
 
 
 var botMiddleware = function(req,res,next) {
 	var ua = req.headers['user-agent'];
 
-	// botRoute(req,res,next);
+	if (debugCrawler) botRoute(req,res,next);
 
-	if (/^(facebookexternalhit)|(Twitterbot)|(Pinterest)/gi.test(ua)) {
+	if (!debugCrawler && /^(facebookexternalhit)|(Twitterbot)|(Pinterest)/gi.test(ua)) {
 		console.log(ua,' is a bot');
 		botRoute(req,res,next);
 	}

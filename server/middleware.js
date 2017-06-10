@@ -1,6 +1,8 @@
 
 
-
+var refreshPages = [
+"home"
+]
 
 
 const forceSSL = function() {
