@@ -43,6 +43,9 @@ var refresh = function () {
 }
 
 
+app.set('view engine', 'jade');
+
+
 // app.use("/", bot.router);
 
 app.use(bot.middleware);

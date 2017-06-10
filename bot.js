@@ -17,19 +17,21 @@ var meta = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
 // getMetaData();
 
+// console.log(meta);
+
 var parseUrl = function (url) {
 
 	var urlArray = url.split("/");
 
 	console.log(urlArray);
 
-	return meta[urlArray[4]];
+	return meta[urlArray[2]];
 
 }
 
 var getType = function (url) {
 
-	var urlArray = req.url.split("/");
+	var urlArray = url.split("/");
 
 	if (url[1] == "blog") {
 		return "article"
@@ -44,13 +46,15 @@ var getMetaData = function (req) {
 
 	var data = parseUrl(req.url);
 
+	// console.log("image", data.image);
+
 	return { 
 		appID:variables.FBappID,
 		url:process.env.NODE_ENV == "production" ? variables.url.prod : variables.url.dev,
 		title:data.title, 
 		type:getType(req.url),
 		description:data.description,
-		img: (process.env.NODE_ENV == "production" ? variables.url.prod : variabsles.url.dev) + data.image,
+		img: (process.env.NODE_ENV == "production" ? variables.url.prod : variables.url.dev) + data.image,
 		height:data.size.height,
 		width:data.size.width
 	}
