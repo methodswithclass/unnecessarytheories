@@ -7,17 +7,6 @@ const variables = require("./variables");
 
 var meta = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
-// var getDataFile = function () {
-
-// 	fs.readFile('data.json', 'utf8', function (err, data) {
-// 		if (err) throw err;
-// 		obj = JSON.parse(data);
-// 	});
-// }
-
-// getMetaData();
-
-// console.log(meta);
 
 var parseUrl = function (url) {
 
@@ -38,15 +27,13 @@ var getType = function (url) {
 	}
 
 	return "website";
-	
-
 }
 
 var getMetaData = function (req) {
 
 	var data = parseUrl(req.url);
 
-	// console.log("image", data.image);
+	console.log(data);
 
 	return { 
 		appID:variables.FBappID,
@@ -83,9 +70,5 @@ var botMiddleware = function(req,res,next) {
 
 
 module.exports = {
-
-	router:function () {
-		botRouter.get("/", botRoute);
-	},
 	middleware:botMiddleware
 }
