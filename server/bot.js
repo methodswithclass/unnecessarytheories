@@ -33,7 +33,7 @@ var getMetaData = function (req) {
 
 	var data = parseUrl(req.url);
 
-	console.log(data);
+	console.log(data); 
 
 	return { 
 		appID:variables.FBappID,
