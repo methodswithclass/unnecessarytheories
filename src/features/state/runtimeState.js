@@ -34,7 +34,8 @@ stateModule.provider("runtime.state", function ($stateProvider) {
                 return 'assets/views/' + view;
             }
 
-            $scope.url = data.env().url + '/?b=' + $scope.blog.meta.name;
+            // $scope.url = data.env().url + '/?b=' + $scope.blog.meta.name;
+            $scope.url = data.env().url + '/blog/' + $scope.blog.meta.name;
 
             $("#body").scrollTo(0);
 

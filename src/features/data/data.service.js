@@ -4,13 +4,13 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 	var dev = {
 		test:true,
-		url:'http://gentlephrasing-dev.herokuapp.com',
+		url:'http://www.methodswc.com',
 		id:'725062234262184'
 	}
 
 	var prod = {
 		test:false,
-		url:'http://www.methodswc.com',
+		url:'http://www.gentlephrasing.com',
 		id:'696572137111194'
 	}
 
