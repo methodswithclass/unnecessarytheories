@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const variables = require("./variables");
 
-var debugCrawler = false;
+var debugCrawler = true;
 
 var meta = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
@@ -31,7 +31,7 @@ var getType = function (url) {
 
 	console.log("url array", urlArray);
 
-	if (url[1] == "blog") {
+	if (urlArray[1] == "blog") {
 		return "article"
 	}
 
