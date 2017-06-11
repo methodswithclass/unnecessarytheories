@@ -48,7 +48,7 @@ var getMetaData = function (req) {
 		title:data.title, 
 		type:getType(req.url),
 		description:data.description,
-		img: (process.env.NODE_ENV == "production" ? variables.url.prod : variables.url.dev) + data.image,
+		img: data.image,
 		height:data.size.height,
 		width:data.size.width
 	}
