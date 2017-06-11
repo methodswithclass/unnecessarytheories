@@ -14,9 +14,9 @@ var parseUrl = function (url) {
 
 	var urlArray = url.split("/");
 
-	// console.log(urlArray);
+	console.log("initial array", urlArray);
 
-	if (urlArray > 1) {
+	if (urlArray.length > 1) {
 		return meta[urlArray[2]];
 	}
 	else {
@@ -58,7 +58,7 @@ var getMetaData = function (req) {
 
 var botRoute = function(req, res, next) {
 
-	res.render('./views/bot', getMetaData(req));
+	return res.render('./views/bot', getMetaData(req));
 }
 
 
@@ -66,8 +66,7 @@ var botMiddleware = function(req,res,next) {
 	var ua = req.headers['user-agent'];
 
 	if (debugCrawler) botRoute(req,res,next);
-
-	if (!debugCrawler && /^(facebookexternalhit)|(Twitterbot)|(Pinterest)/gi.test(ua)) {
+	else if (/^(facebookexternalhit)|(Twitterbot)|(Pinterest)/gi.test(ua)) {
 		console.log(ua,' is a bot');
 		botRoute(req,res,next);
 	}
