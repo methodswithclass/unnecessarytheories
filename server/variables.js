@@ -1,7 +1,6 @@
 module.exports = {
 	url:{
-		dev:"",
-		local:"http://blog-app-m.herokuapp.com",
+		dev:"localhost:8080",
 		prod:"http://www.methodswc.com"
 	},
 	FBappID:'696572137111194'
