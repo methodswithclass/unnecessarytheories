@@ -17,7 +17,6 @@ var parseUrl = function (url) {
 	// console.log(urlArray);
 
 	if (urlArray > 1) {
-
 		return meta[urlArray[2]];
 	}
 	else {
