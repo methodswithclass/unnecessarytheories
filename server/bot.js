@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const variables = require("./variables");
 
-var debugCrawler = true;
+var debugCrawler = false;
 
 var meta = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
