@@ -1,6 +1,6 @@
 blogModule.controller("blogCtrl", ['$scope', 'data.service', 'runtime.state', 'states', '$window', 'events', '$location', 'global', 'send', function ($scope, data, runtime, states, $window, events, $location, g, send) {
 
-	console.log("enter controller");
+	console.log("enter blog controller");
 
 	var self = this;
 
@@ -12,13 +12,13 @@ blogModule.controller("blogCtrl", ['$scope', 'data.service', 'runtime.state', 's
 
 	var blog = send.retrieve.get({name:"inbound"})[0];
 
-	console.log("blog", blog);
+	console.log("blog in controller is:", blog);
 
-	if (data.isBlog(blog)) {
-		console.log("controller inbound", blog);
+	// if (data.isBlog(blog)) {
+	// 	console.log("controller inbound", blog);
 
-		states.go(blog);
-	}
+	// 	states.go(blog);
+	// }
 
 	$scope.openExternal = function (link) {
 
@@ -26,7 +26,7 @@ blogModule.controller("blogCtrl", ['$scope', 'data.service', 'runtime.state', 's
 	}
 
 	$scope.getContentUrl = function() {
-			
+
 		var view;
 
 		if (g.isMobile()) {
@@ -38,26 +38,33 @@ blogModule.controller("blogCtrl", ['$scope', 'data.service', 'runtime.state', 's
 			view = "d.home.html";
 		}
 
-        return 'assets/views/' + view;
-    }
+		return 'assets/views/' + view;
+	}
 
-    
 
-    $window.asyncFBInit = function () {
 
-    	console.log("facebook sdk loaded");
+	$window.asyncFBInit = function () {
 
-    	var env = data.env();
+		console.log("facebook sdk loaded");
 
-        FB.init({
-          appId: env.id,
-          status: true, 
-          cookie: true, 
-          xfbml: true,
-          version: 'v2.4'
-        });
-    }
+		var env = data.env();
 
-    $("#body").scrollTo(0);
+		// try {
+
+			FB.init({
+				appId: env.id,
+				status: true, 
+				cookie: true, 
+				xfbml: true,
+				version: 'v2.4'
+			});
+
+		// }
+		// catch (e) {
+		// 	console.log("no FB object", e.message);
+		// }
+	}
+
+	$("#body").scrollTo(0);
 
 }]);

@@ -5,9 +5,9 @@ FBuiModule.directive('fbparse', ['$window', function ($window) {
         scope: {},
         link: function postLink(scope, elem, attrs) {
             
-            $window.asyncFBInit();
+            // $window.asyncFBInit();
 
-            FB.XFBML.parse(elem[0]);
+            // FB.XFBML.parse(elem[0]);
         }
     };
 }]);

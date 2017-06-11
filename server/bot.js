@@ -29,6 +29,8 @@ var getType = function (url) {
 
 	var urlArray = url.split("/");
 
+	console.log("url array", urlArray);
+
 	if (url[1] == "blog") {
 		return "article"
 	}

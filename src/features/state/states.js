@@ -33,51 +33,16 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
 	var getParams = function (absurl) {
 
-		// var obj = {};
-
-		// var url = absurl.split("?");
-
-		// if (url.length > 1) {
-
-		// 	var pairs = url[1].split("&");
-
-		// 	var pairArray;
-
-		// 	for (i in pairs) {
-
-		// 		pairArray = pairs[i].split("=");
-
-		// 		obj[pairArray[0]] = pairArray[1];
-
-		// 	}
-
-		// }
-
-		// printParams(obj);
-
-		// return obj;
-
-		var obj = {};
+		var obj = "home";
 
 		var url = absurl.split("/");
 
 		if (url.length > 5) {
 
-			// var pairs = url[1].split("&");
-
-			// var pairArray;
-
-			// for (i in pairs) {
-
-			// 	pairArray = pairs[i].split("=");
-
-				obj = url[4];
-
-			// }
-
+			obj = url[4];
 		}
 
-		// printParams(obj);
+		console.log("check returns:", obj);
 
 		return obj;
 
@@ -96,21 +61,8 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
 		prevState = $trans.$from().name;
 
-		console.log("to state", $trans.$to().name);
-	})
-
-	// $rootScope.$on('$stateChangeSuccess', 
-	// 	function(event, toState, toParams, fromState, fromParams) {
-
-	// 		//console.log(toState);	  
-
-	// 		events.dispatch("stateChange");
-
-	// 		prevState = fromState;
-
-	// 		console.log("to state", toState);
-	// 	}
-	// );
+		console.log("to state", $trans.$to());
+	});
 
 	var addState = function (name) {
 
@@ -128,21 +80,15 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
 	var checkInbound = function() {
 
-		console.log("check inbound", $location.absUrl());
+		console.log("check inbound for url", $location.absUrl());
 
 		var blog = getParams($location.absUrl());
 
-		// console.log("params", params);
-
-		// var blog = "none";
-
-		// if (params.b) {
-		// 	blog = params.b;
-		// }
-
 		send.setup.save({name:"inbound", data:blog});
 
-		$state.go("home");
+		// console.log("go to blog", blog);
+
+		go(blog);
 	}
 
 	var define = function () {
@@ -189,11 +135,14 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
     var go = function (state) {
 
+    	console.log("change state to", state);
+
     	if (data.isBlog(state)) {
-    		console.log("state " + state);
+    		console.log("state is blog", state);
     		$state.go("blog", {name:state});
     	}
     	else{
+    		console.log("state is not blog:", state);
     		$state.go(state);
     	}
     }
