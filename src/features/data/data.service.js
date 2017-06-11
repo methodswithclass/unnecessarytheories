@@ -1,6 +1,6 @@
 dataModule.factory("data.service", ['global', 'file.service', function (g, file) {
 
-	var test = false;
+	var testOverride = true;
 
 	var dev = {
 		test:true,
@@ -327,7 +327,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 	var env = function (_test) {
 
-		return _test ? (_test ? dev : prod) : (test ? dev : prod);
+		return _test ? (_test ? dev : prod) : (testOverride ? dev : prod);
 	}
 
 	return {
