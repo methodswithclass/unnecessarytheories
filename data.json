@@ -38,7 +38,7 @@
 	"intelligence":{
 		"title":"Intelligence",
 		"description":"Are we smart when we can't define the things we make up?",
-		"image":"/dist/assets/img/machine_thumb.jpg",
+		"image":"/src/assets/img/machine_thumb.jpg",
 		"size":{
 			"width":"1200",
 			"height":"630"
