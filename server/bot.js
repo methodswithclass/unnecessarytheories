@@ -58,7 +58,7 @@ var getMetaData = function (req) {
 
 var botRoute = function(req, res, next) {
 
-	return res.render('./views/bot', getMetaData(req));
+	res.render('./views/bot', getMetaData(req));
 }
 
 
