@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const variables = require("./variables");
 
-var debugCrawler = false;
+var debugCrawler = true;
 
 var meta = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
@@ -16,7 +16,7 @@ var parseUrl = function (url) {
 
 	console.log("initial array", urlArray);
 
-	if (urlArray.length > 1) {
+	if (urlArray.length > 1 && urlArray[1] !== "") {
 		return meta[urlArray[2]];
 	}
 	else {
