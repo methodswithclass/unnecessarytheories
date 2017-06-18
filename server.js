@@ -19,15 +19,26 @@ app.use(middleware.refresh());
 app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
 app.use(bodyParser.json());                                     // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-app.use("/dist/assets/css", express.static(path.join(__dirname, "dist/assets/css")));
-app.use("/dist/assets/css/museo", express.static(path.join(__dirname, "dist/assets/css/museo")));
-app.use("/dist/assets/js", express.static(path.join(__dirname, "dist/assets/js")));
-app.use("/dist/assets/img", express.static(path.join(__dirname, "dist/assets/img")));
+// app.use("/assets/css", express.static(path.join(__dirname, "dist/assets/css")));
+// app.use("/assets/css/museo", express.static(path.join(__dirname, "dist/assets/css/museo")));
+// app.use("/assets/js", express.static(path.join(__dirname, "dist/assets/js")));
+// app.use("/assets/img", express.static(path.join(__dirname, "dist/assets/img")));
+app.use(express.static(path.join(__dirname, "dist/assets")))
+app.use("/", function (req, res, next) {
+
+	console.log(path.join(__dirname, "dist/assets/css"));
+	next();
+})
 app.use("/", express.static(path.join(__dirname, "dist")));
 app.use("/blog/*", express.static(path.join(__dirname, "dist")));
 
 
 var listener = app.listen(process.env.PORT || 8080, function () {
 
+	console.log()
+
 	console.log("listening on port", listener.address().port);
 });
+
+
+
