@@ -5,15 +5,12 @@
   "scripts": {
     "ng": "ng",
     "start": "NODE_ENV=production node server.js",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod",
-    "deploy": "git push bitbucket master && git push heroku master",
+    "build": "gulp build",
+    "postinstall": "gulp build --aot -prod",
+    "commit-deploy-dev": "git add * && git commit -m update && git push development master",
     "commit-deploy": "git add * && git commit -m update && git push heroku master",
     "deploy-dev": "git push development master",
-    "commit-deploy-dev": "git add * && git commit -m update && git push development master"
+    "deploy": "git push heroku master"
   },
   "engines": {
     "node": "6.9.2",
