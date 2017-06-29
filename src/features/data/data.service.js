@@ -30,11 +30,11 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 	var home = {
 		meta:{
 			name:"home",
-			title:"gentle phrasing",
+			title:"unecessary theories",
 			image:"assets/img/landscape"
 		},
 		share:{
-			description:"no worries, the sharp phrasing will be gentle"
+			description:"here are some theories, probably unecessary"
 		}
 	}
 
@@ -49,7 +49,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				s:"intelligence",
 				l:"Are we smart when we can't define the things we make up? And those things actually hurt us?",
 				color:"black",
-				sfont:"font-50"
+				sfont:"font-70"
 			},
 			image:'assets/img/machine',
 			file:"assets/files/intelligence.txt",
@@ -71,7 +71,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				s:"the prison",
 				l:"Even prisons with three walls are impossible to break free from",
 				color:"black",
-				sfont:"font-50"
+				sfont:"font-70"
 			},
 			image:'assets/img/corridor',
 			file:"assets/files/prison.txt",
@@ -93,7 +93,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				s:"scale of time",
 				l:"The realities of time are not all that friendly to our visions of sci-fi",
 				color:"black",
-				sfont:"font-50"
+				sfont:"font-70"
 			},
 			image:'assets/img/relativity',
 			file:"assets/files/scale_time.txt",
@@ -115,7 +115,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				s:"meaning of god",
 				l:"I don't care whether god exists or not, but what does the concept mean?",
 				color:"black",
-				sfont:"font-50"
+				sfont:"font-70"
 			},
 			image:'assets/img/space',
 			file:"assets/files/meaning_god.txt",
@@ -137,7 +137,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				s:"vase of the world",
 				l:"Caution to you, when you create in order to relieve, you know not what you make",
 				color:"black",
-				sfont:"font-50"
+				sfont:"font-70"
 			},
 			image:'assets/img/cavemen',
 			file:"assets/files/vaseoftheworld.txt",
@@ -159,7 +159,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				s:"online dating",
 				l:"Online dating is not a fun activity, so I wrote some poetry about it.",
 				color:"black",
-				sfont:"font-50"
+				sfont:"font-70"
 			},
 			image:'assets/img/online-date',
 			file:"assets/files/online-date.txt",
@@ -181,7 +181,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				s:"girl on path",
 				l:"I was lost in a world of my own thinking thoughts, then I came upon her, and she connected the dots.",
 				color:"black",
-				sfont:"font-50"
+				sfont:"font-70"
 			},
 			image:'assets/img/girl',
 			file:"assets/files/girl_on_path.txt",
@@ -203,7 +203,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				s:"the impossibility of alien contact",
 				l:"The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible",
 				color:"black",
-				sfont:"font-30"
+				sfont:"font-50"
 			},
 			image:'assets/img/contact',
 			file:"assets/files/alien_contact2.txt",
@@ -225,7 +225,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				s:"perspective",
 				l:"For the stone and the mote, the grass is always greener...",
 				color:"black",
-				sfont:"font-50"
+				sfont:"font-70"
 			},
 			image:'assets/img/dust',
 			file:"assets/files/mote.txt",

@@ -1,16 +1,28 @@
 
 <div class="relative width height">
-	<div class="relative width height-800 cutoff" id="header" parallax scroll="body" top="true" src="assets/img/landscape.jpg">
+	<div class="relative width height-800 cutoff" id="header" parallax scroll="body" top="true" inner="splash">
 		
+		<!-- src="assets/img/landscape.jpg" -->
+
+		<div class="absolute width height" id="splash">
+			<img class="absolute width height-auto opacity70" src="assets/img/evolution_chalk.jpg">
+			<div class="absolute width90 height90 center">
+				<div class="absolute width height text-right font-90 dearjoe">
+					here are some theories, <br><br> they're probably unecessary
+				</div>
+			</div>
+		</div>
+
 		<div class="absolute width40 height-100 bottom-50 left-minus-20">
 			<div class="absolute width height rounded10 black-back opacity90 border-white"></div>
-			<div class="absolute center white font-50">{{main.title}}</div>
+			<div class="absolute center beige font-70 dearjoe">{{main.title}}</div>
 		</div>
 
 	</div>
 
-	<div class="relative width black-back" id="button-group">
+	<div class="relative width beige-back" id="button-group">
 
+		<!-- <div class="relative width beige-back opacity70"></div> -->
 		<div class="relative width80 top10 hcenter" id="button-parent">
 			<div ng-repeat="blog in main.blogs">
 				<btn class="absolute width height" data="blog"></btn>
@@ -18,6 +30,6 @@
 		</div>
 
 	</div>
-	
+
 </div>
 
