@@ -10,10 +10,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod",
-    "deploy":"git push bitbucket master && git push heroku master",
-    "commit-deploy":"git add * && git commit -m update && git push heroku master",
-    "deploy-dev":"git push development master",
-    "commit-deploy-dev":"git add * && git commit -m update && git push development master"
+    "deploy": "git push bitbucket master && git push heroku master",
+    "commit-deploy": "git add * && git commit -m update && git push heroku master",
+    "deploy-dev": "git push development master",
+    "commit-deploy-dev": "git add * && git commit -m update && git push development master"
   },
   "engines": {
     "node": "6.9.2",
