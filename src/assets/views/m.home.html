@@ -3,16 +3,23 @@
 
 	<div class="relative width height-800 noedge cutoff" id="header">
 		
-		<img class="absolute height120 width-auto center" src="img/landscape.jpg"/>
-		
+		<div class="absolute width height" id="splash">
+			<img class="absolute width height-auto opacity70" src="assets/img/evolution_chalk.jpg">
+			<div class="absolute width90 height90 center">
+				<div class="absolute width height text-right font-90 dearjoe">
+					here are some theories, <br><br> they're probably unecessary
+				</div>
+			</div>
+		</div>
+
 		<div class="absolute width60 height-200 bottom-100 left-minus-20">
 			<div class="absolute width height rounded20 black-back opacity80 border-white"></div>
-			<div class="absolute width text-center vcenter white font-70">{{main.title}}</div>
+			<div class="absolute width text-center vcenter beige font-70 dearjoe">{{main.title}}</div>
 		</div>
 
 	</div>
 
-	<div class="relative width padding-v-100" id="button-group">
+	<div class="relative width padding-v-100 beige-back" id="button-group">
 
 		<div class="relative width" id="button-parent">
 			<div ng-repeat="blog in main.blogs">
