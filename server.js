@@ -45,8 +45,8 @@ var refresh = function () {
 
 
 app.use(refresh());
-if (process.env.NODE_ENV == "production") app.use(forceSSL());
-else {console.log("environment development")}
+// if (process.env.NODE_ENV == "production") app.use(forceSSL());
+// else {console.log("environment development")}
 
 app.use(express.static(__dirname + "/dist"));
 
