@@ -16,8 +16,8 @@ const forceSSL = function() {
   	console.log("force https");
     if (req.headers['x-forwarded-proto'] !== 'https') {
       return res.redirect(
-       ['https://', req.get('Host'), req.url].join('')
-      );
+                          ['https://', req.get('Host'), req.url].join('')
+                          );
     }
     next();
   }
@@ -42,7 +42,6 @@ var refresh = function () {
 
 	}
 }
-
 
 app.use(refresh());
 // if (process.env.NODE_ENV == "production") app.use(forceSSL());

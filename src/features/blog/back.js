@@ -6,7 +6,7 @@ blogModule.directive("back", ['states', function (states) {
 			font:"@"
 		},
 		replace:true,
-		template:"<div class='absolute width height'><div class='absolute width height white-back opacity80 border rounded10 pointer'></div><div class='absolute center'>Home</div></div>",
+		template:"<div class='absolute width height'><div class='absolute width height white-back opacity80 border rounded10 pointer'></div><div class='absolute center'>home</div></div>",
 		link:function ($scope, element, attr) {
 
 			element.first().addClass($scope.font);
