@@ -1,48 +1,54 @@
 const express = require("express");
-const path = require("path");
-const bodyParser = require("body-parser");
-
 const app = express();
 
-const bot = require("./server/bot");
-const middleware = require("./server/middleware");
+
+var refreshPages = [
+"construction"
+]
 
 
-
-app.set('view engine', 'jade');
-app.set('views', path.join(__dirname, '/server'));
-
-
-app.use(bot.middleware);
-app.use(middleware.refresh());
-// if  (process.env.NODE_ENV == "production") app.use(middleware.forceSSL());
-// else {console.log("environment development");}
-app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
-app.use(bodyParser.json());                                     // parse application/json
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-// app.use("/assets/css", express.static(path.join(__dirname, "dist/assets/css")));
-// app.use("/assets/css/museo", express.static(path.join(__dirname, "dist/assets/css/museo")));
-// app.use("/assets/js", express.static(path.join(__dirname, "dist/assets/js")));
-// app.use("/assets/img", express.static(path.join(__dirname, "dist/assets/img")));
-app.use(express.static(path.join(__dirname, "dist/assets/css")));
-app.use(express.static(path.join(__dirname, "dist/assets/css/museo")));
-app.use(express.static(path.join(__dirname, "dist/assets/js")));
-app.use(express.static(path.join(__dirname, "dist/assets/img")));
-app.use("/", function (req, res, next) {
-
-	console.log(path.join(__dirname, "dist/assets/css"));
-	next();
-})
-app.use("/", express.static(path.join(__dirname, "dist")));
-app.use("/blog/*", express.static(path.join(__dirname, "dist")));
+// // If an incoming request uses
+// // a protocol other than HTTPS,
+// // redirect that request to the
+// // same url but with HTTPS
+const forceSSL = function() {
+  return function (req, res, next) {
+  	console.log("force https");
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+      return res.redirect(
+       ['https://', req.get('Host'), req.url].join('')
+      );
+    }
+    next();
+  }
+}
 
 
-var listener = app.listen(process.env.PORT || 8080, function () {
+var refresh = function () {
 
-	console.log("dirname", __dirname);
+	return function (req, res, next) {
 
-	console.log("listening on port", listener.address().port);
-});
+		console.log(req.url);
+
+		var urlArray = req.url.split("/");
+
+		for (var i in refreshPages) {
+			if (urlArray[1] == refreshPages[i]) {
+				return res.redirect(['http://', req.get('Host')].join(''));
+			}
+		}
+
+		next();
+
+	}
+}
 
 
+app.use(refresh());
+if (process.env.NODE_ENV == "production") app.use(forceSSL());
+else {console.log("environment development")}
 
+app.use(express.static(__dirname + "/dist"));
+
+
+app.listen(process.env.PORT || 8080);
