@@ -52,7 +52,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				sfont:{
 					button:{
 						d:"font-70",
-						m:"font-60"
+						m:"font-80"
 					},
 					blog:{
 						d:"font-50",
@@ -83,7 +83,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				sfont:{
 					button:{
 						d:"font-70",
-						m:"font-60"
+						m:"font-80"
 					},
 					blog:{
 						d:"font-50",
@@ -114,7 +114,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				sfont:{
 					button:{
 						d:"font-70",
-						m:"font-60"
+						m:"font-80"
 					},
 					blog:{
 						d:"font-50",
@@ -145,7 +145,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				sfont:{
 					button:{
 						d:"font-70",
-						m:"font-60"
+						m:"font-80"
 					},
 					blog:{
 						d:"font-50",
@@ -176,7 +176,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				sfont:{
 					button:{
 						d:"font-70",
-						m:"font-60"
+						m:"font-80"
 					},
 					blog:{
 						d:"font-50",
@@ -207,7 +207,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				sfont:{
 					button:{
 						d:"font-70",
-						m:"font-60"
+						m:"font-80"
 					},
 					blog:{
 						d:"font-50",
@@ -238,7 +238,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				sfont:{
 					button:{
 						d:"font-70",
-						m:"font-60"
+						m:"font-80"
 					},
 					blog:{
 						d:"font-50",
@@ -269,7 +269,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				sfont:{
 					button:{
 						d:"font-60",
-						m:"font-50"
+						m:"font-70"
 					},
 					blog:{
 						d:"font-30",
@@ -300,7 +300,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				sfont:{
 					button:{
 						d:"font-70",
-						m:"font-60"
+						m:"font-80"
 					},
 					blog:{
 						d:"font-50",
