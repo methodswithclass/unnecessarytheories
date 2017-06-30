@@ -14,6 +14,17 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 		id:'696572137111194'
 	}
 
+	var fonts = {
+		button:{
+			d:"font-15",
+			m:"font-30"
+		},
+		blog:{
+			d:"font-50",
+			m:"font-60"
+		}
+	}
+
 	var published = {
 		none:false,
 		prison:true,
@@ -46,26 +57,26 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			by:"Christopher Polito",
 			name:"intelligence",
 			title:{
-				s:"intelligence",
-				l:"Are we smart when we can't define the things we make up? And those things actually hurt us?",
-				color:"black",
-				sfont:{
-					button:{
-						d:"font-70",
-						m:"font-80"
-					},
-					blog:{
-						d:"font-50",
-						m:"font-60"
+				s:{
+					text:"intelligence",
+					font:{
+						button:{
+							d:fonts.button.d,
+							m:fonts.button.m
+						},
+						blog:{
+							d:fonts.blog.d,
+							m:fonts.blog.m
+						}
 					}
+				},
+				l:{
+					text:"Are we smart when we can't define the things we make up? And those things actually hurt us?"
 				}
 			},
 			image:'assets/img/machine',
 			file:"assets/files/intelligence.txt",
 			published:published.intelligence
-		},
-		button:{
-			classname:"absolute center white font-25"
 		},
 		twitter:{
 			description:"It's a good thing we are smart enough to make up something like intelligence."
@@ -77,26 +88,26 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			by:"Christopher Polito",
 			name:"prison",
 			title:{
-				s:"the prison",
-				l:"Even prisons with three walls are impossible to break free from",
-				color:"black",
-				sfont:{
-					button:{
-						d:"font-70",
-						m:"font-80"
-					},
-					blog:{
-						d:"font-50",
-						m:"font-60"
+				s:{
+					text:"the prison",
+					font:{
+						button:{
+							d:fonts.button.d,
+							m:fonts.button.m
+						},
+						blog:{
+							d:fonts.blog.d,
+							m:fonts.blog.m
+						}
 					}
+				},
+				l:{
+					text:"Even prisons with three walls are impossible to break free from"
 				}
 			},
 			image:'assets/img/corridor',
 			file:"assets/files/prison.txt",
 			published:published.prison
-		},
-		button:{
-			classname:"absolute center white font-25"
 		},
 		twitter:{
 			description:"You're in a prison you can't see because you're distracted by all the writing on the wall"
@@ -108,26 +119,26 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			by:"Christopher Polito",
 			name:"scale_time",
 			title:{
-				s:"scale of time",
-				l:"The realities of time are not all that friendly to our visions of sci-fi",
-				color:"black",
-				sfont:{
-					button:{
-						d:"font-70",
-						m:"font-80"
-					},
-					blog:{
-						d:"font-50",
-						m:"font-60"
+				s:{
+					text:"scale of time",
+					font:{
+						button:{
+							d:fonts.button.d,
+							m:fonts.button.m
+						},
+						blog:{
+							d:fonts.blog.d,
+							m:fonts.blog.m
+						}
 					}
+				},
+				l:{
+					text:"The realities of time are not all that friendly to our visions of sci-fi"
 				}
 			},
 			image:'assets/img/relativity',
 			file:"assets/files/scale_time.txt",
 			published:published.scale_time
-		},
-		button:{
-			classname:"absolute center white font-25"
 		},
 		twitter:{
 			description:"Time has no scale, but the implications do"
@@ -139,26 +150,26 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			by:"Christopher Polito",
 			name:"meaning_god",
 			title:{
-				s:"meaning of god",
-				l:"I don't care whether god exists or not, but what does the concept mean?",
-				color:"black",
-				sfont:{
-					button:{
-						d:"font-70",
-						m:"font-80"
-					},
-					blog:{
-						d:"font-50",
-						m:"font-60"
+				s:{
+					text:"meaning of god",
+					font:{
+						button:{
+							d:fonts.button.d,
+							m:fonts.button.m
+						},
+						blog:{
+							d:fonts.blog.d,
+							m:fonts.blog.m
+						}
 					}
+				},
+				l:{
+					text:"I don't care whether god exists or not, but what does the concept mean?"
 				}
 			},
 			image:'assets/img/space',
 			file:"assets/files/meaning_god.txt",
 			published:published.meaning_god
-		},
-		button:{
-			classname:"absolute center white font-25"
 		},
 		twitter:{
 			description:"the existence of god is irrelevant, but the meaning isn\'t"
@@ -170,26 +181,26 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			by:"Christopher Polito",
 			name:"vase",
 			title:{
-				s:"vase of the world",
-				l:"Caution to you, when you create in order to relieve, you know not what you make",
-				color:"black",
-				sfont:{
-					button:{
-						d:"font-70",
-						m:"font-80"
-					},
-					blog:{
-						d:"font-50",
-						m:"font-60"
+				s:{
+					text:"vase of the world",
+					font:{
+						button:{
+							d:fonts.button.d,
+							m:fonts.button.m
+						},
+						blog:{
+							d:fonts.blog.d,
+							m:fonts.blog.m
+						}
 					}
+				},
+				l:{
+					text:"Caution to you, when you create in order to relieve, you know not what you make"
 				}
 			},
 			image:'assets/img/cavemen',
 			file:"assets/files/vaseoftheworld.txt",
 			published:published.vase
-		},
-		button:{
-			classname:"absolute center white font-25"
 		},
 		twitter:{
 			description:"Be careful what you create, you know not what it can become"
@@ -201,26 +212,26 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			by:"Christopher Polito",
 			name:"online_dating",
 			title:{
-				s:"online dating",
-				l:"Online dating is not a fun activity, so I wrote some poetry about it.",
-				color:"black",
-				sfont:{
-					button:{
-						d:"font-70",
-						m:"font-80"
-					},
-					blog:{
-						d:"font-50",
-						m:"font-60"
+				s:{
+					text:"online dating",
+					font:{
+						button:{
+							d:fonts.button.d,
+							m:fonts.button.m
+						},
+						blog:{
+							d:fonts.blog.d,
+							m:fonts.blog.m
+						}
 					}
+				},
+				l:{
+					text:"Online dating is not a fun activity, so I wrote some poetry about it."
 				}
 			},
 			image:'assets/img/online-date',
 			file:"assets/files/online-date.txt",
 			published:published.online_dating
-		},
-		button:{
-			classname:"absolute center white font-25"
 		},
 		twitter:{
 			description:"Online dating is not a fun activity, so I wrote some poetry about it."
@@ -232,26 +243,26 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			by:"Christopher Polito",
 			name:"girl",
 			title:{
-				s:"girl on path",
-				l:"I was lost in a world of my own thinking thoughts, then I came upon her, and she connected the dots.",
-				color:"black",
-				sfont:{
-					button:{
-						d:"font-70",
-						m:"font-80"
-					},
-					blog:{
-						d:"font-50",
-						m:"font-60"
+				s:{
+					text:"girl on the path",
+					font:{
+						button:{
+							d:fonts.button.d,
+							m:fonts.button.m
+						},
+						blog:{
+							d:fonts.blog.d,
+							m:fonts.blog.m
+						}
 					}
+				},
+				l:{
+					text:"I was lost in a world of my own thinking thoughts, then I came upon her, and she connected the dots."
 				}
 			},
 			image:'assets/img/girl',
 			file:"assets/files/girl_on_path.txt",
 			published:published.girl
-		},
-		button:{
-			classname:"absolute center white font-25"
 		},
 		twitter:{
 			description:"I was lost in a world of my own thinking thoughts, then I came upon her, and she connected the dots."
@@ -263,26 +274,26 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			by:"Christopher Polito",
 			name:"contact",
 			title:{
-				s:"the impossibility of alien contact",
-				l:"The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible",
-				color:"black",
-				sfont:{
-					button:{
-						d:"font-60",
-						m:"font-70"
-					},
-					blog:{
-						d:"font-30",
-						m:"font-50"
+				s:{
+					text:"the impossibility of alien contact",
+					font:{
+						button:{
+							d:"font-15",
+							m:fonts.button.m
+						},
+						blog:{
+							d:"font-40",
+							m:fonts.blog.m
+						}
 					}
+				},
+				l:{
+					text:"The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible"
 				}
 			},
 			image:'assets/img/contact',
 			file:"assets/files/alien_contact2.txt",
 			published:published.contact
-		},
-		button:{
-			classname:"absolute center white font-25"
 		},
 		twitter:{
 			description:"The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible"
@@ -294,26 +305,26 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			by:"Christopher Polito",
 			name:"perspective",
 			title:{
-				s:"perspective",
-				l:"For the stone and the mote, the grass is always greener...",
-				color:"black",
-				sfont:{
-					button:{
-						d:"font-70",
-						m:"font-80"
-					},
-					blog:{
-						d:"font-50",
-						m:"font-60"
+				s:{
+					text:"perspective",
+					font:{
+						button:{
+							d:fonts.button.d,
+							m:fonts.button.m
+						},
+						blog:{
+							d:fonts.blog.d,
+							m:fonts.blog.m
+						}
 					}
+				},
+				l:{
+					text:"For the stone and the mote, the grass is always greener..."
 				}
 			},
 			image:'assets/img/dust',
 			file:"assets/files/mote.txt",
 			published:published.perspective
-		},
-		button:{
-			classname:"absolute center white font-25"
 		},
 		twitter:{
 			description:"For the stone and the mote, the grass is always greener..."
