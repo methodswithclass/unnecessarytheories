@@ -21,7 +21,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 		},
 		blog:{
 			d:"font-50",
-			m:"font-60"
+			m:"font-50"
 		}
 	}
 
@@ -283,7 +283,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 						},
 						blog:{
 							d:"font-40",
-							m:fonts.blog.m
+							m:"font-40"
 						}
 					}
 				},
