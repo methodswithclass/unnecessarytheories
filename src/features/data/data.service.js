@@ -1,6 +1,6 @@
 dataModule.factory("data.service", ['global', 'file.service', function (g, file) {
 
-	var testOverride = true;
+	var testOverride = false;
 
 	var dev = {
 		test:true,
@@ -10,7 +10,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 	var prod = {
 		test:false,
-		url:'http://www.gentlephrasing.com',
+		url:'http://www.unecessarytheories.io',
 		id:'696572137111194'
 	}
 
