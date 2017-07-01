@@ -1,6 +1,6 @@
 module.exports = {
 	url:{
-		dev:"localhost:8080",2
+		dev:"localhost:8080",
 		prod:"http://www.unecessarytheories.io"
 	},
 	FBappID:{
