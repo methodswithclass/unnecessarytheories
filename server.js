@@ -15,8 +15,8 @@ app.set('views', path.join(__dirname, '/server'));
 
 app.use(bot.middleware);
 app.use(middleware.refresh());
-// if  (process.env.NODE_ENV == "production") app.use(middleware.forceSSL());
-// else {console.log("environment development");}
+if  (process.env.NODE_ENV == "production") app.use(middleware.forceSSL());
+else {console.log("environment development");}
 app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
 app.use(bodyParser.json());                                     // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
