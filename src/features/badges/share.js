@@ -21,7 +21,7 @@ badgesModule.directive("share", ['$window', 'data.service', 'global', function (
 			}
 			else {
 
-				url =  env.url + '/?b=' + $scope.name;
+				url =  env.url + '/blog/' + $scope.name;
 			}
 
 			blog = data.getBlogByName($scope.name);
