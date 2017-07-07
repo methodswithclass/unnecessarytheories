@@ -4,14 +4,19 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 	var dev = {
 		test:true,
-		url:'http://www.methodswc.com',
+		url:'http://unecessarytheories-dev.herokuapp.com/',
 		id:'725062234262184'
 	}
 
 	var prod = {
 		test:false,
-		url:'http://www.unecessarytheories.io',
+		url:'http://www.unecessarytheories.io/',
 		id:'696572137111194'
+	}
+
+	var env = function (_test) {
+
+		return _test ? (_test ? dev : prod) : (testOverride ? dev : prod);
 	}
 
 	var fonts = {
@@ -75,7 +80,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/machine',
-			file:"assets/files/intelligence.txt",
+			file:"files/intelligence.txt",
 			published:published.intelligence
 		},
 		twitter:{
@@ -106,7 +111,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/corridor',
-			file:"assets/files/prison.txt",
+			file:"files/prison.txt",
 			published:published.prison
 		},
 		twitter:{
@@ -137,7 +142,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/relativity',
-			file:"assets/files/scale_time.txt",
+			file:"files/scale_time.txt",
 			published:published.scale_time
 		},
 		twitter:{
@@ -168,7 +173,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/space',
-			file:"assets/files/meaning_god.txt",
+			file:"files/meaning_god.txt",
 			published:published.meaning_god
 		},
 		twitter:{
@@ -199,7 +204,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/cavemen',
-			file:"assets/files/vaseoftheworld.txt",
+			file:"files/vaseoftheworld.txt",
 			published:published.vase
 		},
 		twitter:{
@@ -230,7 +235,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/online-date',
-			file:"assets/files/online-date.txt",
+			file:"files/online-date.txt",
 			published:published.online_dating
 		},
 		twitter:{
@@ -261,7 +266,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/girl',
-			file:"assets/files/girl_on_path.txt",
+			file:"files/girl_on_path.txt",
 			published:published.girl
 		},
 		twitter:{
@@ -292,7 +297,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/contact',
-			file:"assets/files/alien_contact2.txt",
+			file:"files/alien_contact2.txt",
 			published:published.contact
 		},
 		twitter:{
@@ -323,7 +328,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/dust',
-			file:"assets/files/mote.txt",
+			file:"files/mote.txt",
 			published:published.perspective
 		},
 		twitter:{
@@ -334,7 +339,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 	allblogs.sort(function (a,b) {
 
-		return b.meta.date.getTime() - a.meta.date.getTime();
+		return a.meta.date.getTime() - b.meta.date.getTime();
 	});
 
 	var blogs = allblogs.filter(function (blog, index, array) {
@@ -349,7 +354,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 		value.meta.index = index;
 
-		file.process(value.meta.file, function (blog) {
+		file.process(env().url + value.meta.file, function (blog) {
 			value.content = blog;
 		});
 
@@ -415,11 +420,6 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 		return {x:index % cols, y:Math.floor(index/cols), cols:cols, rows:rows};
 
-	}
-
-	var env = function (_test) {
-
-		return _test ? (_test ? dev : prod) : (testOverride ? dev : prod);
 	}
 
 	return {
