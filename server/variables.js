@@ -1,7 +1,7 @@
 module.exports = {
 	url:{
 		local:"localhost:8080",
-		dev:"http://unecessarytheories.herokuapp.com",
+		dev:"http://unecessarytheories-dev.herokuapp.com",
 		prod:"http://www.unecessarytheories.io"
 	},
 	FBappID:{
