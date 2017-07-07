@@ -4,13 +4,13 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 	var dev = {
 		test:true,
-		url:'http://www.unecessarytheories-dev.herokuapp.com/',
+		url:'http://unecessarytheories-dev.herokuapp.com/',
 		id:'725062234262184'
 	}
 
 	var prod = {
 		test:false,
-		url:'http://www.unecessarytheories-dev.herokuapp.com/',
+		url:'http://unecessarytheories-dev.herokuapp.com/',
 		id:'696572137111194'
 	}
 
