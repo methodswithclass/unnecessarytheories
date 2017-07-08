@@ -12,13 +12,15 @@ dataModule.factory("file.service", ['$http', function ($http) {
 
 		var section = [];
 		var blog = [];
-		var array = string.split("\n\n");
+		var array = string.split(/\n\r\n/);
+		// console.log(string, array);
 		var j = 0;
 		var k = 0;
 		var list = false;
 
 		for (i in array) {
-			if (array[i] == ".") {
+			// console.log(array[i], array[i].match(/\./));
+			if (array[i].match(/\./) && array[i].match(/\./).index == 0) {
 				
 				blog[k++] = section;
 
@@ -50,9 +52,7 @@ dataModule.factory("file.service", ['$http', function ($http) {
 			return cleanData;
 		})
 		.then(function (data) {
-			// console.log(data);
 			var blog = make(data);
-			console.log(blog);
 			blogs[blogs.length] = blog;
 			return blog;
 		})

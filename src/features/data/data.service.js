@@ -81,7 +81,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/machine',
-			file:"assets/files/intelligence.txt",
+			file:"files/intelligence.txt",
 			published:published.intelligence
 		},
 		twitter:{
@@ -112,7 +112,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/corridor',
-			file:"assets/files/prison.txt",
+			file:"files/prison.txt",
 			published:published.prison
 		},
 		twitter:{
@@ -143,7 +143,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/relativity',
-			file:"assets/files/scale_time.txt",
+			file:"files/scale_time.txt",
 			published:published.scale_time
 		},
 		twitter:{
@@ -174,7 +174,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/space',
-			file:"assets/files/meaning_god.txt",
+			file:"files/meaning_god.txt",
 			published:published.meaning_god
 		},
 		twitter:{
@@ -205,7 +205,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/cavemen',
-			file:"assets/files/vaseoftheworld.txt",
+			file:"files/vaseoftheworld.txt",
 			published:published.vase
 		},
 		twitter:{
@@ -236,7 +236,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 				}
 			},
 			image:'assets/img/online-date',
-			file:"assets/files/online-date.txt",
+			file:"files/online-date.txt",
 			published:published.online_dating
 		},
 		twitter:{
