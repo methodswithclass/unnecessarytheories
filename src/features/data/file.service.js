@@ -12,7 +12,7 @@ dataModule.factory("file.service", ['$http', function ($http) {
 
 		var section = [];
 		var blog = [];
-		var array = string.split(/\n\r\n/);
+		var array = string.split(/\n\n/);
 		// console.log(string, array);
 		var j = 0;
 		var k = 0;
