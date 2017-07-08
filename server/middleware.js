@@ -37,14 +37,19 @@ var refresh = function () {
 
 var accessControl = function () {
 
+	console.log("access control");
+
 	return function (req, res, next) {
 
 		// Website you wish to allow to connect
     	// res.setHeader('Access-Control-Allow-Origin', ['http://unecessarytheories-dev.herokuapp.com', 'http://unecessarytheories.herokuapp.com', 'http://localhost:8080']);
 
-    	return res.set("Access-Control-Allow-Origin", "*");
+    	console.log("set header");
 
-    	// next();
+    	res.set("Access-Control-Allow-Origin", "*");
+    	res.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+    	next();
 	}
 }
 
