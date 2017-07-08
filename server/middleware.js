@@ -42,9 +42,9 @@ var accessControl = function () {
 		// Website you wish to allow to connect
     	// res.setHeader('Access-Control-Allow-Origin', ['http://unecessarytheories-dev.herokuapp.com', 'http://unecessarytheories.herokuapp.com', 'http://localhost:8080']);
 
-    	res.setHeader("Access-Control-Allow-Origin", "*");
+    	return res.setHeader("Access-Control-Allow-Origin", "*");
 
-    	next();
+    	// next();
 	}
 }
 
