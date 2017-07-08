@@ -25,6 +25,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 // app.use(express.static(path.join(__dirname, "dist/assets/js")));
 // app.use(express.static(path.join(__dirname, "dist/assets/img")));
 app.use("/", express.static(path.join(__dirname, "dist")));
+app.use("/files/*", express.static(path.join(__dirname, "files")));
 app.use("/blog/*", express.static(path.join(__dirname, "dist")));
 
 
