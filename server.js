@@ -15,6 +15,7 @@ app.set('views', path.join(__dirname, '/server'));
 
 app.use(bot.middleware);
 app.use(middleware.refresh());
+app.use(middleware.accessControl());
 // if  (process.env.NODE_ENV == "production") app.use(middleware.ssl());
 // else {console.log("environment development");}
 app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
