@@ -13,7 +13,7 @@ app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, '/server'));
 
 
-app.use(middleware.accessControl());
+// app.use(middleware.accessControl());
 app.use(bot.middleware);
 app.use(middleware.refresh());
 // if  (process.env.NODE_ENV == "production") app.use(middleware.ssl());
@@ -25,7 +25,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 // app.use(express.static(path.join(__dirname, "dist/assets/css/museo")));
 // app.use(express.static(path.join(__dirname, "dist/assets/js")));
 // app.use(express.static(path.join(__dirname, "dist/assets/img")));
-app.use(express.static(path.join(__dirname, "files")));
+app.use(express.static(path.join(__dirname, "public")));
 app.use("/", express.static(path.join(__dirname, "dist")));
 app.use("/blog/*", express.static(path.join(__dirname, "dist")));
 

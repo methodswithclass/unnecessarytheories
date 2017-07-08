@@ -44,18 +44,19 @@ dataModule.factory("file.service", ['$http', function ($http) {
 
 		$http({url:url})
 		.then(function (response) {
-			var data = response.data
-			//console.log(data);
+			var data = response.data;
 			var cleanData = clean(data);
 			files[files.length] = cleanData;
 			return cleanData;
-		}).
-		then(function (data) {
+		})
+		.then(function (data) {
+			// console.log(data);
 			var blog = make(data);
+			console.log(blog);
 			blogs[blogs.length] = blog;
 			return blog;
-		}).
-		then(complete);
+		})
+		.then(complete);
 		
 	}
 
