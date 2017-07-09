@@ -49,7 +49,7 @@ blogModule.controller("blogCtrl", ['$scope', 'data.service', 'runtime.state', 's
 
 		var env = data.env();
 
-		// try {
+		try {
 
 			FB.init({
 				appId: env.id,
@@ -59,10 +59,10 @@ blogModule.controller("blogCtrl", ['$scope', 'data.service', 'runtime.state', 's
 				version: 'v2.4'
 			});
 
-		// }
-		// catch (e) {
-		// 	console.log("no FB object", e.message);
-		// }
+		}
+		catch (e) {
+			console.log("no FB object", e.message);
+		}
 	}
 
 	$("#body").scrollTo(0);
