@@ -4,13 +4,13 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 	var dev = {
 		test:true,
-		url:'http://unecessarytheories-dev.herokuapp.com/',
+		url:'http://unnecessarytheories-dev.herokuapp.com/',
 		id:'725062234262184'
 	}
 
 	var prod = {
 		test:false,
-		url:'http://www.unecessarytheories.io/',
+		url:'http://www.unnecessarytheories.io/',
 		// url:"localhost:8080/",
 		id:'696572137111194'
 	}
@@ -47,11 +47,11 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 	var home = {
 		meta:{
 			name:"home",
-			title:"unecessary theories",
+			title:"unnecessary theories",
 			image:"assets/img/landscape"
 		},
 		share:{
-			description:"here are some theories, probably unecessary"
+			description:"here are some theories, probably unnecessary"
 		}
 	}
 
