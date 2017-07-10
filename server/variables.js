@@ -1,4 +1,5 @@
 module.exports = {
+	site_name:"Unnecessary Theories",
 	url:{
 		local:"localhost:8080",
 		dev:"http://unecessarytheories-dev.herokuapp.com",

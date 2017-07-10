@@ -48,6 +48,7 @@ var getMetaData = function (req) {
 	return { 
 		appID:(process.env.NODE_ENV == "production" ? variables.FBappID.prod : variables.FBappID.dev),
 		url:(process.env.NODE_ENV == "production" ? variables.url.prod : variables.url.dev) + req.url,
+		site_name:variables.site_name,
 		title:data.title, 
 		type:getType(req.url),
 		description:data.description,
