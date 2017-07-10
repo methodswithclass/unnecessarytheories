@@ -2,8 +2,8 @@ module.exports = {
 	site_name:"Unnecessary Theories",
 	url:{
 		local:"localhost:8080",
-		dev:"http://unecessarytheories-dev.herokuapp.com",
-		prod:"http://www.unecessarytheories.io"
+		dev:"http://unnecessarytheories-dev.herokuapp.com",
+		prod:"http://www.unnecessarytheories.io"
 	},
 	FBappID:{
 		prod:'696572137111194',
