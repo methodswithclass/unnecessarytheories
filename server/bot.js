@@ -72,9 +72,9 @@ var botMiddleware = function(req,res,next) {
 		console.log(ua,' is a bot');
 		botRoute(req,res,next);
 	}
-	else {
-		next();
-	}
+
+	next();
+	
 
 }
 
