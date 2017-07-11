@@ -23,9 +23,9 @@ app.use(bodyParser.urlencoded({'extended':'true'}));            // parse applica
 app.use(bodyParser.json());                                     // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(path.join(__dirname, "dist")));
-app.use("/assets/*", express.static(path.join(__dirname, "dist/assets")));
+app.use("/", express.static(path.join(__dirname, "dist")));
 app.use("/blog/*", express.static(path.join(__dirname, "dist")));
+app.use("/assets/img/*", express.static(path.join(__dirname, "dist/assets/img")));
 
 
 var listener = app.listen(process.env.PORT || 8080, function () {
