@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "NODE_ENV=production node server.js",
+    "start": "node server.js",
     "build": "gulp build",
     "postinstall": "gulp build --aot -prod",
     "commit-deploy-dev": "git add * && git commit -m update && git push development develop:master",
