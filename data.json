@@ -2,7 +2,7 @@
 	"home":{
 		"title":"Unnecessary Theories",
 		"description":"here are some theories, they're probably unnecessary",
-		"image":"https://www.unnecessarytheories.io/assets/img/evolution_chalk.jpg",
+		"image":"https://www.unnecessarytheories.io/img/evolution_chalk.jpg",
 		"size":{
 			"width":"1200",
 			"height":"630"
@@ -83,7 +83,7 @@
 	"perspective":{
 		"title":"Perspective",
 		"description":"For the stone and the mote, the grass is always greener...",
-		"image":"https://www.unnecessarytheories.io/assets/img/dust_thumb2.jpg",
+		"image":"https://www.unnecessarytheories.io/img/dust_thumb2.jpg",
 		"size":{
 			"width":"1080",
 			"height":"567"
