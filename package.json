@@ -5,7 +5,6 @@
   "scripts": {
     "ng": "ng",
     "start": "NODE_ENV=production node server.js",
-    "start-dev": "NODE_ENV=development node server.js",
     "build": "gulp build",
     "postinstall": "gulp build --aot -prod",
     "commit-deploy-dev": "git add * && git commit -m update && git push development develop:master",
