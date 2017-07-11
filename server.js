@@ -23,7 +23,8 @@ app.use(bodyParser.urlencoded({'extended':'true'}));            // parse applica
 app.use(bodyParser.json());                                     // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/", express.static(path.join(__dirname, "dist")));
+app.use(express.static(path.join(__dirname, "dist")));
+app.use("/assets/*", express.static(path.join(__dirname, "dist/assets")));
 app.use("/blog/*", express.static(path.join(__dirname, "dist")));
 
 
