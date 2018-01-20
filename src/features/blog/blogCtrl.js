@@ -20,6 +20,29 @@ blogModule.controller("blogCtrl", ['$scope', 'data.service', 'runtime.state', 's
 	// 	states.go(blog);
 	// }
 
+	
+
+	$scope.menu = [
+	{
+		id:"home",
+		title:"Home",
+		state:"home",
+		url:"/blog/home"
+	},
+	{
+		id:"nonfict",
+		title:"Non-Fiction",
+		state:"blog.non_fiction",
+		url:"/blog/non-fiction"
+	},
+	{
+		id:"poetry",
+		title:"Poetry",
+		state:"blog.poetry",
+		url:"/blog/poetry"
+	}
+	]
+
 	$scope.openExternal = function (link) {
 
 		$window.open(link, "_blank");
@@ -27,18 +50,7 @@ blogModule.controller("blogCtrl", ['$scope', 'data.service', 'runtime.state', 's
 
 	$scope.getContentUrl = function() {
 
-		var view;
-
-		if (g.isMobile()) {
-			//console.log("load mobile home");
-			view = "m.home.html";
-		}
-		else {
-			//console.log("load desktop home");
-			view = "d.home.html";
-		}
-
-		return 'assets/views/' + view;
+		return 'assets/views/' + (g.isMobile() ? "m.home.html" : "d.home.html");
 	}
 
 

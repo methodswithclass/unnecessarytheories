@@ -11,35 +11,18 @@ stateModule.provider("runtime.state", function ($stateProvider) {
     },
     {
         name:"blog",
-        url:"/blog/:name",
-        template:"<div ng-include='getContentUrl()'></div>",
-        controller:['$scope', 'global', '$stateParams', 'data.service', function ($scope, g, $stateParams, data) {
-
-            console.log("name:", $stateParams.name);
-
-            $scope.blog = data.getBlogByName($stateParams.name);
-
-            $scope.getContentUrl = function() {
-            
-                var view;
-
-                if (g.isMobile()) {
-
-                    view = "m.blog.html";
-                }
-                else {
-                    view = "d.blog.html";
-                }
-
-                return 'assets/views/' + view;
-            }
-
-            // $scope.url = data.env().url + '/?b=' + $scope.blog.meta.name;
-            $scope.url = data.env().url + '/blog/' + $scope.blog.meta.name;
-
-            $("#body").scrollTo(0);
-
-        }]
+        url:"/blog",
+        abstract:true
+    },
+    {
+        name:"blog.non_fiction",
+        url:"/non-fiction/:name",
+        template:"<div ng-include='getContentUrl()'></div>"
+    },
+    {
+        name:"blog.poetry",
+        url:"/poetry/:name",
+        template:"<div ng-include='getContentUrl()'></div>"
     },
     {
         name:"credits",

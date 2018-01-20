@@ -1,36 +1,84 @@
-var gulp = require('gulp'),
-autoprefixer = require('gulp-autoprefixer'),
-watch = require("gulp-watch"),
+var gulp = require('gulp');
+var autoprefixer = require('gulp-autoprefixer')
 shell = require("gulp-shell"),
 uglify = require('gulp-uglify'),
 imagemin = require('gulp-imagemin'),
 rename = require('gulp-rename'),
 concat = require('gulp-concat'),
-cache = require('gulp-cache'),
 del = require('del'),
 inject = require('gulp-inject'),
-angularFilesort = require('gulp-angular-filesort'),
-order = require("order"),
 filter = require("gulp-filter"),
 merge = require("merge-stream"),
-mainBowerFiles = require("main-bower-files");
+mainBowerFiles = require("main-bower-files"),
+nodemon = require('gulp-nodemon'),
+livereload = require('gulp-livereload');
 
-gulp.task("serve", ["watch"], shell.task("node server.js"));
+// var minify = process.env.NODE_ENV == "production";
+var minify = false;
 
-gulp.task('watch', ["build"], function() {
+// var injectMin = process.env.NODE_ENV == "production";
+var injectMin = false;
 
-	gulp.watch(["./src/**/*.*", "./server/**/*.*"], ["build"]);
+
+var livereloadPort = 3020;
+
+
+gulp.task("serve", ["build"], function () {
+
+ 	// livereload.listen({port:livereloadPort})
+
+	var stream = nodemon({ 
+		script: './server.js',
+		ext:"js html css json",
+		watch:["./src"],
+		tasks:["build"]
+	});
+	
+
+	stream.on("restart", function () {
+
+		setTimeout(function () {
+
+			// livereload.reload();
+
+		}, 2000);
+
+	})
+
+	stream.on("crash", function () {
+		
+		stream.emit('restart', 10);
+	})
+
+	
+})
+
+gulp.task("build", ["clean"], function () {
+
+
+	gulp.start("compile");
+})
+
+
+gulp.task('compile', ["js", "styles", "copy"], function () {
+
 
 });
 
-gulp.task('styles', function() {
-	return gulp.src('src/assets/css/**/*.css', { style: 'expanded' })
-	.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-	// .pipe(concat("styles.css"))
-	// .pipe(rename({suffix: '.min'}))
-	// .pipe(uglify())
-	.pipe(gulp.dest('dist/assets/css'));
-});
+
+gulp.task("js", ["scripts"], function () {
+
+	var important = gulp.src('dist/assets/js/vendor' + (minify && injectMin ? ".min" : "") + '.js', {read: false});
+	var standard = gulp.src(["dist/assets/js/main" + (minify && injectMin ? ".min" : "") + ".js", 'dist/assets/**/*.css'], {read:false});
+
+	return gulp.src('src/index.html')
+	.pipe(inject(important, {ignorePath:"dist", starttag: '<!-- inject:head:{{ext}} -->'}))
+	.pipe(inject(standard, {ignorePath:"dist"}))
+	.pipe(gulp.dest('dist'));
+
+})
+
+
 
 gulp.task('scripts', ['vendor'], function() {
 	return gulp.src([
@@ -42,8 +90,6 @@ gulp.task('scripts', ['vendor'], function() {
 	            "src/features/**/*.js",
 	            "src/features/app/app.js"
 	            ])
-	// .pipe(jshint('.jshintrc'))
-	// .pipe(jshint.reporter('default'))
 	.pipe(concat('main.js'))
 	// .pipe(rename({suffix: '.min'}))
 	// .pipe(uglify())
@@ -68,6 +114,14 @@ gulp.task("vendor", function () {
 
 	return merge(js, css);
 });
+
+
+gulp.task('styles', function() {
+	return gulp.src('src/assets/css/**/*.css', { style: 'expanded' })
+	.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+	.pipe(gulp.dest('dist/assets/css'));
+});
+
 
 gulp.task("html", function () {
 
@@ -98,34 +152,14 @@ gulp.task("misc", function () {
 	return merge(toRoot, files);
 })
 
-gulp.task('index', ["styles", "scripts", 'html', "fonts", "images", "misc"], function () {
+gulp.task("copy", ["misc", "html", "images", "fonts"], function () {
 
-	// It's not necessary to read the files (will speed up things), we're only after their paths: 
-	var important = gulp.src('dist/assets/js/vendor.js', {read: false});
-	var standard = gulp.src(["dist/assets/js/main.js", 'dist/assets/**/*.css'], {read:false});
 
-	return gulp.src('src/index.html')
-	.pipe(inject(important, {ignorePath:"dist", starttag: '<!-- inject:head:{{ext}} -->'}))
-	.pipe(inject(standard, {ignorePath:"dist"}))
-	.pipe(gulp.dest('dist'));
-});
+})
 
 gulp.task('clean', function() {
 	return del('dist');
 });
-
-gulp.task('build', ['clean'], function() {
-	gulp.start("index");
-});
-
-
-// gulp.task('serve', ["build"], function() {
-// 	nodemon({
-// 		script:"server.js",
-// 		ext:"html js css scss",
-// 		tasks:["build"]
-// 	});
-// });
 
 
 

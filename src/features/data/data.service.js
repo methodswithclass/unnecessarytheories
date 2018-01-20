@@ -48,7 +48,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 		meta:{
 			name:"home",
 			title:"unnecessary theories",
-			image:"assets/img/landscape"
+			image:"img/landscape"
 		},
 		share:{
 			description:"here are some theories, probably unnecessary"
@@ -80,7 +80,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 					text:"Are we smart when we can't define the things we make up? And those things actually hurt us?"
 				}
 			},
-			image:'assets/img/machine',
+			image:'img/machine',
 			file:"files/intelligence.txt",
 			published:published.intelligence
 		},
@@ -111,7 +111,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 					text:"Even prisons with three walls are impossible to break free from"
 				}
 			},
-			image:'assets/img/corridor',
+			image:'img/corridor',
 			file:"files/prison.txt",
 			published:published.prison
 		},
@@ -142,7 +142,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 					text:"The realities of time are not all that friendly to our visions of sci-fi"
 				}
 			},
-			image:'assets/img/relativity',
+			image:'img/relativity',
 			file:"files/scale_time.txt",
 			published:published.scale_time
 		},
@@ -173,7 +173,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 					text:"I don't care whether god exists or not, but what does the concept mean?"
 				}
 			},
-			image:'assets/img/space',
+			image:'img/space',
 			file:"files/meaning_god.txt",
 			published:published.meaning_god
 		},
@@ -204,7 +204,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 					text:"Caution to you, when you create in order to relieve, you know not what you make"
 				}
 			},
-			image:'assets/img/cavemen',
+			image:'img/cavemen',
 			file:"files/vaseoftheworld.txt",
 			published:published.vase
 		},
@@ -235,7 +235,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 					text:"Online dating is not a fun activity, so I wrote some poetry about it."
 				}
 			},
-			image:'assets/img/online-date',
+			image:'img/online-date',
 			file:"files/online-date.txt",
 			published:published.online_dating
 		},
@@ -266,7 +266,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 					text:"I was lost in a world of my own thinking thoughts, then I came upon her, and she connected the dots."
 				}
 			},
-			image:'assets/img/girl',
+			image:'img/girl',
 			file:"files/girl_on_path.txt",
 			published:published.girl
 		},
@@ -297,7 +297,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 					text:"The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible"
 				}
 			},
-			image:'assets/img/contact',
+			image:'img/contact',
 			file:"files/alien_contact2.txt",
 			published:published.contact
 		},
@@ -328,7 +328,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 					text:"For the stone and the mote, the grass is always greener..."
 				}
 			},
-			image:'assets/img/dust',
+			image:'img/dust',
 			file:"files/mote.txt",
 			published:published.perspective
 		},

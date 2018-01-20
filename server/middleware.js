@@ -1,7 +1,8 @@
 
 
 var refreshPages = [
-"home"
+"home",
+"blog"
 ]
 
 
