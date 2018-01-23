@@ -1,8 +1,8 @@
-
+<!-- 
 <div class="relative width height">
 	<div class="relative width height-600 cutoff" id="header" parallax scroll="body" top="true" inner="splash">
 		
-		<!-- src="assets/img/landscape.jpg" -->
+		src="assets/img/landscape.jpg"
 
 		<div class="absolute width height" id="splash">
 			<img class="absolute width height-auto opacity70" src="img/evolution_chalk.jpg" id="banner">
@@ -25,7 +25,7 @@
 
 		<div class="relative width80 hcenter height-70 margin-v-70 border-top border-bottom">
 
-			<div class="relative inline width20 height60 vcenter border margin-h-60 pointer black-back beige font120-rem" ng-repeat="btn in main.menu" ng-style="main.genreGenre == btn.state ? {'background-color':'#fbb44f', color:'black', 'font-weight':'bold'} : {}" ng-click="main.menuClick(btn.state)">
+			<div class="relative inline width20 height60 vcenter border margin-h-60 pointer black-back beige font120-rem" ng-repeat="btn in main.menu" ng-click="main.menuClick(btn.state)">
 
 				<div class="absolute center">
 					{{btn.title}}
@@ -34,18 +34,39 @@
 
 		</div>
 
+ -->
 
-		<ui-view></ui-view>
+		<div class="relative width80 hcenter margin-bottom-100">
 
 
-		<!-- <div class="relative width beige-back opacity70"></div> -->
-		<!-- <div class="relative width80 top10 hcenter" id="button-parent">
-			<div ng-repeat="blog in main.blogs">
-				<btn class="absolute width height" data="blog"></btn>
+			<div class="relative width50 height-100" ng-repeat="blog in main.genreBlogs">
+
+				<div class="relative width80 height80 center rounded20 border pointer" ng-click="main.blogClick(blog.meta.name)">
+
+					<div class="relative width99 height99 center rounded20 cutoff" parallax body="scroll" top="false" src="{{blog.meta.image + '.jpg'}}">
+						
+						<!-- <img class="absolute width110 height-auto vcenter" ng-src=> -->
+
+						<div class="relative width height font120-rem beige">
+
+							<div class="absolute width80 height40 center black-back opacity70"></div>
+
+							<div class="absolute center">
+								{{blog.meta.title.s.text}}
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
 			</div>
-		</div> -->
 
+		</div>
+
+
+<!--  
 	</div>
 
-</div>
 
+</div> -->

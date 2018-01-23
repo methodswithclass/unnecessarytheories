@@ -18,7 +18,7 @@ var parseUrl = function (url) {
 	console.log("initial array", urlArray);
 
 	if (urlArray.length > 1 && urlArray[1] !== "") {
-		return meta[urlArray[2]];
+		return meta[urlArray[urlArray.length-1]];
 	}
 	else {
 		return meta["home"];
@@ -32,7 +32,7 @@ var getType = function (url) {
 
 	console.log("url array", urlArray);
 
-	if (urlArray[1] == "blog") {
+	if (urlArray[1] == "genre") {
 		return "article"
 	}
 
@@ -72,8 +72,9 @@ var botMiddleware = function(req,res,next) {
 		console.log(ua,' is a bot');
 		botRoute(req,res,next);
 	}
-
-	next();
+	else {
+		next();
+	}
 	
 
 }

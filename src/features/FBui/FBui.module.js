@@ -1,1 +1,1 @@
-var FBuiModule = angular.module("FBui.module", ['sharedModule']);
+var FBuiModule = angular.module("FBui.module", ['shared.module']);

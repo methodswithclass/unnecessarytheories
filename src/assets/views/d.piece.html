@@ -1,11 +1,16 @@
 <div class="relative width height">
 
-	<div class="relative width height-800 cutoff" parallax scroll="body" top="true" src="{{blog.meta.image + '.jpg'}}">
+	<div class="relative width height-600 cutoff" parallax scroll="body" top="true" inner="splash">
+
+
+		<div class="absolute width height" id="splash">
+			<img class="absolute width height-auto opacity70" ng-src="{{blog.meta.image + '.jpg'}}" id="banner">
+		</div>
 
 		<div class="absolute width height-300 left0 bottom0">
 
 			<div class="absolute width-300 height-50 left-minus-20">
-				<back font="font-30"></back>
+				<back font="font-30" loc="{{blog.meta.genre}}"></back>
 			</div>
 
 			<div class="absolute width50 height-100 vcenter left-minus-20">

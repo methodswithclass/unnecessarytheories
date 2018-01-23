@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer')
-shell = require("gulp-shell"),
 uglify = require('gulp-uglify'),
 imagemin = require('gulp-imagemin'),
 rename = require('gulp-rename'),
@@ -13,6 +12,9 @@ mainBowerFiles = require("main-bower-files"),
 nodemon = require('gulp-nodemon'),
 livereload = require('gulp-livereload');
 
+
+const config = require("./config.js");
+
 // var minify = process.env.NODE_ENV == "production";
 var minify = false;
 
@@ -20,17 +22,14 @@ var minify = false;
 var injectMin = false;
 
 
-var livereloadPort = 3020;
-
-
 gulp.task("serve", ["build"], function () {
 
- 	// livereload.listen({port:livereloadPort})
+ 	livereload.listen({port:config.livereloadPort})
 
 	var stream = nodemon({ 
 		script: './server.js',
 		ext:"js html css json",
-		watch:["./src"],
+		watch:["./src", "./server.js"],
 		tasks:["build"]
 	});
 	
@@ -39,7 +38,7 @@ gulp.task("serve", ["build"], function () {
 
 		setTimeout(function () {
 
-			// livereload.reload();
+			livereload.reload();
 
 		}, 2000);
 
@@ -84,6 +83,7 @@ gulp.task('scripts', ['vendor'], function() {
 	return gulp.src([
 	            "src/features/data/dataModule.js",
 	            "src/features/state/stateModule.js",
+	            "src/features/services/serviceModule.js",
 	            "src/features/blog/blogModule.js",
 	            "src/features/FBui/FBui.module.js",
 	            "src/features/badges/badgesModule.js",

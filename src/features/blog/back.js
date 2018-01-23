@@ -3,7 +3,8 @@ blogModule.directive("back", ['states', function (states) {
 	return {
 		restrict:"E",
 		scope:{
-			font:"@"
+			font:"@",
+			loc:"@"
 		},
 		replace:true,
 		template:"<div class='absolute width height'><div class='absolute width height white-back opacity80 border rounded10 pointer'></div><div class='absolute center'>home</div></div>",
@@ -13,7 +14,9 @@ blogModule.directive("back", ['states', function (states) {
 
 			element.on("click", function () {
 
-				states.go("home");
+				// states.go("home");
+
+				states.go("home." + $scope.loc);
 
 			});
 

@@ -1,4 +1,4 @@
-var app = angular.module('blog', ['sharedModule', 'consoleModule', 'stateModule', 'blogModule', "ui.router"]);
+var app = angular.module('blog', ['shared.module', 'stateModule', 'blogModule', "ui.router"]);
 
 
 var checking = "/checking";

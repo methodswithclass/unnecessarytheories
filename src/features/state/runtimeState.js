@@ -3,26 +3,44 @@ stateModule.provider("runtime.state", function ($stateProvider) {
 
     var provider = {};
 
+    var g = shared.utility_service;
+
     var states = [
     {
         name:"home",
-        url:"/home",
-        template:"<div ng-include='getContentUrl()'></div>"
+        url:"",
+        templateUrl:"assets/views/" + (g.isMobile() ? "m.home.html" : "d.home.html"),
+        controller:"home.controller",
+        controllerAs:"main"
+
     },
     {
-        name:"blog",
-        url:"/blog",
-        abstract:true
+        name:"home.blogs",
+        url:"/blogs",
+        templateUrl:"assets/views/" + (g.isMobile() ? "m.genre.html" : "d.genre.html"),
+        controller:"genre.controller",
+        controllerAs:"main"
     },
     {
-        name:"blog.non_fiction",
-        url:"/non-fiction/:name",
-        template:"<div ng-include='getContentUrl()'></div>"
+        name:"blogs",
+        url:"/genre/blogs/:name",
+        templateUrl:"assets/views/" + (g.isMobile() ? "m.piece.html" : "d.piece.html"),
+        controller:"piece.controller",
+        controllerAs:"main"
     },
     {
-        name:"blog.poetry",
-        url:"/poetry/:name",
-        template:"<div ng-include='getContentUrl()'></div>"
+        name:"home.poetry",
+        url:"/poetry",
+        templateUrl:"assets/views/" + (g.isMobile() ? "m.genre.html" : "d.genre.html"),
+        controller:"genre.controller",
+        controllerAs:"main"
+    },
+    {
+        name:"poetry",
+        url:"/genre/poetry/:name",
+        templateUrl:"assets/views/" + (g.isMobile() ? "m.piece.html" : "d.piece.html"),
+        controller:"piece.controller",
+        controllerAs:"main"
     },
     {
         name:"credits",
@@ -38,7 +56,7 @@ stateModule.provider("runtime.state", function ($stateProvider) {
         $stateProvider.state(state);
     }
 
-    provider.$get = ['send', '$location', 'data.service', 'global', '$state', function (send, $location, data, g, $state) {
+    provider.$get = ['send.service', '$location', 'data.service', 'global.service', '$state', function (send, $location, data, g, $state) {
 
       //console.log("get add state factory");
 

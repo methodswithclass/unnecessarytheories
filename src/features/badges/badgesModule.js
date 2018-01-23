@@ -1,1 +1,1 @@
-var badgesModule = angular.module("badgesModule", ['sharedModule', "dataModule"]);
+var badgesModule = angular.module("badgesModule", ['shared.module', "dataModule"]);

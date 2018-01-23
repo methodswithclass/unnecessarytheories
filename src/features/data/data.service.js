@@ -20,6 +20,11 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 		return _test ? (_test ? dev : prod) : (testOverride ? dev : prod);
 	}
 
+	var genres = {
+		nonFict:"blogs",
+		poetry:"poetry"
+	}
+
 	var fonts = {
 		button:{
 			d:"font-15",
@@ -44,6 +49,27 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 		perspective:true
 	}
 
+	var menu = [
+	{
+		id:"home",
+		title:"Home",
+		state:"home",
+		url:"/home"
+	},
+	{
+		id:"blogs",
+		title:"Blogs",
+		state:"blogs",
+		url:"/genre/blogs"
+	},
+	{
+		id:"poetry",
+		title:"Poetry",
+		state:"poetry",
+		url:"/genre/poetry"
+	}
+	]
+
 	var home = {
 		meta:{
 			name:"home",
@@ -62,6 +88,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			date:new Date(2016, 0, 7, 12, 0, 0),
 			by:"Christopher Polito",
 			name:"intelligence",
+			genre:genres.nonFict,
 			title:{
 				s:{
 					text:"intelligence",
@@ -93,6 +120,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			date:new Date(2015, 11, 22, 12, 0, 0),
 			by:"Christopher Polito",
 			name:"prison",
+			genre:genres.poetry,
 			title:{
 				s:{
 					text:"the prison",
@@ -124,6 +152,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			date:new Date(2015, 11, 22, 12, 0, 0),
 			by:"Christopher Polito",
 			name:"scale_time",
+			genre:genres.nonFict,
 			title:{
 				s:{
 					text:"scale of time",
@@ -155,6 +184,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			date:new Date(2016, 0, 1, 12, 0, 0),
 			by:"Christopher Polito",
 			name:"meaning_god",
+			genre:genres.nonFict,
 			title:{
 				s:{
 					text:"meaning of god",
@@ -186,6 +216,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			date:new Date(2016, 7, 21, 6, 0, 0),
 			by:"Christopher Polito",
 			name:"vase",
+			genre:genres.poetry,
 			title:{
 				s:{
 					text:"vase of the world",
@@ -217,6 +248,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			date:new Date(2016, 09, 01, 6, 0, 0),
 			by:"Christopher Polito",
 			name:"online_dating",
+			genre:genres.nonFict,
 			title:{
 				s:{
 					text:"online dating",
@@ -248,6 +280,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			date:new Date(2016, 09, 30, 6, 0, 0),
 			by:"Christopher Polito",
 			name:"girl",
+			genre:genres.poetry,
 			title:{
 				s:{
 					text:"girl on the path",
@@ -279,6 +312,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			date:new Date(2016, 10, 15, 6, 0, 0),
 			by:"Christopher Polito",
 			name:"contact",
+			genre:genres.nonFict,
 			title:{
 				s:{
 					text:"the impossibility of alien contact",
@@ -310,6 +344,7 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 			date:new Date(2016, 10, 16, 6, 0, 0),
 			by:"Christopher Polito",
 			name:"perspective",
+			genre:genres.poetry,
 			title:{
 				s:{
 					text:"perspective",
@@ -401,11 +436,36 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 	}
 
+	var getBlogsByGenre = function (genre) {
+
+
+		var genreBlogs = blogs.filter(function (blog, index, array) {
+
+
+			return blog.meta.genre == genre;
+		})
+
+		return genreBlogs;
+
+	}
+
 	var isBlog = function (name) {
 
 		var index = getIndexByName(name);
 
 		return resolveIndex(index);
+	}
+
+	var isGenre = function (name) {
+
+		for (var i in genres) {
+
+			if (name == genres[i]) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	var getButtonPosition = function (index) {
@@ -425,13 +485,17 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 	return {
 		env:env,
+		menu:menu,
 		home:home,
+		genres:genres,
 		blogs:blogs,
 		getBlogByName:getBlogByName,
 		getBlogByIndex:getBlogByIndex,
 		isBlog:isBlog,
+		isGenre:isGenre,
 		resolveIndex:resolveIndex,
-		getButtonPosition:getButtonPosition
+		getButtonPosition:getButtonPosition,
+		getBlogsByGenre:getBlogsByGenre
 	}
 
 }]);

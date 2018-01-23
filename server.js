@@ -7,10 +7,9 @@ const app = express();
 const bot = require("./server/bot");
 const middleware = require("./server/middleware");
 
+const config = require("./config.js");
 
-var livereloadPort = 3020;
-
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, '/server'));
 
 
@@ -20,7 +19,7 @@ app.set('views', path.join(__dirname, '/server'));
 var PORTS = {
 	heroku:8080,
 	http:80,
-	livereload:livereloadPort,
+	livereload:config.livereloadPort,
 	misc1:3000,
 	misc2:4200,
 	misc3:4210
@@ -37,15 +36,20 @@ app.use(bodyParser.json());                                     // parse applica
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", express.static(path.join(__dirname, "dist")));
-app.use("/blog/*", express.static(path.join(__dirname, "dist")));
+
+
+app.use("/blogs", express.static(path.join(__dirname, "dist")));
+app.use("/poetry", express.static(path.join(__dirname, "dist")));
+app.use("/genre/*", express.static(path.join(__dirname, "dist")));
 app.use("/img", express.static(path.join(__dirname, "public/img")));
 app.use("/files", express.static(path.join(__dirname, "public/files")));
-
 
 app.use(require('connect-livereload')({
 	port: PORTS.livereload
 }));
+
+
+app.use("/", express.static(path.join(__dirname, "dist")));
 
 
 var env = process.env.NODE_ENV;

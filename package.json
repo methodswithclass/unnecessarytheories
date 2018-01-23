@@ -36,17 +36,16 @@
     "gulp-filter": "^5.0.0",
     "gulp-imagemin": "^3.3.0",
     "gulp-inject": "^4.2.0",
-    "gulp-jshint": "^2.0.4",
     "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.1",
-    "gulp-shell": "^0.6.3",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
     "jshint": "^2.9.4",
     "main-bower-files": "^2.13.1",
-    "mc-shared": "^4.1.4",
-    "merge-stream": "^1.0.1"
+    "mc-shared": "^4.1.5",
+    "merge-stream": "^1.0.1",
+    "pug": "^2.0.0-rc.4"
   }
 }

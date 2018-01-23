@@ -1,1 +1,1 @@
-var blogModule = angular.module("blogModule", ['sharedModule', 'dataModule', 'ui.router', 'badgesModule', 'stateModule', 'parallaxModule', 'FBui.module']);
+var blogModule = angular.module("blogModule", ['shared.module', 'dataModule', 'ui.router', 'badgesModule', 'stateModule', 'parallaxModule', 'serviceModule', 'FBui.module']);
