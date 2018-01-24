@@ -17,16 +17,23 @@ blogModule.controller("home.controller", ['$scope', 'data.service', 'runtime.sta
 	
 	display.adjustImageSize();
 
-	self.menu = data.menu;
+	// self.menu = data.menu;
 
-	self.menuClick = function ($state) {
+	self.genres = data.genres.genres;
 
-		var state = $state != "home" ? "home." + $state : $state;
+	self.getBlogs = function (genre) {
 
-		self.genreGenre = $state;
-
-		states.go(state);
+		return data.getBlogsByGenre(genre.id);
 	}
+
+	// self.menuClick = function ($state) {
+
+	// 	var state = $state != "home" ? "home." + $state : $state;
+
+	// 	self.genreGenre = $state;
+
+	// 	states.go(state);
+	// }
 
 	$scope.openExternal = function (link) {
 

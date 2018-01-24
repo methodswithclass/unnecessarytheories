@@ -21,6 +21,18 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 	}
 
 	var genres = {
+		genres:[
+		{
+			id:"blogs",
+			title:"Blogs",
+			map:"nonFict"
+		},
+		{
+			id:"poetry",
+			title:"Poetry",
+			map:"poetry"
+		}
+		],
 		nonFict:"blogs",
 		poetry:"poetry"
 	}
@@ -108,8 +120,8 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 					text:"do you image aliens as our counterparts, but just different? think again, the differences are so fundamental they will make you question your own existence."
 				}
 			},
-			image:'img/extraterrestrial_life5',
-			file:"files/extraterrestrial_life.txt",
+			image:'img/extraterrestrial-life5',
+			file:"files/extraterrestrial-life.txt",
 			published:published.scale_time
 		},
 		twitter:{
