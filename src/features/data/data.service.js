@@ -59,7 +59,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		girl:true,
 		contact:true,
 		perspective:true,
-		extraterrestrial_life:true
+		extraterrestrial_life:false
 	}
 
 	var menu = [
@@ -122,7 +122,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			},
 			image:'img/extraterrestrial-life5',
 			file:"files/extraterrestrial-life.txt",
-			published:published.scale_time
+			published:published.extraterrestrial_life
 		},
 		twitter:{
 			description:"Sci-Fi has given us all a horrible education in extraterrestrial life, even scientists are victims"
