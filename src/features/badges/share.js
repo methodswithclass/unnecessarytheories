@@ -1,4 +1,4 @@
-badgesModule.directive("share", ['$window', 'data.service', 'global', function ($window, data, g) {
+badgesModule.directive("share", ['$window', 'data.service', 'global.service', function ($window, data, g) {
 
 	return {
 

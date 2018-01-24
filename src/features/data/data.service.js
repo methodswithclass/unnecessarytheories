@@ -1,4 +1,4 @@
-dataModule.factory("data.service", ['global', 'file.service', function (g, file) {
+dataModule.factory("data.service", ['global.service', 'file.service', function (g, file) {
 
 	var testOverride = false;
 
@@ -46,7 +46,8 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 		online_dating:true,
 		girl:true,
 		contact:true,
-		perspective:true
+		perspective:true,
+		extraterrestrial_life:true
 	}
 
 	var menu = [
@@ -83,6 +84,38 @@ dataModule.factory("data.service", ['global', 'file.service', function (g, file)
 
 
 	var allblogs = [
+	{
+		meta:{
+			date:new Date(2018, 0, 23, 12, 0, 0),
+			by:"Christopher Polito",
+			name:"extraterrestrial_life",
+			genre:genres.nonFict,
+			title:{
+				s:{
+					text:"extraterrestrial life",
+					font:{
+						button:{
+							d:fonts.button.d,
+							m:fonts.button.m
+						},
+						blog:{
+							d:fonts.blog.d,
+							m:fonts.blog.m
+						}
+					}
+				},
+				l:{
+					text:"do you image aliens as our counterparts, but just different? think again, the differences are so fundamental they will make you question your own existence."
+				}
+			},
+			image:'img/extraterrestrial_life5',
+			file:"files/extraterrestrial_life.txt",
+			published:published.scale_time
+		},
+		twitter:{
+			description:"Sci-Fi has given us all a horrible education in extraterrestrial life, even scientists are victims"
+		}
+	},
 	{
 		meta:{
 			date:new Date(2016, 0, 7, 12, 0, 0),

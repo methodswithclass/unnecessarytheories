@@ -20,7 +20,7 @@ var PORTS = {
 	heroku:8080,
 	http:80,
 	livereload:config.livereloadPort,
-	misc1:3000,
+	misc1:3300,
 	misc2:4200,
 	misc3:4210
 }

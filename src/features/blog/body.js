@@ -1,5 +1,5 @@
 
-blogModule.directive("body", ['send', function (send) {
+blogModule.directive("body", ['send.service', function (send) {
 
 	return function ($scope, element, attr) {
 
