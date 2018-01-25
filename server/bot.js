@@ -8,6 +8,14 @@ const variables = require("./variables");
 // var debugCrawler = true;
 var debugCrawler = false;
 
+var userAgents = [
+	'facebookexternalhit/1.1',
+	'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)',
+	'Facebot',
+	'Twitterbot',
+	'Pinterest'
+]
+
 var meta = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
 
@@ -58,6 +66,20 @@ var getMetaData = function (req) {
 	}
 }
 
+var isBot = function (ua) {
+
+
+	var $bot = userAgents.find(function (p) {
+
+		return p == ua;
+	})
+
+	console.log("this is the bot", $bot);
+
+	return $bot ? true : false;
+
+}
+
 var resolve = function (url) {
 
 	var urlArray = url.split("/");
@@ -81,9 +103,16 @@ var botRoute = function(req, res, next) {
 var botMiddleware = function(req,res,next) {
 	var ua = req.headers['user-agent'];
 
+	console.log("user-agent", ua);
+
 	if (debugCrawler) botRoute(req,res,next);
-	else if (/^((facebookexternalhit/1.1)|(facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php))|(Facebot)|(Twitterbot)|(Pinterest)/gi.test(ua) && resolve(req.url)) {
-		console.log(ua,' is a bot');
+	// else if (/^((facebookexternalhit/1.1)|(facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php))|(Facebot)|(Twitterbot)|(Pinterest))/gi.test(ua) && resolve(req.url)) {
+	// 	console.log(ua,' is a bot');
+	// 	botRoute(req,res,next);
+	// }
+	else if (isBot(ua)) {
+
+		console.log(ua, 'is a bot');
 		botRoute(req,res,next);
 	}
 	else {

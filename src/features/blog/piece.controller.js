@@ -33,7 +33,8 @@ blogModule.controller("piece.controller", ['$scope', 'data.service', 'runtime.st
 				status: true, 
 				cookie: true, 
 				xfbml: true,
-				version: 'v2.4'
+				// version: 'v2.4',
+				version: 'v2.11'
 			});
 
 		}
