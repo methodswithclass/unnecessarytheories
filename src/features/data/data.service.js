@@ -420,7 +420,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 
 	allblogs.sort(function (a,b) {
 
-		return a.meta.date.getTime() - b.meta.date.getTime();
+		return b.meta.date.getTime() - a.meta.date.getTime();
 	});
 
 	var blogs = allblogs.filter(function (blog, index, array) {
