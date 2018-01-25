@@ -32,11 +32,11 @@ var getType = function (url) {
 
 	console.log("url array", urlArray);
 
-	if (urlArray[1] == "genre") {
-		return "article"
+	if (urlArray[1] == "") {
+		return "website"
 	}
 
-	return "website";
+	return "article";
 }
 
 var getMetaData = function (req) {
