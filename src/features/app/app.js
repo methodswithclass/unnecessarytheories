@@ -22,6 +22,6 @@ app.config(['runtime.stateProvider', '$locationProvider', function (runtimeProvi
 
 	states.checkInbound();
 
-	//forceMobile();
+	// forceMobile();
 
 });
