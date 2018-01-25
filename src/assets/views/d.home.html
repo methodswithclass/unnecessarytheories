@@ -61,7 +61,7 @@
 					<div class="flex flex-wrap flex-row flex-justify-space width">
 
 
-						<div class="flex-grow flex-grow-1 width30 height-200 margin-50 rounded20 border" ng-repeat="blog in main.getBlogs(genre)" ng-click="main.blogClick(blog.meta.name)">
+						<div class="flex-grow flex-grow-1 width30 height-200 margin-50 rounded20 border" ng-repeat="blog in main.getBlogs(genre)" ng-click="main.blogClick(blog.meta.name, genre.id)">
 
 							<div class="relative width99 height99 center rounded20 pointer cutoff" parallax name="{{'genre_page_' + blog.meta.name}}" scroll="body" top="false" inner="{{'genre_thumb' + blog.meta.name}}" id="{{'genre_button' + blog.meta.name}}">
 

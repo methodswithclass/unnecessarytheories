@@ -9,11 +9,11 @@ blogModule.controller("home.controller", ['$scope', 'data.service', 'runtime.sta
 	this.title = data.home.meta.title;
 
 
-	var state = states.current();
-	var stateArray = state.split(".");
-	this.genreGenre = stateArray[1] || state;
+	// var state = states.current();
+	// var stateArray = state.split(".");
+	// this.genre = stateArray[1] || state;
 
-	console.log("genre is", self.genreGenre);
+	console.log("genre is", self.genre);
 	
 	display.adjustImageSize();
 
@@ -24,6 +24,16 @@ blogModule.controller("home.controller", ['$scope', 'data.service', 'runtime.sta
 	self.getBlogs = function (genre) {
 
 		return data.getBlogsByGenre(genre.id);
+	}
+
+	self.blogClick = function (blog, genre) {
+
+		send.setup.save({name:"navigate", data:blog});
+
+		console.log("blog is", blog, genre);
+
+		// $state.go(".piece" + self.genre, {name:blog});
+		states.go(blog, genre);
 	}
 
 	// self.menuClick = function ($state) {
