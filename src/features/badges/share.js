@@ -28,11 +28,7 @@ badgesModule.directive("share", ['$window', 'data.service', 'global.service', fu
 
 				url = blog.facebook.url;
 			}
-
-			//$scope.img = $scope.type == "fb" ? "img/fbshare.png" : "img/twittershare.png";
 			
-			//var img = "<img class='relative width height-auto' src='"+ $scope.img +"'/>"
-
 			var share = {icon:"", hover:"", size:""};
 
 			if ($scope.type == 'fb') {

@@ -8,18 +8,8 @@ blogModule.directive("section", ['global.service', 'events.service', function (g
 		link:function ($scope, element, attr) {
 
 			$scope.getContentUrl = function() {
-			
-				var view;
 
-				if (g.isMobile()) {
-
-					view = "m.section.html";
-				}
-				else {
-					view = "d.section.html";
-				}
-
-	            return 'assets/views/' + view;
+	            return 'assets/views/' + (g.isMobile() ? "m.section.html" : "d.section.html");
 	        }
 			
 		}

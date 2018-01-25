@@ -14,13 +14,6 @@ stateModule.provider("runtime.state", function ($stateProvider) {
         controllerAs:"main"
 
     },
-    // {
-    //     name:"home.blogs",
-    //     url:"/blogs",
-    //     templateUrl:"assets/views/" + (g.isMobile() ? "m.genre.html" : "d.genre.html"),
-    //     controller:"genre.controller",
-    //     controllerAs:"main"
-    // },
     {
         name:"blogs",
         url:"/blogs/:name",
@@ -28,13 +21,6 @@ stateModule.provider("runtime.state", function ($stateProvider) {
         controller:"piece.controller",
         controllerAs:"main"
     },
-    // {
-    //     name:"home.poetry",
-    //     url:"/poetry",
-    //     templateUrl:"assets/views/" + (g.isMobile() ? "m.genre.html" : "d.genre.html"),
-    //     controller:"genre.controller",
-    //     controllerAs:"main"
-    // },
     {
         name:"poetry",
         url:"/poetry/:name",

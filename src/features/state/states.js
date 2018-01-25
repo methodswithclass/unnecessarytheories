@@ -1,30 +1,17 @@
 stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'data.service', 'send.service', 'events.service', 'global.service', '$location', "$transitions", function ($q, runtime, $state, $rootScope, data, send, events, g, $location, $transitions) {
 
 	var modalTime = 1000;
-
-	var body = {};
-	var elements = {};
-	var bodyElem;
-	var elem;
-	var btn;
-
 	var prevState;
-
 	var states = runtime.states;
-
 	var state;
-
 	var blogs = data.blogs;
 
 	var blogUrlIndex = function (url) {
-
 
 		// return url[0] == "http:" ? 4 : 2;
 		return url.length-2;
 	};
 
-	send.setup.receiver({name:"body", receiver:body});
-	send.setup.receiver({name:"blog", receiver:elements});
 
 	var printParams = function(params) {
 

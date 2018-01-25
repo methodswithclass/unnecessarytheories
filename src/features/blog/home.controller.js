@@ -9,15 +9,8 @@ blogModule.controller("home.controller", ['$scope', 'data.service', 'runtime.sta
 	this.title = data.home.meta.title;
 
 
-	// var state = states.current();
-	// var stateArray = state.split(".");
-	// this.genre = stateArray[1] || state;
-
-	// console.log("genre is", self.genre);
-	
 	display.adjustImageSize();
 
-	// self.menu = data.menu;
 
 	self.genres = data.genres.genres;
 
@@ -35,15 +28,6 @@ blogModule.controller("home.controller", ['$scope', 'data.service', 'runtime.sta
 		// $state.go(".piece" + self.genre, {name:blog});
 		states.go(blog, genre);
 	}
-
-	// self.menuClick = function ($state) {
-
-	// 	var state = $state != "home" ? "home." + $state : $state;
-
-	// 	self.genreGenre = $state;
-
-	// 	states.go(state);
-	// }
 
 	$scope.openExternal = function (link) {
 

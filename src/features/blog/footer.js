@@ -8,18 +8,6 @@ blogModule.directive("footer", ['global.service', 'events.service', 'states', '$
 		link:function ($scope, element, attr) {
 
 
-			// $scope.ishome = true;
-
-			// events.on("stateChange", function () {
-
-			// 	console.log("footer state is", states.current());
-
-			// 	$scope.ishome = states.current() == "home";
-			// 	//$scope.$apply();
-
-			// });
-
-
 			$scope.height = "height-300";
 			$scope.font = "font-20";
 
@@ -27,7 +15,7 @@ blogModule.directive("footer", ['global.service', 'events.service', 'states', '$
 				$scope.height = "height-400";
 				$scope.font = "font-40";
 	        }
-	        
+
 		}
 	}
 }]);

@@ -8,7 +8,7 @@ blogModule.controller("piece.controller", ['$scope', 'data.service', 'runtime.st
 
 	display.adjustImageSize();
 
-	// var inboundBlog = send.retrieve.get({name:"inbound"})[0];
+
 	var bl = send.retrieve.get({name:"navigate"});
 
 
