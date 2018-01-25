@@ -5,8 +5,8 @@ const fs = require('fs');
 
 const variables = require("./variables");
 
-// var debugCrawler = true;
-var debugCrawler = false;
+var debugCrawler = true;
+// var debugCrawler = false;
 
 var meta = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
@@ -82,7 +82,7 @@ var botMiddleware = function(req,res,next) {
 	var ua = req.headers['user-agent'];
 
 	if (debugCrawler) botRoute(req,res,next);
-	else if (/^(facebookexternalhit)|(Twitterbot)|(Pinterest)/gi.test(ua) && resolve(req.url)) {
+	else if (/^(facebookexternalhit/1.1)|(+http://www.facebook.com/externalhit_uatext.php)|(Facebot)|(Twitterbot)|(Pinterest)/gi.test(ua) && resolve(req.url)) {
 		console.log(ua,' is a bot');
 		botRoute(req,res,next);
 	}
