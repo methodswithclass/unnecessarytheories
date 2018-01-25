@@ -11,9 +11,11 @@
 			</div>
 		</div>
 
-		<div class="absolute width40 height-100 bottom-100 left-minus-20">
-			<div class="absolute width height rounded10 black-back opacity90 border-white"></div>
-			<div class="absolute center beige font-50 dearjoe">{{main.title}}</div>
+		<div class="absolute width50 height-200 bottom-100 left-minus-20">
+			<div class="absolute width height rounded20 black-back opacity90 border-white"></div>
+			<div class="absolute width80 height right0">
+				<div class="absolute center text-center beige font3-rem dearjoe">{{main.title}}</div>
+			</div>
 		</div>
 
 	</div>
@@ -26,7 +28,7 @@
 
 			<div class="relative height-80 width80 border-bottom">
 				
-				<div class="absolute bottom0 font4-rem">
+				<div class="absolute bottom0 font3-rem">
 
 					{{genre.title}}
 				</div>
@@ -38,7 +40,7 @@
 				<div class="flex flex-column flex-justify-space width">
 
 
-					<div class="flex-grow flex-grow-1 width80 height-400 margin-50 rounded20 border" ng-repeat="blog in main.getBlogs(genre)" ng-click="main.blogClick(blog.meta.name)">
+					<div class="flex-grow flex-grow-1 width80 height-400 margin-50 rounded20 border" ng-repeat="blog in main.getBlogs(genre)" ng-click="main.blogClick(blog.meta.name, genre.id)">
 
 						<div class="relative width99 height99 center rounded20 pointer cutoff">
 
@@ -53,7 +55,7 @@
 
 								<div class="absolute width80 height50 rounded10 center black-back opacity80"></div>
 
-								<div class="absolute width80 text-center center font4-rem beige">
+								<div class="absolute width80 text-center center font3-rem beige">
 									{{blog.meta.title.s.text}}
 								</div>
 
