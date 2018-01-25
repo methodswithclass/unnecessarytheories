@@ -1,4 +1,4 @@
-blogModule.directive("footer", ['global.service', 'events.service', 'states', function (g, events, states) {
+blogModule.directive("footer", ['global.service', 'events.service', 'states', '$window', 'data.service', function (g, events, states, $window, data) {
 
 	return {
 		restrict:'E',
@@ -27,6 +27,7 @@ blogModule.directive("footer", ['global.service', 'events.service', 'states', fu
 				$scope.height = "height-400";
 				$scope.font = "font-40";
 	        }
+	        
 		}
 	}
 }]);

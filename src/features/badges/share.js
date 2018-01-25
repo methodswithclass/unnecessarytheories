@@ -15,19 +15,19 @@ badgesModule.directive("share", ['$window', 'data.service', 'global.service', fu
 			var env = data.env();
 			var blog;
 
+			blog = data.getBlogByName($scope.name);
+
+			console.log("share", blog.meta.name);
+			
+
 			if ($scope.name == "home") {
 
 				url = env.url;
 			}
 			else {
 
-				url =  env.url + '/blog/' + $scope.name;
+				url = blog.facebook.url;
 			}
-
-			blog = data.getBlogByName($scope.name);
-
-			console.log("share", blog.meta.name);
-			
 
 			//$scope.img = $scope.type == "fb" ? "img/fbshare.png" : "img/twittershare.png";
 			

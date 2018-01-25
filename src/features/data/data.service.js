@@ -128,7 +128,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			description:"Sci-Fi has unfortunately taught us many terrible lessons about the possibilities for alien life and has put us all in a small mental box. Even trained scientists are not often free from sci-fi's gripping influence."
 		},
 		facebook:{
-			url:prod.url + genres.nonFict + "/extraterrestrial_life"
+			url:env().url + genres.nonFict + "/extraterrestrial_life"
 		}
 	},
 	{
@@ -163,7 +163,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			description:"It's a good thing we are smart enough to make up something like intelligence."
 		},
 		facebook:{
-			url:prod.url + genres.nonFict + "/intelligence"
+			url:env().url + genres.nonFict + "/intelligence"
 		}
 	},
 	{
@@ -198,7 +198,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			description:"You're in a prison you can't see because you're distracted by all the writing on the wall"
 		},
 		facebook:{
-			url:prod.url + genres.poetry + "/prison"
+			url:env().url + genres.poetry + "/prison"
 		}
 	},
 	{
@@ -233,7 +233,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			description:"Time has no scale, but the implications do"
 		},
 		facebook:{
-			url:prod.url + genres.nonFict + "/scale_time"
+			url:env().url + genres.nonFict + "/scale_time"
 		}
 	},
 	{
@@ -268,7 +268,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			description:"the existence of god is irrelevant, but the meaning isn't"
 		},
 		facebook:{
-			url:prod.url + genres.nonFict + "/meaning_god"
+			url:env().url + genres.nonFict + "/meaning_god"
 		}
 	},
 	{
@@ -303,7 +303,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			description:"Be careful what you create, you know not what it can become"
 		},
 		facebook:{
-			url:prod.url + genres.poetry + "/vase"
+			url:env().url + genres.poetry + "/vase"
 		}
 	},
 	{
@@ -338,7 +338,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			description:"Online dating is not a fun activity, so I wrote some poetry about it."
 		},
 		facebook:{
-			url:prod.url + genres.poetry + "/online_dating"
+			url:env().url + genres.poetry + "/online_dating"
 		}
 	},
 	{
@@ -373,7 +373,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			description:"I was lost in a world of my own thinking thoughts, then I came upon her, and she connected the dots."
 		},
 		facebook:{
-			url:prod.url + genres.poetry + "/girl"
+			url:env().url + genres.poetry + "/girl"
 		}
 	},
 	{
@@ -408,7 +408,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			description:"The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible"
 		},
 		facebook:{
-			url:prod.url + genres.nonFict + "/contact"
+			url:env().url + genres.nonFict + "/contact"
 		}
 	},
 	{
@@ -443,7 +443,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			description:"For the stone and the mote, the grass is always greener..."
 		},
 		facebook:{
-			url:prod.url + genres.poetry + "/perspective"
+			url:env().url + genres.poetry + "/perspective"
 		}
 	}
 	];

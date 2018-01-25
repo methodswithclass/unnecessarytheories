@@ -13,7 +13,7 @@ blogModule.controller("home.controller", ['$scope', 'data.service', 'runtime.sta
 	// var stateArray = state.split(".");
 	// this.genre = stateArray[1] || state;
 
-	console.log("genre is", self.genre);
+	// console.log("genre is", self.genre);
 	
 	display.adjustImageSize();
 
@@ -50,8 +50,6 @@ blogModule.controller("home.controller", ['$scope', 'data.service', 'runtime.sta
 		$window.open(link, "_blank");
 	}
 
-
-
 	$window.asyncFBInit = function () {
 
 		console.log("facebook sdk loaded");
@@ -73,6 +71,7 @@ blogModule.controller("home.controller", ['$scope', 'data.service', 'runtime.sta
 			console.log("no FB object", e.message);
 		}
 	}
+
 
 	$("#body").scrollTo(0);
 
