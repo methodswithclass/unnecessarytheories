@@ -62,13 +62,13 @@ var resolve = function (url) {
 
 	var urlArray = url.split("/");
 
-	if (urlArray[1] == "img") {
+	var result = urlArray.find(function (p) {
 
-		return false;
-	}
-	else {
-		return true;
-	}
+		return p == "img";
+	});
+
+	
+	return result ? true : false;
 
 }
 
