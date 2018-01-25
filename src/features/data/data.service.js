@@ -117,7 +117,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 					}
 				},
 				l:{
-					text:"do you image aliens as our counterparts, but just different? think again, the differences are so fundamental they will make you question your own existence."
+					text:"Do you image aliens as our counterparts, but just slightly different? Think again. The differences are most probably so basic and fundamental that they will make you question your own existence."
 				}
 			},
 			image:'img/extraterrestrial-life5',
@@ -125,7 +125,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			published:published.extraterrestrial_life
 		},
 		twitter:{
-			description:"Sci-Fi has given us all a horrible education in extraterrestrial life, even scientists are victims"
+			description:"Sci-Fi has unfortunately taught us many terrible lessons about the possibilities for alien life and has put us all in a small mental box. Even trained scientists are not often free from sci-fi's gripping influence."
 		},
 		facebook:{
 			url:prod.url + genres.nonFict + "/extraterrestrial_life"
@@ -152,7 +152,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 					}
 				},
 				l:{
-					text:"Are we smart when we can't define the things we make up? And those things actually hurt us?"
+					text:"How can we, as humans, be so intelligent when we can't define intelligence?"
 				}
 			},
 			image:'img/machine',
@@ -222,7 +222,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 					}
 				},
 				l:{
-					text:"The realities of time are not all that friendly to our visions of sci-fi"
+					text:"The realities of time are not all that conducive with our sci-fi dreams"
 				}
 			},
 			image:'img/relativity',
@@ -265,7 +265,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			published:published.meaning_god
 		},
 		twitter:{
-			description:"the existence of god is irrelevant, but the meaning isn\'t"
+			description:"the existence of god is irrelevant, but the meaning isn't"
 		},
 		facebook:{
 			url:prod.url + genres.nonFict + "/meaning_god"
@@ -311,7 +311,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			date:new Date(2016, 09, 01, 6, 0, 0),
 			by:"Christopher Polito",
 			name:"online_dating",
-			genre:genres.nonFict,
+			genre:genres.poetry,
 			title:{
 				s:{
 					text:"online dating",
@@ -338,7 +338,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			description:"Online dating is not a fun activity, so I wrote some poetry about it."
 		},
 		facebook:{
-			url:prod.url + genres.nonFict + "/online_dating"
+			url:prod.url + genres.poetry + "/online_dating"
 		}
 	},
 	{
@@ -397,7 +397,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 					}
 				},
 				l:{
-					text:"The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible"
+					text:"The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible. What's wrong is that it has affected real scientific research endeavors."
 				}
 			},
 			image:'img/contact',
