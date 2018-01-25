@@ -58,6 +58,20 @@ var getMetaData = function (req) {
 	}
 }
 
+var resolve = function (url) {
+
+	var urlArray = url.split("/");
+
+	if (urlArray[1] == "img") {
+
+		return false;
+	}
+	else {
+		return true;
+	}
+
+}
+
 var botRoute = function(req, res, next) {
 
 	res.render('./views/bot', getMetaData(req));
@@ -68,7 +82,7 @@ var botMiddleware = function(req,res,next) {
 	var ua = req.headers['user-agent'];
 
 	if (debugCrawler) botRoute(req,res,next);
-	else if (/^(facebookexternalhit)|(Twitterbot)|(Pinterest)/gi.test(ua)) {
+	else if (/^(facebookexternalhit)|(Twitterbot)|(Pinterest)/gi.test(ua) && resolve(req.url)) {
 		console.log(ua,' is a bot');
 		botRoute(req,res,next);
 	}
