@@ -82,7 +82,7 @@ var botMiddleware = function(req,res,next) {
 	var ua = req.headers['user-agent'];
 
 	if (debugCrawler) botRoute(req,res,next);
-	else if (/^(facebookexternalhit/1.1)|(+http://www.facebook.com/externalhit_uatext.php)|(Facebot)|(Twitterbot)|(Pinterest)/gi.test(ua) && resolve(req.url)) {
+	else if (/^(facebookexternalhit)|(+http://www.facebook.com/externalhit_uatext.php)|(Facebot)|(Twitterbot)|(Pinterest)/gi.test(ua) && resolve(req.url)) {
 		console.log(ua,' is a bot');
 		botRoute(req,res,next);
 	}
