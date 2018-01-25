@@ -38,9 +38,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 
-app.use("/blogs", express.static(path.join(__dirname, "dist")));
-app.use("/poetry", express.static(path.join(__dirname, "dist")));
-app.use("/genre/*", express.static(path.join(__dirname, "dist")));
+app.use("/blogs/*", express.static(path.join(__dirname, "dist")));
+app.use("/poetry/*", express.static(path.join(__dirname, "dist")));
+// app.use("/genre/*", express.static(path.join(__dirname, "dist")));
 app.use("/img", express.static(path.join(__dirname, "public/img")));
 app.use("/files", express.static(path.join(__dirname, "public/files")));
 

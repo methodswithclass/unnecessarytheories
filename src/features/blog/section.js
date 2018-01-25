@@ -1,4 +1,4 @@
-blogModule.directive("section", ['global', 'events', function (g, events) {
+blogModule.directive("section", ['global.service', 'events.service', function (g, events) {
 
 	return {
 		restrict:'E',

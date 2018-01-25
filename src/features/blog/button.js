@@ -1,4 +1,4 @@
-blogModule.directive("btn", ['$location', 'global', 'data.service', 'states', function ($location, g, blogs, states) {
+blogModule.directive("btn", ['$location', 'global.service', 'data.service', 'states', function ($location, g, blogs, states) {
 
 	return {
 		restrict:'E',

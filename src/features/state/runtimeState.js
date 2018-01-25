@@ -14,30 +14,30 @@ stateModule.provider("runtime.state", function ($stateProvider) {
         controllerAs:"main"
 
     },
-    {
-        name:"home.blogs",
-        url:"/blogs",
-        templateUrl:"assets/views/" + (g.isMobile() ? "m.genre.html" : "d.genre.html"),
-        controller:"genre.controller",
-        controllerAs:"main"
-    },
+    // {
+    //     name:"home.blogs",
+    //     url:"/blogs",
+    //     templateUrl:"assets/views/" + (g.isMobile() ? "m.genre.html" : "d.genre.html"),
+    //     controller:"genre.controller",
+    //     controllerAs:"main"
+    // },
     {
         name:"blogs",
-        url:"/genre/blogs/:name",
+        url:"/blogs/:name",
         templateUrl:"assets/views/" + (g.isMobile() ? "m.piece.html" : "d.piece.html"),
         controller:"piece.controller",
         controllerAs:"main"
     },
-    {
-        name:"home.poetry",
-        url:"/poetry",
-        templateUrl:"assets/views/" + (g.isMobile() ? "m.genre.html" : "d.genre.html"),
-        controller:"genre.controller",
-        controllerAs:"main"
-    },
+    // {
+    //     name:"home.poetry",
+    //     url:"/poetry",
+    //     templateUrl:"assets/views/" + (g.isMobile() ? "m.genre.html" : "d.genre.html"),
+    //     controller:"genre.controller",
+    //     controllerAs:"main"
+    // },
     {
         name:"poetry",
-        url:"/genre/poetry/:name",
+        url:"/poetry/:name",
         templateUrl:"assets/views/" + (g.isMobile() ? "m.piece.html" : "d.piece.html"),
         controller:"piece.controller",
         controllerAs:"main"

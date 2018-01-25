@@ -111,11 +111,11 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 			go(param, blogObj.meta.genre);
 
 		}
-		else if (data.isGenre(param)) {
-			// go("home");
-			console.log("check inbound go genre", param);
-			go(param);
-		}
+		// else if (data.isGenre(param)) {
+		// 	// go("home");
+		// 	console.log("check inbound go genre", param);
+		// 	go(param);
+		// }
 		else {
 			console.log("check inbound go home", "home");
 			go("home");
@@ -174,10 +174,10 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
     		console.log("state is blog", state);
     		$state.go(genre, {name:state});
     	}
-    	else if (data.isGenre(state)) {
-    		console.log("state is genre", state);
-    		$state.go("home." + state);
-    	}
+    	// else if (data.isGenre(state)) {
+    	// 	console.log("state is genre", state);
+    	// 	$state.go("home." + state);
+    	// }
     	else{
     		console.log("state is not blog", state);
     		$state.go(state);

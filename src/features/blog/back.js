@@ -14,9 +14,7 @@ blogModule.directive("back", ['states', function (states) {
 
 			element.on("click", function () {
 
-				// states.go("home");
-
-				states.go("home." + $scope.loc);
+				states.go("home");
 
 			});
 
