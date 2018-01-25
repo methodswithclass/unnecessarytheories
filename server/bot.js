@@ -53,16 +53,23 @@ var getMetaData = function (req) {
 
 	console.log("data", data); 
 
-	return { 
-		appID:(process.env.NODE_ENV == "production" ? variables.FBappID.prod : variables.FBappID.dev),
-		url:(process.env.NODE_ENV == "production" ? variables.url.prod : variables.url.dev) + req.url,
-		site_name:variables.site_name,
-		title:data.title, 
-		type:getType(req.url),
-		description:data.description,
-		img: data.image,
-		height:data.size.height,
-		width:data.size.width
+	if (data) {
+
+		return { 
+			appID:(process.env.NODE_ENV == "production" ? variables.FBappID.prod : variables.FBappID.dev),
+			url:(process.env.NODE_ENV == "production" ? variables.url.prod : variables.url.dev) + req.url,
+			site_name:variables.site_name,
+			title:data.title, 
+			type:getType(req.url),
+			description:data.description,
+			img: data.image,
+			height:data.size.height,
+			width:data.size.width
+		}
+	}
+	else {
+
+		return null;
 	}
 }
 
@@ -90,13 +97,18 @@ var resolve = function (url) {
 	});
 
 	
-	return result ? true : false;
+	return result ? false : true;
 
 }
 
 var botRoute = function(req, res, next) {
 
-	res.render('./views/bot', getMetaData(req));
+	var meta = getMetaData(req);
+
+	if (meta) {
+
+		res.render('./views/bot', meta);
+	}
 }
 
 
@@ -105,12 +117,10 @@ var botMiddleware = function(req,res,next) {
 
 	console.log("user-agent", ua);
 
-	if (debugCrawler) botRoute(req,res,next);
-	// else if (/^((facebookexternalhit/1.1)|(facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php))|(Facebot)|(Twitterbot)|(Pinterest))/gi.test(ua) && resolve(req.url)) {
-	// 	console.log(ua,' is a bot');
-	// 	botRoute(req,res,next);
-	// }
-	else if (isBot(ua)) {
+	if (debugCrawler) { 
+		botRoute(req,res,next)
+	}
+	else if (isBot(ua) && resolve(req.url)) {
 
 		console.log(ua, 'is a bot');
 		botRoute(req,res,next);
