@@ -5,7 +5,7 @@
   "scripts": {
     "node": "node server.js",
     "build": "gulp build",
-    "start": "gulp serve",
+    "start": "bower install && npm install && gulp serve",
     "commit-deploy-dev": "git add * && git commit -m update && git push development develop:master",
     "commit-deploy": "git add * && git commit -m update && git push heroku master",
     "deploy-dev": "git push development master",
