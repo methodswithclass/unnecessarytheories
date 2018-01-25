@@ -19,7 +19,7 @@
 	},
 	"scale_time":{
 		"title":"Scale of Time",
-		"description":"How some facts about time make all of sci-fi really silly",
+		"description":"Time has no scale, but the implications do",
 		"image":"https://www.unnecessarytheories.io/img/relativity_thumb.jpg",
 		"size":{
 			"width":"1200",
@@ -37,7 +37,7 @@
 	},
 	"intelligence":{
 		"title":"Intelligence",
-		"description":"Are we smart when we can't define the things we make up?",
+		"description":"How can we, as humans, be so intelligent when we can't define intelligence?",
 		"image":"https://www.unnecessarytheories.io/img/machine_thumb.jpg",
 		"size":{
 			"width":"1200",
@@ -84,6 +84,15 @@
 		"title":"Perspective",
 		"description":"For the stone and the mote, the grass is always greener...",
 		"image":"https://www.unnecessarytheories.io/img/dust_thumb2.jpg",
+		"size":{
+			"width":"1080",
+			"height":"567"
+		}
+	},
+	"extraterrestrial_life":{
+		"title":"Extraterrestrial Life",
+		"description":"The differences between us an alien llife are most probably so basic and fundamental that they will make you question your own existence.",
+		"image":"https://www.unnecessarytheories.io/img/extraterrestrial-life5_thumb.jpg",
 		"size":{
 			"width":"1080",
 			"height":"567"
