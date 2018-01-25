@@ -126,6 +126,9 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		},
 		twitter:{
 			description:"Sci-Fi has given us all a horrible education in extraterrestrial life, even scientists are victims"
+		},
+		facebook:{
+			url:prod.url + genres.nonFict + "/extraterrestrial_life"
 		}
 	},
 	{
@@ -158,6 +161,9 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		},
 		twitter:{
 			description:"It's a good thing we are smart enough to make up something like intelligence."
+		},
+		facebook:{
+			url:prod.url + genres.nonFict + "/intelligence"
 		}
 	},
 	{
@@ -190,6 +196,9 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		},
 		twitter:{
 			description:"You're in a prison you can't see because you're distracted by all the writing on the wall"
+		},
+		facebook:{
+			url:prod.url + genres.poetry + "/prison"
 		}
 	},
 	{
@@ -222,6 +231,9 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		},
 		twitter:{
 			description:"Time has no scale, but the implications do"
+		},
+		facebook:{
+			url:prod.url + genres.nonFict + "/scale_time"
 		}
 	},
 	{
@@ -254,6 +266,9 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		},
 		twitter:{
 			description:"the existence of god is irrelevant, but the meaning isn\'t"
+		},
+		facebook:{
+			url:prod.url + genres.nonFict + "/meaning_god"
 		}
 	},
 	{
@@ -286,6 +301,9 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		},
 		twitter:{
 			description:"Be careful what you create, you know not what it can become"
+		},
+		facebook:{
+			url:prod.url + genres.poetry + "/vase"
 		}
 	},
 	{
@@ -318,6 +336,9 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		},
 		twitter:{
 			description:"Online dating is not a fun activity, so I wrote some poetry about it."
+		},
+		facebook:{
+			url:prod.url + genres.nonFict + "/online_dating"
 		}
 	},
 	{
@@ -350,6 +371,9 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		},
 		twitter:{
 			description:"I was lost in a world of my own thinking thoughts, then I came upon her, and she connected the dots."
+		},
+		facebook:{
+			url:prod.url + genres.poetry + "/girl"
 		}
 	},
 	{
@@ -382,6 +406,9 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		},
 		twitter:{
 			description:"The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible"
+		},
+		facebook:{
+			url:prod.url + genres.nonFict + "/contact"
 		}
 	},
 	{
@@ -414,6 +441,9 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		},
 		twitter:{
 			description:"For the stone and the mote, the grass is always greener..."
+		},
+		facebook:{
+			url:prod.url + genres.poetry + "/perspective"
 		}
 	}
 	];

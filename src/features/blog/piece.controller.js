@@ -14,10 +14,10 @@ blogModule.controller("piece.controller", ['$scope', 'data.service', 'runtime.st
 
 	console.log("blo navigate", bl[bl.length-1]);
 
-	// $scope.blog = (data.isBlog(inboundBlog) ? data.getBlogByName(inboundBlog) 
-	               // : (data.isBlog(navigateBlog) ? data.getBlogByName(navigateBlog) : data.getBlogByIndex(0)));
 
 	$scope.blog = data.getBlogByName(bl[bl.length-1]);
+	
+	$scope.url = $scope.blog.facebook.url;
 
 
 	console.log("blog in controller is:", $scope.blog);
