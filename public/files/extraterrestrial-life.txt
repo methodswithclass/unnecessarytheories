@@ -13,19 +13,35 @@ This does not just come from Sci-Fi. Prominent scientists have thought this way 
 Another scientific group that has influenced a generation of the general public is the group that developed the Drake Equation. The Drake equation, headed up by Dr. Frank Drake, is a probabilistic equation that includes 6 probabilities for factors that would lead to the existence of alien civilizations we may communicate with. The problem is right in the intent of the equation. It's trying to find alien "civilizations" for us to communicate with. When looking at the individual terms for the equation, more problems surface. 
 
 
+
+
 Drake Equation
+
 N = R*p*n*L*I*c*T
 
+
+
+
 R = rate of start formation
+
 p = fraction of stars that have planets
+
 n  = of starts that have planets, planets that can potentially support life
+
 L = fraction of those planets that actually develop life
+
 I = fraction of planets bearing life that intelligent, civilized life,  has developed
-c = fraction of those civilizations that have developed communications 
-	i.e. technologies that release signals into space 
+
+c = fraction of those civilizations that have developed communications (i.e. technologies that release signals into space)
+
 T = length of time that those signals have been released into space
 
+
+
 [c] = https://en.wikipedia.org/wiki/Drake_equation
+
+
+
 
 
 Most of the first few terms aren't problematic, but when you get down to the intelligent life terms and the phrase "civilized life" enters the mix, you start to see the extraordinary bias these scientists had toward their own world and way of living, without any regard for what was possible outside the human or earth system.  

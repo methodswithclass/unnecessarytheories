@@ -59,7 +59,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		girl:true,
 		contact:true,
 		perspective:true,
-		extraterrestrial_life:false
+		extraterrestrial_life:true
 	}
 
 	var menu = [

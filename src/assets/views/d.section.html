@@ -1,7 +1,7 @@
 
 <div class="relative width">
 
-	<div class="relative width60 hcenter" ng-repeat="paragraph in section track by paragraph.text">
+	<div class="relative width60 hcenter" ng-repeat="paragraph in section track by $index">
 
 		<div ng-if="paragraph.para == 'para'" class="relative width">
 			<div class="relative width font-20 line-height-40">{{paragraph.text}}</div>
