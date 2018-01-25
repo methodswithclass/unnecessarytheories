@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
+    "node": "node server.js",
     "build": "gulp build",
+    "start": "gulp serve",
     "commit-deploy-dev": "git add * && git commit -m update && git push development develop:master",
     "commit-deploy": "git add * && git commit -m update && git push heroku master",
     "deploy-dev": "git push development master",
