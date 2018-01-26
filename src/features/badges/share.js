@@ -15,6 +15,8 @@ badgesModule.directive("share", ['$window', 'data.service', 'global.service', fu
 			var env = data.env();
 			var blog;
 
+
+
 			blog = data.getBlogByName($scope.name);
 
 			console.log("share", blog.meta.name);
@@ -28,7 +30,7 @@ badgesModule.directive("share", ['$window', 'data.service', 'global.service', fu
 
 				url = blog.facebook.url;
 			}
-			
+
 			var share = {icon:"", hover:"", size:""};
 
 			if ($scope.type == 'fb') {
@@ -66,8 +68,10 @@ badgesModule.directive("share", ['$window', 'data.service', 'global.service', fu
 	            	$window.asyncFBInit();
 
 					FB.ui({
-						method: 'feed',
-						link:url,
+						// method: 'feed',
+						// link:url,
+						method: "share",
+						href:url
 					}, function(response){
 
 						console.log("share response");
