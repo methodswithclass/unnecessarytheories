@@ -1,6 +1,6 @@
 dataModule.factory("data.service", ['global.service', 'file.service', function (g, file) {
 
-	var testOverride = true;
+	var testOverride = false;
 
 	var dev = {
 		test:true,
