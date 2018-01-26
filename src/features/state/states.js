@@ -8,40 +8,54 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
 	var blogUrlIndex = function (url) {
 
-		// return url[0] == "http:" ? 4 : 2;
 		return url.length-2;
-	};
-
-
-	var printParams = function(params) {
-
-		var string = "";
-
-		for (i in params) {
-
-			string + "param " + i + " value " + params[i] + "\n";
-		}
-
-		console.log(string);
 	}
+
 
 	var getParams = function (absurl) {
 
-		var obj = "home";
+		var obj = "";
+		var urlArray = absurl.split("/");
+		var index = absurl.indexOf("?");
 
-		var url = absurl.split("/");
+		if (index >= 0) {
 
-		console.log("url array", url);
+			obj = absurl.substr(index + 3);
+		}
+		else if (urlArray.length >= 1) {
 
-		if (url.length >= blogUrlIndex(url)+1) {
-
-			obj = url[blogUrlIndex(url)];
+			obj = urlArray[blogUrlIndex(urlArray)];
 		}
 
 		console.log("check returns:", obj);
 
 		return obj
 
+	}
+
+	var checkInbound = function() {
+
+		console.log("check inbound for url", $location.absUrl());
+
+		var param = getParams($location.absUrl());
+
+		if (data.isBlog(param)) {
+
+			send.setup.save({name:"navigate", data:param});
+
+			var blogObj = data.getBlogByName(param);
+
+			console.log("check inbound go blog", param);
+
+			go(param, blogObj.meta.genre);
+
+		}
+		else {
+			console.log("check inbound go home", "home");
+			go("home");
+		}
+
+		
 	}
 
 	var current = function () {
@@ -67,12 +81,15 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
 	})
 
-	var addState = function (name) {
+	var addState = function (state) {
 
 		state = {
 
-			name:"blog." + name,
-			url:"/" + name
+			name:state.name,
+			url:state.url,
+			templateUrl:state.templateUrl,
+			controller:state.controller,
+			controllerAs:"main"
 
 		};
 
@@ -81,39 +98,11 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 		runtime.addState(state);
 	}
 
-	var checkInbound = function() {
-
-		console.log("check inbound for url", $location.absUrl());
-
-		var param = getParams($location.absUrl());
-
-		if (data.isBlog(param)) {
-
-			send.setup.save({name:"navigate", data:param});
-
-			var blogObj = data.getBlogByName(param);
-
-			console.log("check inbound go blog", param);
-
-			go(param, blogObj.meta.genre);
-
-		}
-		// else if (data.isGenre(param)) {
-		// 	// go("home");
-		// 	console.log("check inbound go genre", param);
-		// 	go(param);
-		// }
-		else {
-			console.log("check inbound go home", "home");
-			go("home");
-		}
-
-		
-	}
-
 	var define = function () {
 
-		var blog = send.retrieve.get({name:"navigate"});
+		var bl = send.retrieve.get({name:"navigate"});
+
+		var blog = bl[bl.length-1];
 
 		if (runtime.isState(blog)) {
 			return resolve(blog);
@@ -128,9 +117,18 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
 		var name = state.name.split(".");
 
-		return {
-			type:name[0],
-			state:name[1]
+		if (name.length > 1) {
+
+			return {
+				type:name[0],
+				state:name[1]
+			}
+
+		}
+		else {
+			return {
+				state:name
+			}
 		}
 
 	}

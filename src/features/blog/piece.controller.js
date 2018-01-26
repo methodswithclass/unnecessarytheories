@@ -11,11 +11,12 @@ blogModule.controller("piece.controller", ['$scope', 'data.service', 'runtime.st
 
 	var bl = send.retrieve.get({name:"navigate"});
 
+	var blogName = bl[bl.length-1];
 
-	console.log("blo navigate", bl[bl.length-1]);
+	console.log("blo navigate", blogName);
 
 
-	$scope.blog = data.getBlogByName(bl[bl.length-1]);
+	$scope.blog = data.getBlogByName(blogName);
 
 	$scope.url = $scope.blog.facebook.url;
 
