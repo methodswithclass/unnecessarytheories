@@ -19,14 +19,24 @@ var userAgents = [
 var meta = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
 
+var getBlogIndex = function (url) {
+
+	return url.length-1;
+}
+
+
+
 var parseUrl = function (url) {
 
 	var urlArray = url.split("/");
+	var index = url.indexOf("?");
 
-	console.log("initial array", urlArray);
+	if (index >= 0) {
 
-	if (urlArray.length > 1 && urlArray[1] !== "") {
-		return meta[urlArray[urlArray.length-1]];
+		return meta[url.substr(index + 3)];
+	}
+	else if (urlArray.length > 1 && urlArray[1] !== "") {
+		return meta[urlArray[getBlogIndex(urlArray)]];
 	}
 	else {
 		return meta["home"];
@@ -81,7 +91,7 @@ var isBot = function (ua) {
 		return p == ua;
 	})
 
-	console.log("this is the bot", $bot);
+	// console.log("this is the bot", $bot);
 
 	return $bot ? true : false;
 
@@ -115,7 +125,7 @@ var botRoute = function(req, res, next) {
 var botMiddleware = function(req,res,next) {
 	var ua = req.headers['user-agent'];
 
-	console.log("user-agent", ua);
+	// console.log("user-agent", ua);
 
 	if (debugCrawler) { 
 		botRoute(req,res,next)
