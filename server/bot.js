@@ -50,11 +50,12 @@ var getType = function (url) {
 
 	console.log("url array", urlArray);
 
-	if (urlArray[1] == "") {
-		return "website"
-	}
+	var result = urlArray.find(function (p) {
 
-	return "article";
+		return p == "blogs" || p == "poetry" || p.indexOf("?") >= 0;
+	})
+
+	return result ? "article" : "website";
 }
 
 var getMetaData = function (req) {
