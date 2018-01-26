@@ -68,8 +68,6 @@ badgesModule.directive("share", ['$window', 'data.service', 'global.service', fu
 	            	$window.asyncFBInit();
 
 					FB.ui({
-						// method: 'feed',
-						// link:url,
 						method: "share",
 						href:url
 					}, function(response){

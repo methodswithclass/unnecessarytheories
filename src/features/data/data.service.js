@@ -121,7 +121,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 				}
 			},
 			image:'img/extraterrestrial-life5',
-			file:"files/extraterrestrial-life.txt",
+			file:"files/extraterrestrial-life2.txt",
 			published:published.extraterrestrial_life
 		},
 		twitter:{
