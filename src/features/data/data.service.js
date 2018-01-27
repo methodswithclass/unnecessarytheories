@@ -51,7 +51,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 	var published = {
 		none:false,
 		prison:true,
-		scale_time:true,
+		scale_time:false,
 		meaning_god:false,
 		intelligence:true,
 		vase:true,
@@ -401,7 +401,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 				}
 			},
 			image:'img/contact',
-			file:"files/alien_contact3.txt",
+			file:"files/alien-contact3.txt",
 			published:published.contact
 		},
 		twitter:{
