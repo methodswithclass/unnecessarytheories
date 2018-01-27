@@ -401,7 +401,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 				}
 			},
 			image:'img/contact',
-			file:"files/alien_contact2.txt",
+			file:"files/alien_contact3.txt",
 			published:published.contact
 		},
 		twitter:{
