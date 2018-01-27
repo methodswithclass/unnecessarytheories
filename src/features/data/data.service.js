@@ -156,7 +156,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 				}
 			},
 			image:'img/machine',
-			file:"files/intelligence.txt",
+			file:"files/intelligence2.txt",
 			published:published.intelligence
 		},
 		twitter:{
@@ -457,7 +457,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 
 		var now = new Date();
 
-		return (blog.meta.date.getTime() < now.getTime() && blog.meta.published && !published.none);
+		return (blog.meta.date.getTime() < now.getTime() && published[blog.meta.name] && !published.none);
 
 	});
 
