@@ -471,6 +471,16 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 
 	});
 
+	var resolveName = function (name) {
+
+		if (name == "scale_time") {
+
+			name = "contact";
+		}
+
+		return name;
+	}
+
 	var getBlogByIndex = function (index) {
 
 		return blogs[index];
@@ -478,13 +488,22 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 
 	var getIndexByName = function (name) {
 
-		for (i in blogs) {
-			if (name == blogs[i].meta.name) {
-				return i;
-			}
-		}
+		name = resolveName(name);
 
-		return -1;
+		console.log("get index by name", name);
+
+		var indexA = -1;
+
+		blogs.map(function (value, index) {
+
+			if (value.meta.name == name) {
+				indexA = index;
+			}
+		})
+
+		console.log("get index by name", indexA);
+
+		return indexA;
 	}
 
 	var resolveIndex = function (index) {
@@ -501,12 +520,18 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 
 			return home;
 		}
+		
+		name = resolveName(name);
+
+		var blog = blogs.find(function (p) {
+
+			return p.meta.name == name;
+		})
+
+		if (blog) return blog;
 		else {
-
-			var index = getIndexByName(name);
-
-			if (resolveIndex(index)) return getBlogByIndex(index);
-			else console.log("invalid name");
+			console.log("invalid name");
+			return null;
 		}
 
 	}
@@ -568,6 +593,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		getBlogByIndex:getBlogByIndex,
 		isBlog:isBlog,
 		isGenre:isGenre,
+		resolveName:resolveName,
 		resolveIndex:resolveIndex,
 		getButtonPosition:getButtonPosition,
 		getBlogsByGenre:getBlogsByGenre

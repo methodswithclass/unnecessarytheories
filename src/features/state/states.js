@@ -39,6 +39,8 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
 		var param = getParams($location.absUrl());
 
+		param = data.resolveName(param);
+
 		if (data.isBlog(param)) {
 
 			send.setup.save({name:"navigate", data:param});
