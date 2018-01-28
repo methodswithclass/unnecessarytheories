@@ -294,7 +294,7 @@ angular.module("parallaxModule", [])
 		var reset = function () {
 
 			var xBuffer = 100;
-			var yBuffer = 10;
+			var yBuffer = 20;
 
 
 			var getEqs = function ($ih) {
@@ -304,27 +304,21 @@ angular.module("parallaxModule", [])
 
 				// console.log($scope.name, "sh:" + sh + " ph:" + ph + " ih:" + $ih + " g:" + g + " h:" + h);
 
-				if ($ih < h && !$scope.top) {
+				if (!$scope.top) {
 
-					// console.log($scope.name, "linear", $scope.params);
+					console.log($scope.name, "linear");
 
 					eqs = linear({
-						x1:$scope.params ? $scope.params.x1 : (-1)*xBuffer,
-						y1:$scope.params ? $scope.params.y1 : (-1)*yBuffer,
+						x1:xBuffer,
+						y1:yBuffer,
 
-						x2:$scope.params ? $scope.params.x2 : h + xBuffer,
-						y2:$scope.params ? $scope.params.y2 : (-1)*Math.abs(ph-sh) + yBuffer
-
-						// x1:(-1)*xBuffer,
-						// y1:(-1)*yBuffer,
-
-						// x2:h + xBuffer,
-						// y2:(-1)*Math.abs(ph-sh) + yBuffer
+						x2:h + xBuffer,
+						y2:(sh-ph) + yBuffer
 					});
 
 				}
 				else {
-					// console.log($scope.name, "simple");
+					console.log($scope.name, "simple");
 					eqs = {m:-0.99, b:-1*(ph-sh)/2};
 				}
 
@@ -443,41 +437,10 @@ angular.module("parallaxModule", [])
 
 			runSetup(function () {
 
-				// count = 0;
-
-				// if ($scope.params) {
-
-				// 	paramsTimer = setInterval(function () {
-
-				// 		if (Object.keys($scope.params).length >= 5 || count >= 500) {
-
-				// 			clearInterval(paramsTimer);
-				// 			paramsTimer = {};
-				// 			paramsTimer = null;
-
-				// 			if (count < 500) {
-
-				// 				u.waitForElem({elems:[$el, element, inner]}, function () {
-										
-				// 					runResetAndScroll();
-				// 				})
-				// 			}
-				// 		}
-				// 		else {
-				// 			count += 10;
-				// 		}
-
-				// 	}, 30);
-
-				// }
-				// else {
-
-					u.waitForElem({elems:[$el, element, inner]}, function () {
-								
-						runResetAndScroll();
-					})
-
-				// }
+				u.waitForElem({elems:[$el, element, inner]}, function () {
+							
+					runResetAndScroll();
+				})
 
 			});
 
@@ -498,20 +461,10 @@ angular.module("parallaxModule", [])
 							// it will not work with only the default window scroll
 			top:"=", 	// is top or not 	boolean 		optional. true if the element has a zero offset when loaded
 			factor:"=",	// multiplier		number			optional.	mulitplier to adjust speed of parallax effect as desired.
-			params:"=",	// values 			object 			optional. additional values to adjust the parallax motion as desired
-			getParams:"=",
 			adjustinner:"=" // to adjust the size of the inner element or not 		boolean
 		},
 		link:link
 	};
 
-
-	// var params = {
-	// 	factor:1, 	// multiplier 						number 		optional  	multiplier to adjust overall parallax speed as desired. 
-	// 	x1:1, 		// lower bound on window			number		optional	lower x bound for linear function to get slope and offset 
-	// 	x2:1,		// upper bound on window			number		optional	upper x bound for linear function to get slope and offset
-	// 	y1:1,		// lower bound on inner element 	number		optional 	lower y bound for linear function to get slope and offset
-	// 	y2:1		// upper bound on inner element 	number		optional 	upper y bound for linear function to get slope and offset
-	// }
 
 }]);
