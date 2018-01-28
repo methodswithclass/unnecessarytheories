@@ -63,7 +63,7 @@
 
 						<div class="flex-grow flex-grow-1 width30 height-200 margin-50 rounded20 border cutoff" ng-repeat="blog in main.getBlogs(genre)" ng-click="main.blogClick(blog.meta.name, genre.id)">
 
-							<div class="relative width height black-back pointer rounded20" parallax name="{{'genre_page_' + blog.meta.name}}" scroll="body" top="false" inner="{{'genre_thumb' + blog.meta.name}}" id="{{'genre_button' + blog.meta.name}}">
+							<div class="relative width height black-back pointer rounded20 cutoff" parallax name="{{'genre_page_' + blog.meta.name}}" scroll="body" top="false" inner="{{'genre_thumb' + blog.meta.name}}" id="{{'genre_button' + blog.meta.name}}">
 
 								<div class="absolute black-back hcenter" style="width:200%; height:500%" id="{{'genre_thumb' + blog.meta.name}}">
 
