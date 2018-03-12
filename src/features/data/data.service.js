@@ -59,7 +59,8 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		girl:true,
 		contact:true,
 		perspective:true,
-		extraterrestrial_life:true
+		extraterrestrial_life:true,
+		evolution:true
 	}
 
 	var menu = [
@@ -96,6 +97,41 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 
 
 	var allblogs = [
+	{
+		meta:{
+			date:new Date(2018, 2, 11, 12, 0, 0),
+			by:"Christopher Polito",
+			name:"evolution",
+			genre:genres.nonFict,
+			title:{
+				s:{
+					text:"There's no 'selection' in Evolution",
+					font:{
+						button:{
+							d:fonts.button.d,
+							m:fonts.button.m
+						},
+						blog:{
+							d:fonts.blog.d,
+							m:fonts.blog.m
+						}
+					}
+				},
+				l:{
+					text:"There's no 'selection' in Evolution, you've been mislead, and now it's time to know the truth"
+				}
+			},
+			image:'img/extraterrestrial-life5',
+			file:"files/evolution.txt",
+			published:published.evolution
+		},
+		twitter:{
+			description:"There's no 'selection' in Evolution, you've been mislead, and now it's time to know the truth"
+		},
+		facebook:{
+			url:env().url + genres.nonFict + "/evolution"
+		}
+	},
 	{
 		meta:{
 			date:new Date(2018, 0, 23, 12, 0, 0),
