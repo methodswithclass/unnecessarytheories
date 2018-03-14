@@ -28,7 +28,7 @@ badgesModule.directive("share", ['$window', 'data.service', 'global.service', fu
 			}
 			else {
 
-				url = blog.facebook.url;
+				url = blog.share.facebook.url;
 			}
 
 			var share = {icon:"", hover:"", size:""};
@@ -54,7 +54,7 @@ badgesModule.directive("share", ['$window', 'data.service', 'global.service', fu
 
 
 			var getTweet = function () {
-				return blog ? encodeURI(blog.twitter.description + "\n \n" + url) : "";
+				return blog ? encodeURI(blog.share.twitter.description + "\n \n" + url) : "";
 			}
 				
 			element.append(img);

@@ -1,23 +1,23 @@
-dataModule.factory("data.service", ['global.service', 'file.service', function (g, file) {
+dataModule.factory("data.service", ['global.service', 'file.service', "Blog", function (g, file, Blog) {
 
 	var testOverride = false;
 
 	var dev = {
 		test:true,
 		url:'http://unnecessarytheories-dev.herokuapp.com/',
+		// url:"localhost:3300",
 		id:'725062234262184'
 	}
 
 	var prod = {
 		test:false,
 		url:'http://www.unnecessarytheories.io/',
-		// url:"localhost:8080/",
 		id:'696572137111194'
 	}
 
 	var env = function (_test) {
 
-		return _test ? (_test ? dev : prod) : (testOverride ? dev : prod);
+		return _test !== undefined ? (_test ? dev : prod) : (testOverride ? dev : prod);
 	}
 
 	var genres = {
@@ -37,6 +37,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		poetry:"poetry"
 	}
 
+
 	var fonts = {
 		button:{
 			d:"font-15",
@@ -47,6 +48,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			m:"font-50"
 		}
 	}
+	
 
 	var published = {
 		none:false,
@@ -63,27 +65,6 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		evolution:true
 	}
 
-	var menu = [
-	{
-		id:"home",
-		title:"Home",
-		state:"home",
-		url:"/home"
-	},
-	{
-		id:"blogs",
-		title:"Blogs",
-		state:"blogs",
-		url:"/genre/blogs"
-	},
-	{
-		id:"poetry",
-		title:"Poetry",
-		state:"poetry",
-		url:"/genre/poetry"
-	}
-	]
-
 	var home = {
 		meta:{
 			name:"home",
@@ -91,398 +72,181 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 			image:"img/landscape"
 		},
 		share:{
-			description:"here are some theories, probably unnecessary"
+			description:"here are some theories, they're probably unnecessary"
 		}
 	}
 
+	var allblogs = [];
 
-	var allblogs = [
-	{
-		meta:{
-			date:new Date(2018, 2, 11, 12, 0, 0),
-			by:"Christopher Polito",
-			name:"evolution",
-			genre:genres.nonFict,
-			title:{
-				s:{
-					text:"There's no 'selection' in Evolution",
-					font:{
-						button:{
-							d:fonts.button.d,
-							m:fonts.button.m
-						},
-						blog:{
-							d:fonts.blog.d,
-							m:fonts.blog.m
-						}
-					}
-				},
-				l:{
-					text:"There's no 'selection' in Evolution, you've been mislead, and now it's time to know the truth"
-				}
-			},
-			image:'img/evolution_2',
-			file:"files/evolution.txt",
-			published:published.evolution
-		},
-		twitter:{
-			description:"There's no 'selection' in Evolution, you've been mislead, and now it's time to know the truth"
-		},
-		facebook:{
-			url:env().url + genres.nonFict + "/evolution"
-		}
-	},
-	{
-		meta:{
-			date:new Date(2018, 0, 23, 12, 0, 0),
-			by:"Christopher Polito",
-			name:"extraterrestrial_life",
-			genre:genres.nonFict,
-			title:{
-				s:{
-					text:"extraterrestrial life",
-					font:{
-						button:{
-							d:fonts.button.d,
-							m:fonts.button.m
-						},
-						blog:{
-							d:fonts.blog.d,
-							m:fonts.blog.m
-						}
-					}
-				},
-				l:{
-					text:"Do you image aliens as our counterparts, but just slightly different? Think again. The differences are most probably so basic and fundamental that they will make you question your own existence."
-				}
-			},
-			image:'img/extraterrestrial-life5',
-			file:"files/extraterrestrial-life2.txt",
-			published:published.extraterrestrial_life
-		},
-		twitter:{
-			description:"Sci-Fi has unfortunately taught us many terrible lessons about the possibilities for alien life and has put us all in a small mental box. Even trained scientists are not often free from sci-fi's gripping influence."
-		},
-		facebook:{
-			url:env().url + genres.nonFict + "/extraterrestrial_life"
-		}
-	},
-	{
-		meta:{
-			date:new Date(2016, 0, 7, 12, 0, 0),
-			by:"Christopher Polito",
-			name:"intelligence",
-			genre:genres.nonFict,
-			title:{
-				s:{
-					text:"intelligence",
-					font:{
-						button:{
-							d:fonts.button.d,
-							m:fonts.button.m
-						},
-						blog:{
-							d:fonts.blog.d,
-							m:fonts.blog.m
-						}
-					}
-				},
-				l:{
-					text:"How can we, as humans, be so intelligent when we can't define intelligence?"
-				}
-			},
-			image:'img/machine',
-			file:"files/intelligence2.txt",
-			published:published.intelligence
-		},
-		twitter:{
-			description:"It's a good thing we are smart enough to make up something like intelligence."
-		},
-		facebook:{
-			url:env().url + genres.nonFict + "/intelligence"
-		}
-	},
-	{
-		meta:{
-			date:new Date(2015, 11, 22, 12, 0, 0),
-			by:"Christopher Polito",
-			name:"prison",
-			genre:genres.poetry,
-			title:{
-				s:{
-					text:"the prison",
-					font:{
-						button:{
-							d:fonts.button.d,
-							m:fonts.button.m
-						},
-						blog:{
-							d:fonts.blog.d,
-							m:fonts.blog.m
-						}
-					}
-				},
-				l:{
-					text:"Even prisons with three walls are impossible to break free from"
-				}
-			},
-			image:'img/prison',
-			file:"files/prison.txt",
-			published:published.prison
-		},
-		twitter:{
-			description:"You're in a prison you can't see because you're distracted by all the writing on the wall"
-		},
-		facebook:{
-			url:env().url + genres.poetry + "/prison"
-		}
-	},
-	{
-		meta:{
-			date:new Date(2015, 11, 22, 12, 0, 0),
-			by:"Christopher Polito",
-			name:"scale_time",
-			genre:genres.nonFict,
-			title:{
-				s:{
-					text:"scale of time",
-					font:{
-						button:{
-							d:fonts.button.d,
-							m:fonts.button.m
-						},
-						blog:{
-							d:fonts.blog.d,
-							m:fonts.blog.m
-						}
-					}
-				},
-				l:{
-					text:"The realities of time are not all that conducive with our sci-fi dreams"
-				}
-			},
-			image:'img/relativity',
-			file:"files/scale_time.txt",
-			published:published.scale_time
-		},
-		twitter:{
-			description:"Time has no scale, but the implications do"
-		},
-		facebook:{
-			url:env().url + genres.nonFict + "/scale_time"
-		}
-	},
-	{
-		meta:{
-			date:new Date(2016, 0, 1, 12, 0, 0),
-			by:"Christopher Polito",
-			name:"meaning_god",
-			genre:genres.nonFict,
-			title:{
-				s:{
-					text:"meaning of god",
-					font:{
-						button:{
-							d:fonts.button.d,
-							m:fonts.button.m
-						},
-						blog:{
-							d:fonts.blog.d,
-							m:fonts.blog.m
-						}
-					}
-				},
-				l:{
-					text:"I don't care whether god exists or not, but what does the concept mean?"
-				}
-			},
-			image:'img/space',
-			file:"files/meaning_god.txt",
-			published:published.meaning_god
-		},
-		twitter:{
-			description:"the existence of god is irrelevant, but the meaning isn't"
-		},
-		facebook:{
-			url:env().url + genres.nonFict + "/meaning_god"
-		}
-	},
-	{
-		meta:{
-			date:new Date(2016, 7, 21, 6, 0, 0),
-			by:"Christopher Polito",
-			name:"vase",
-			genre:genres.poetry,
-			title:{
-				s:{
-					text:"vase of the world",
-					font:{
-						button:{
-							d:fonts.button.d,
-							m:fonts.button.m
-						},
-						blog:{
-							d:fonts.blog.d,
-							m:fonts.blog.m
-						}
-					}
-				},
-				l:{
-					text:"Caution to you, when you create in order to relieve, you know not what you make"
-				}
-			},
-			image:'img/cavemen',
-			file:"files/vaseoftheworld.txt",
-			published:published.vase
-		},
-		twitter:{
-			description:"Be careful what you create, you know not what it can become"
-		},
-		facebook:{
-			url:env().url + genres.poetry + "/vase"
-		}
-	},
-	{
-		meta:{
-			date:new Date(2016, 09, 01, 6, 0, 0),
-			by:"Christopher Polito",
-			name:"online_dating",
-			genre:genres.poetry,
-			title:{
-				s:{
-					text:"online dating",
-					font:{
-						button:{
-							d:fonts.button.d,
-							m:fonts.button.m
-						},
-						blog:{
-							d:fonts.blog.d,
-							m:fonts.blog.m
-						}
-					}
-				},
-				l:{
-					text:"Online dating is not a fun activity, so I wrote some poetry about it."
-				}
-			},
-			image:'img/online-date',
-			file:"files/online-date.txt",
-			published:published.online_dating
-		},
-		twitter:{
-			description:"Online dating is not a fun activity, so I wrote some poetry about it."
-		},
-		facebook:{
-			url:env().url + genres.poetry + "/online_dating"
-		}
-	},
-	{
-		meta:{
-			date:new Date(2016, 09, 30, 6, 0, 0),
-			by:"Christopher Polito",
-			name:"girl",
-			genre:genres.poetry,
-			title:{
-				s:{
-					text:"girl on the path",
-					font:{
-						button:{
-							d:fonts.button.d,
-							m:fonts.button.m
-						},
-						blog:{
-							d:fonts.blog.d,
-							m:fonts.blog.m
-						}
-					}
-				},
-				l:{
-					text:"I was lost in a world of my own thinking thoughts, then I came upon her, and she connected the dots."
-				}
-			},
-			image:'img/girl',
-			file:"files/girl_on_path.txt",
-			published:published.girl
-		},
-		twitter:{
-			description:"I was lost in a world of my own thinking thoughts, then I came upon her, and she connected the dots."
-		},
-		facebook:{
-			url:env().url + genres.poetry + "/girl"
-		}
-	},
-	{
-		meta:{
-			date:new Date(2016, 10, 15, 6, 0, 0),
-			by:"Christopher Polito",
-			name:"contact",
-			genre:genres.nonFict,
-			title:{
-				s:{
-					text:"the impossibility of alien contact",
-					font:{
-						button:{
-							d:"font-15",
-							m:fonts.button.m
-						},
-						blog:{
-							d:"font-40",
-							m:"font-30"
-						}
-					}
-				},
-				l:{
-					text:"The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible. What's wrong is that it has affected real scientific research endeavors."
-				}
-			},
-			image:'img/contact',
-			file:"files/alien-contact3.txt",
-			published:published.contact
-		},
-		twitter:{
-			description:"The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible"
-		},
-		facebook:{
-			url:env().url + genres.nonFict + "/contact"
-		}
-	},
-	{
-		meta:{
-			date:new Date(2016, 10, 16, 6, 0, 0),
-			by:"Christopher Polito",
-			name:"perspective",
-			genre:genres.poetry,
-			title:{
-				s:{
-					text:"perspective",
-					font:{
-						button:{
-							d:fonts.button.d,
-							m:fonts.button.m
-						},
-						blog:{
-							d:fonts.blog.d,
-							m:fonts.blog.m
-						}
-					}
-				},
-				l:{
-					text:"For the stone and the mote, the grass is always greener..."
-				}
-			},
-			image:'img/dust',
-			file:"files/mote.txt",
-			published:published.perspective
-		},
-		twitter:{
-			description:"For the stone and the mote, the grass is always greener..."
-		},
-		facebook:{
-			url:env().url + genres.poetry + "/perspective"
-		}
-	}
-	];
+
+
+	var writeBlog = new Blog();
+	writeBlog.setDate(new Date(2018, 2, 11, 12, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("evolution");
+	writeBlog.setGenre(genres.nonFict);
+	writeBlog.setShortTitle("There's no 'selection' in Evolution");
+	writeBlog.setLongTitle("There's no 'selection' in Evolution, you've been mislead, and now it's time to know the truth");
+	writeBlog.setImage("img/evolution_2");
+	writeBlog.setFile("files/evolution.txt");
+	writeBlog.setPublished(published.evolution);
+	writeBlog.setTwitter("There's no 'selection' in Evolution, you've been mislead, and now it's time to know the truth");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/evolution");
+
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
+
+	var writeBlog = new Blog();
+	writeBlog.setDate(new Date(2018, 0, 23, 12, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("extraterrestrial_life");
+	writeBlog.setGenre(genres.nonFict);
+	writeBlog.setShortTitle("extraterrestrial life");
+	writeBlog.setLongTitle("Do you image aliens as our counterparts, but just slightly different? Think again. The differences are most probably so basic and fundamental that they will make you question your own existence");
+	writeBlog.setImage("img/extraterrestrial-life5");
+	writeBlog.setFile("files/extraterrestrial-life2.txt");
+	writeBlog.setPublished(published.extraterrestrial_life);
+	writeBlog.setTwitter("Sci-Fi has unfortunately taught us many terrible lessons about the possibilities for alien life and has put us all in a small mental box. Even trained scientists are not often free from sci-fi's gripping influence.");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/extraterrestrial_life");
+	
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
+
+
+	var writeBlog = new Blog();
+	writeBlog.setDate(new Date(2016, 0, 7, 12, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("intelligence");
+	writeBlog.setGenre(genres.nonFict);
+	writeBlog.setShortTitle("intellegence");
+	writeBlog.setLongTitle("How can we, as humans, be so intelligent when we can't define intelligence?");
+	writeBlog.setImage("img/machine");
+	writeBlog.setFile("files/intelligence2.txt");
+	writeBlog.setPublished(published.intelligence);
+	writeBlog.setTwitter("It's a good thing we are smart enough to make up something like intelligence.");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/intelligence");
+	
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
+
+	var writeBlog = new Blog();
+	writeBlog.setDate(new Date(2016, 7, 21, 6, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("vase");
+	writeBlog.setGenre(genres.poetry);
+	writeBlog.setShortTitle("vase of the world");
+	writeBlog.setLongTitle("Caution to you, when you create in order to relieve, you know not what you make");
+	writeBlog.setImage("img/cavemen");
+	writeBlog.setFile("files/vaseoftheworld.txt");
+	writeBlog.setPublished(published.vase);
+	writeBlog.setTwitter("Be careful what you create, you know not what it can become.");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/vase");
+	
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
+
+
+	var writeBlog = new Blog();
+	writeBlog.setDate(new Date(2016, 09, 01, 6, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("online_dating");
+	writeBlog.setGenre(genres.poetry);
+	writeBlog.setShortTitle("online dating");
+	writeBlog.setLongTitle("Online dating is not a fun activity, so I wrote some poetry about it.");
+	writeBlog.setImage("img/online-date");
+	writeBlog.setFile("files/online-date.txt");
+	writeBlog.setPublished(published.online_dating);
+	writeBlog.setTwitter("Online dating is not a fun activity, so I wrote some poetry about it.");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/online_dating");
+	
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
+
+
+	var writeBlog = new Blog();
+	writeBlog.setDate(new Date(2016, 09, 30, 6, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("girl");
+	writeBlog.setGenre(genres.poetry);
+	writeBlog.setShortTitle("girl on the path");
+	writeBlog.setLongTitle("I was lost in a world of my own thinking thoughts, then I came upon her, and she connected the dots.");
+	writeBlog.setImage("img/girl");
+	writeBlog.setFile("files/girl_on_path.txt");
+	writeBlog.setPublished(published.girl);
+	writeBlog.setTwitter("I was lost in a world of my own thinking thoughts, then I came upon her, and she connected the dots.");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/girl");
+	
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
+
+	var writeBlog = new Blog();
+	writeBlog.setDate(new Date(2016, 10, 15, 6, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("contact");
+	writeBlog.setGenre(genres.nonfict);
+	writeBlog.setShortTitle("the impossibility of alien contact");
+	writeBlog.setLongTitle("The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible. What's wrong is that it has affected real scientific research endeavors.");
+	writeBlog.setShortTitleFont({button:{d:"font-15"}});
+	writeBlog.setImage("img/contact");
+	writeBlog.setFile("files/alien-contact3.txt");
+	writeBlog.setPublished(published.contact);
+	writeBlog.setTwitter("The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/contact");
+	
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
+
+	var writeBlog = new Blog();
+	writeBlog.setDate(new Date(2016, 10, 16, 6, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("perspective");
+	writeBlog.setGenre(genres.poetry);
+	writeBlog.setShortTitle("perspective");
+	writeBlog.setLongTitle("For the stone and the mote, the grass is always greener...");
+	writeBlog.setImage("img/dust");
+	writeBlog.setFile("files/mote.txt");
+	writeBlog.setPublished(published.perspective);
+	writeBlog.setTwitter("For the stone and the mote, the grass is always greener...");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/perspective");
+	
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
+
+
+	var writeBlog = new Blog();
+	writeBlog.setDate(new Date(2015, 11, 22, 12, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("prison");
+	writeBlog.setGenre(genres.poetry);
+	writeBlog.setShortTitle("the prison");
+	writeBlog.setLongTitle("Even prisons with three walls are impossible to break free from");
+	writeBlog.setImage("img/prison");
+	writeBlog.setFile("files/prison.txt");
+	writeBlog.setPublished(published.prison);
+	writeBlog.setTwitter("You're in a prison you can't see because you're distracted by all the writing on the wall");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/prison");
+	
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
+
 
 	allblogs.sort(function (a,b) {
 
@@ -506,7 +270,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 		});
 
 	});
-
+	
 	var resolveName = function (name) {
 
 		if (name == "scale_time") {
@@ -621,7 +385,6 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 
 	return {
 		env:env,
-		menu:menu,
 		home:home,
 		genres:genres,
 		blogs:blogs,

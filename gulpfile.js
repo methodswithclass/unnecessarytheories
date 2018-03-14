@@ -83,6 +83,7 @@ gulp.task('scripts', ['vendor'], function() {
 	return gulp.src([
 	            "src/assets/js/**/*.js",
 	            "src/features/data/dataModule.js",
+	            "src/features/data/models/blog.js",
 	            "src/features/state/stateModule.js",
 	            "src/features/services/serviceModule.js",
 	            "src/features/blog/blogModule.js",

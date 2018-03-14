@@ -18,7 +18,9 @@ blogModule.controller("piece.controller", ['$scope', 'data.service', 'runtime.st
 
 	$scope.blog = data.getBlogByName(blogName);
 
-	$scope.url = $scope.blog.facebook.url;
+	console.log("$scope.blog", $scope.blog, $scope.blog.meta.title.s.text);
+
+	$scope.url = $scope.blog.share.facebook.url;
 
 
 	$window.asyncFBInit = function () {
