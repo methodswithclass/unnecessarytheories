@@ -121,7 +121,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 					text:"There's no 'selection' in Evolution, you've been mislead, and now it's time to know the truth"
 				}
 			},
-			image:'img/extraterrestrial-life5',
+			image:'img/evolution_2',
 			file:"files/evolution.txt",
 			published:published.evolution
 		},
@@ -226,7 +226,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', function (
 					text:"Even prisons with three walls are impossible to break free from"
 				}
 			},
-			image:'img/corridor',
+			image:'img/prison',
 			file:"files/prison.txt",
 			published:published.prison
 		},
