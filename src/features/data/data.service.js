@@ -11,7 +11,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', "Blog", fu
 
 	var prod = {
 		test:false,
-		url:'http://www.unnecessarytheories.io/',
+		url:'https://www.unnecessarytheories.io/',
 		id:'696572137111194'
 	}
 
