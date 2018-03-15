@@ -81,6 +81,25 @@ dataModule.factory("data.service", ['global.service', 'file.service', "Blog", fu
 
 
 	var writeBlog = new Blog();
+	writeBlog.setDate(new Date(2016, 10, 15, 6, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("contact");
+	writeBlog.setGenre(genres.nonFict);
+	writeBlog.setShortTitle("the impossibility of alien contact");
+	writeBlog.setLongTitle("The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible. What's wrong is that it has affected real scientific research endeavors.");
+	writeBlog.setShortTitleFont({button:{d:"font-15"}});
+	writeBlog.setImage("img/contact");
+	writeBlog.setFile("files/alien-contact3.txt");
+	writeBlog.setPublished(published.contact);
+	writeBlog.setTwitter("The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/contact");
+	
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
+
+	var writeBlog = new Blog();
 	writeBlog.setDate(new Date(2018, 2, 11, 12, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("evolution");
@@ -122,7 +141,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', "Blog", fu
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("intelligence");
 	writeBlog.setGenre(genres.nonFict);
-	writeBlog.setShortTitle("intellegence");
+	writeBlog.setShortTitle("intellegence is a myth");
 	writeBlog.setLongTitle("How can we, as humans, be so intelligent when we can't define intelligence?");
 	writeBlog.setImage("img/machine");
 	writeBlog.setFile("files/intelligence2.txt");
@@ -192,25 +211,6 @@ dataModule.factory("data.service", ['global.service', 'file.service', "Blog", fu
 
 
 	var writeBlog = new Blog();
-	writeBlog.setDate(new Date(2016, 10, 15, 6, 0, 0));
-	writeBlog.setBy("Christopher Polito");
-	writeBlog.setName("contact");
-	writeBlog.setGenre(genres.nonfict);
-	writeBlog.setShortTitle("the impossibility of alien contact");
-	writeBlog.setLongTitle("The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible. What's wrong is that it has affected real scientific research endeavors.");
-	writeBlog.setShortTitleFont({button:{d:"font-15"}});
-	writeBlog.setImage("img/contact");
-	writeBlog.setFile("files/alien-contact3.txt");
-	writeBlog.setPublished(published.contact);
-	writeBlog.setTwitter("The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible");
-	writeBlog.setFacebook(env().url + genres.nonFict + "/contact");
-	
-	allblogs.push(writeBlog);
-
-	writeBlog = null;
-
-
-	var writeBlog = new Blog();
 	writeBlog.setDate(new Date(2016, 10, 16, 6, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("perspective");
@@ -257,6 +257,8 @@ dataModule.factory("data.service", ['global.service', 'file.service', "Blog", fu
 
 		var now = new Date();
 
+		//console.log("fliter blogs", blog);
+
 		return (blog.meta.date.getTime() < now.getTime() && published[blog.meta.name] && !published.none);
 
 	});
@@ -270,7 +272,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', "Blog", fu
 		});
 
 	});
-	
+
 	var resolveName = function (name) {
 
 		if (name == "scale_time") {
