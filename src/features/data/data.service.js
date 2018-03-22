@@ -54,7 +54,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', "Blog", fu
 		none:false,
 		prison:true,
 		scale_time:false,
-		meaning_god:true,
+		meaning_god:false,
 		intelligence:true,
 		vase:true,
 		online_dating:true,
