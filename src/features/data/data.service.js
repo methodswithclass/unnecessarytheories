@@ -54,7 +54,7 @@ dataModule.factory("data.service", ['global.service', 'file.service', "Blog", fu
 		none:false,
 		prison:true,
 		scale_time:false,
-		meaning_god:false,
+		meaning_god:true,
 		intelligence:true,
 		vase:true,
 		online_dating:true,
@@ -241,6 +241,25 @@ dataModule.factory("data.service", ['global.service', 'file.service', "Blog", fu
 	writeBlog.setPublished(published.prison);
 	writeBlog.setTwitter("You're in a prison you can't see because you're distracted by all the writing on the wall");
 	writeBlog.setFacebook(env().url + genres.nonFict + "/prison");
+	
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
+
+
+	var writeBlog = new Blog();
+	writeBlog.setDate(new Date(2016, 05, 01, 6, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("meaning_god");
+	writeBlog.setGenre(genres.nonFict);
+	writeBlog.setShortTitle("the meaning of god");
+	writeBlog.setLongTitle("Whether God exists or not is the wrong question, ask instead what is the 'meaning' of god");
+	writeBlog.setImage("img/space");
+	writeBlog.setFile("files/meaning_god1.txt");
+	writeBlog.setPublished(published.meaning_god);
+	writeBlog.setTwitter("Whether God exists or not is the wrong question, ask instead what is the 'meaning' of god");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/meaning_god");
 	
 	allblogs.push(writeBlog);
 

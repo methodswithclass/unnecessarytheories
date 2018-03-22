@@ -17,15 +17,6 @@
 			"height":"630"
 		}
 	},
-	"scale_time":{
-		"title":"Scale of Time",
-		"description":"Time has no scale, but the implications do",
-		"image":"https://www.unnecessarytheories.io/img/relativity_thumb.jpg",
-		"size":{
-			"width":"1200",
-			"height":"630"
-		}
-	},
 	"prison":{
 		"title":"The Prison",
 		"description":"You're in a prison you can't see because you're distracted by all the writing on the wall.",
