@@ -1,5 +1,14 @@
 stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'data.service', 'send.service', 'events.service', 'global.service', '$location', "$transitions", function ($q, runtime, $state, $rootScope, data, send, events, g, $location, $transitions) {
 
+
+	var shared = window.shared;
+    var g = shared.utility_service;
+    var send = shared.send_service;
+    var react = shared.react_service;
+    var events = shared.events_service;
+
+
+
 	var modalTime = 1000;
 	var prevState;
 	var states = runtime.states;
@@ -10,6 +19,7 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 
 		return url.length-2;
 	}
+
 
 
 	var getParams = function (absurl) {
@@ -60,6 +70,7 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 		
 	}
 
+	
 	var current = function () {
 
 		return $state.current.name;
