@@ -34,28 +34,30 @@ blogModule.controller("home.controller", ['$scope', 'data.service', 'runtime.sta
 		$window.open(link, "_blank");
 	}
 
-	$window.asyncFBInit = function () {
+	// $window.asyncFBInit = function () {
 
-		console.log("facebook sdk loaded");
+	// 	console.log("home load facebook sdk");
 
-		var env = data.env();
+	// 	var env = data.env();
 
-		try {
+	// 	try {
 
-			FB.init({
-				appId: env.id,
-				status: true, 
-				cookie: true, 
-				xfbml: true,
-				// version: 'v2.4',
-				version: 'v2.11'
-			});
+	// 		FB.init({
+	// 			appId: env.id,
+	// 			status: true, 
+	// 			cookie: true, 
+	// 			xfbml: true,
+	// 			// version: 'v2.4',
+	// 			version: 'v2.11'
+	// 		});
 
-		}
-		catch (e) {
-			console.log("no FB object", e.message);
-		}
-	}
+	// 		console.log("home facebook sdk loaded")
+
+	// 	}
+	// 	catch (e) {
+	// 		console.log("Error, message:", e.message, "\n\nsdk not loaded");
+	// 	}
+	// }
 
 
 	$("#body").scrollTo(0);

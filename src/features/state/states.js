@@ -1,11 +1,11 @@
 stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'data.service', 'send', 'events', 'global', '$location', "$transitions", function ($q, runtime, $state, $rootScope, data, send, events, g, $location, $transitions) {
 
 
-	var shared = window.shared;
-    var g = shared.utility_service;
-    var send = shared.send_service;
-    var react = shared.react_service;
-    var events = shared.events_service;
+	// var shared = window.shared;
+ //    var g = shared.utility_service;
+ //    var send = shared.send_service;
+ //    var react = shared.react_service;
+ //    var events = shared.events_service;
 
 
 
@@ -52,6 +52,8 @@ stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'd
 		param = data.resolveName(param);
 
 		if (data.isBlog(param)) {
+
+			// console.log("send", send, "setup", send.setup);
 
 			send.setup.save({name:"navigate", data:param});
 

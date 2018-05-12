@@ -22,30 +22,6 @@ blogModule.controller("piece.controller", ['$scope', 'data.service', 'runtime.st
 
 	$scope.url = $scope.blog.share.facebook.url;
 
-
-	$window.asyncFBInit = function () {
-
-		console.log("facebook sdk loaded");
-
-		var env = data.env();
-
-		try {
-
-			FB.init({
-				appId: env.id,
-				status: true, 
-				cookie: true, 
-				xfbml: true,
-				// version: 'v2.4',
-				version: 'v2.11'
-			});
-
-		}
-		catch (e) {
-			console.log("no FB object", e.message);
-		}
-	}
-
 	console.log("blog in controller is:", $scope.blog);
 
 
