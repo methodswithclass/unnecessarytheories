@@ -1,4 +1,4 @@
-stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'data.service', 'send.service', 'events.service', 'global.service', '$location', "$transitions", function ($q, runtime, $state, $rootScope, data, send, events, g, $location, $transitions) {
+stateModule.factory("states", ['$q', 'runtime.state', '$state', '$rootScope', 'data.service', 'send', 'events', 'global', '$location', "$transitions", function ($q, runtime, $state, $rootScope, data, send, events, g, $location, $transitions) {
 
 
 	var shared = window.shared;

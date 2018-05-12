@@ -1,4 +1,4 @@
-blogModule.directive("footer", ['global.service', 'events.service', 'states', '$window', 'data.service', function (g, events, states, $window, data) {
+blogModule.directive("footer", ['global', 'events', 'states', '$window', 'data.service', function (g, events, states, $window, data) {
 
 	return {
 		restrict:'E',

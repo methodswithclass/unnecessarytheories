@@ -1,4 +1,4 @@
-dataModule.factory("data.service", ['global.service', 'file.service', "Blog", function (g, file, Blog) {
+dataModule.factory("data.service", ['global', 'file.service', "Blog", function (g, file, Blog) {
 
 	var testOverride = false;
 
