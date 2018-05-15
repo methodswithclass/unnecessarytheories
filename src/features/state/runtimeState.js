@@ -42,7 +42,7 @@ stateModule.provider("runtime.state", function ($stateProvider) {
         $stateProvider.state(state);
     }
 
-    provider.$get = ['send', '$location', 'data.service', 'global', '$state', function (send, $location, data, g, $state) {
+    provider.$get = ['data.service', function (data) {
 
       //console.log("get add state factory");
 
