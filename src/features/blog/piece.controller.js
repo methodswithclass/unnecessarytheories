@@ -25,6 +25,8 @@ blogModule.controller("piece.controller", ['$scope', 'data.service', 'runtime.st
 	console.log("blog in controller is:", $scope.blog);
 
 
+	// $window.fbAsyncInit();
+
 	$("#body").scrollTo(0);
 
 }]);

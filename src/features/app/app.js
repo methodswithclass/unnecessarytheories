@@ -40,7 +40,7 @@ app.config(['runtime.stateProvider', '$locationProvider', function (runtimeProvi
 				status: true, 
 				cookie: true, 
 				xfbml: true,
-				version: 'v2.11'
+				version: 'v2.4'
 			});
 
 			console.log("facebook sdk loaded");
@@ -71,6 +71,6 @@ app.config(['runtime.stateProvider', '$locationProvider', function (runtimeProvi
 
 	    ref.parentNode.insertBefore(js, ref);
 
-	  }(document));
+	}(document));
 
 }]);

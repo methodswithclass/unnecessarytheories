@@ -65,7 +65,7 @@ badgesModule.directive("share", ['$window', 'data.service', 'global', function (
 
             	if ($scope.type == "fb") {
 
-	            	$window.asyncFBInit();
+	            	// $window.fbAsyncInit();
 
 					FB.ui({
 						method: "share",
