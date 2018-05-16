@@ -3,27 +3,32 @@
 
 	<div class="relative width60 hcenter" ng-repeat="paragraph in section track by $index">
 
-		<div ng-if="paragraph.para == 'para'" class="relative width">
-			<div class="relative width font-20 line-height-40">{{paragraph.text}}</div>
-		</div>
-		
-		<div ng-if="paragraph.para == 'list'" class="relative width">
-			<table class="relative width">
-				<tr class="relative width">
-					<td class="relative width10 table-cell cell-top"></td>
-					<td class="relative width10 font-20 line-height-40 table-cell cell-top">
-						<div class="relative width height-30"><div class="absolute center">&bull;</div></div>
-					</td>
-					<td class="relative width75 font-20 line-height-40 table-cell cell-top">{{paragraph.text}}</td>
-				</tr>
-			</table>
-		</div>
+		<div class="relative width80">
 
-		<div class="relative width height-30 white-back"></div>
+			<div ng-if="paragraph.para == 'para'" class="relative width">
+				<div class="relative width font-15 line-height-30">{{paragraph.text}}</div>
+			
+				<div class="relative width height-30 white-back"></div>
+			
+				<div class="relative width40 height-70 margin-bottom-100 hcenter border-bottom"></div>
+			
+			</div>
+
+			<div ng-if="paragraph.para == 'list'" class="relative width">
+				<table class="relative width">
+					<tr class="relative width">
+						<td class="relative width10 table-cell cell-top"></td>
+						<td class="relative width10 font-20 line-height-40 table-cell cell-top">
+							<div class="relative width height-30"><div class="absolute center">&bull;</div></div>
+						</td>
+						<td class="relative width75 font-15 line-height-30 table-cell cell-top">{{paragraph.text}}</td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
 
 	</div>
-
-	<div class="relative width40 height-70 margin-bottom-100 hcenter border-bottom"></div>
 
 </div>
 
