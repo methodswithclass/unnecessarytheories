@@ -40,7 +40,7 @@ app.config(['runtime.stateProvider', '$locationProvider', function (runtimeProvi
 				status: true, 
 				cookie: true, 
 				xfbml: true,
-				version: 'v2.4'
+				version: 'v3.0'
 			});
 
 			console.log("facebook sdk loaded");
@@ -53,24 +53,24 @@ app.config(['runtime.stateProvider', '$locationProvider', function (runtimeProvi
 
 	// $window.asyncFBInit();
 
-	(function(d){
-    // load the Facebook javascript SDK
+	// (function(d){
+ //    // load the Facebook javascript SDK
 
-	    var js,
-	    id = 'facebook-jssdk',
-	    ref = d.getElementsByTagName('script')[0];
+	//     var js,
+	//     id = 'facebook-jssdk',
+	//     ref = d.getElementsByTagName('script')[0];
 
-	    if (d.getElementById(id)) {
-	      return;
-	    }
+	//     if (d.getElementById(id)) {
+	//       return;
+	//     }
 
-	    js = d.createElement('script');
-	    js.id = id;
-	    js.async = true;
-	    js.src = "//connect.facebook.net/en_US/sdk.js";
+	//     js = d.createElement('script');
+	//     js.id = id;
+	//     js.async = true;
+	//     js.src = "https://connect.facebook.net/en_US/sdk.js";
 
-	    ref.parentNode.insertBefore(js, ref);
+	//     ref.parentNode.insertBefore(js, ref);
 
-	}(document));
+	// }(document));
 
 }]);

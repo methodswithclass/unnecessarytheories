@@ -23,13 +23,13 @@
 
     <script>
 
-        // (function(d, s, id) {
-        //   var js, fjs = d.getElementsByTagName(s)[0];
-        //   if (d.getElementById(id)) return;
-        //   js = d.createElement(s); js.id = id;
-        //   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11";
-        //   fjs.parentNode.insertBefore(js, fjs);
-        // }(document, 'script', 'facebook-jssdk'));
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
 
         !function(d,s,id){
             var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
@@ -58,6 +58,9 @@
 
   </head>
   <body ng-app="blog">
+
+    <div id="fb-root"></div>
+
     <div class="absolute min-width-900 fill cutoff noedge deselect museo" id="main">
 
         <!-- <div class="fb-comments" fbparse data-href={{url}} data-width="600px" data-numposts="100"></div> -->
@@ -75,7 +78,7 @@
     </div>
     <!-- <console ng-attr-vis="hide"><console> -->
 
-    <div id="fb-root"></div>
+    
     
 
     <!-- <script src="https://code.methodswithclass.com/api/shared-2.js"></script> -->
