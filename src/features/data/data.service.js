@@ -106,7 +106,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", function (
 	writeBlog.setGenre(genres.nonFict);
 	writeBlog.setShortTitle("There's no 'selection' in Evolution");
 	writeBlog.setLongTitle("There's no 'selection' in Evolution, you've been mislead, and now it's time to know what's more accurate");
-	writeBlog.setImage("img/evolution_2");
+	writeBlog.setImage("img/evolution2");
 	writeBlog.setFile("files/evolution.txt");
 	writeBlog.setPublished(published.evolution);
 	writeBlog.setTwitter("There's no 'selection' in Evolution, you've been mislead, and now it's time to know the truth");
