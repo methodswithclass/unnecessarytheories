@@ -1,10 +1,10 @@
 dataModule.factory("data.service", ['global', 'file.service', "Blog", function (g, file, Blog) {
 
-	var testOverride = false;
+	var testOverride = true;
 
 	var dev = {
 		test:true,
-		url:'http://unnecessarytheories-dev.herokuapp.com/',
+		url:'https://unnecessarytheories-dev.herokuapp.com/',
 		// url:"localhost:3300",
 		id:'725062234262184'
 	}
