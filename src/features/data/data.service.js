@@ -19,7 +19,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 
 		console.log("location", $location.absUrl(), $location.absUrl() == prod.url);
 
-		return _test !== undefined ? (_test ? dev : prod) : (testOverride ? dev : ($location.absUrl() == prod.url ? prod : dev));
+		return (_test !== undefined ? (_test ? dev : prod) : (testOverride ? dev : ($location.absUrl() == prod.url ? prod : dev)));
 	}
 
 	var genres = {
