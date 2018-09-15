@@ -44,9 +44,11 @@ app.use("/poetry/*", express.static(path.join(__dirname, "dist")));
 app.use("/img", express.static(path.join(__dirname, "public/img")));
 app.use("/files", express.static(path.join(__dirname, "public/files")));
 
-app.use(require('connect-livereload')({
-	port: PORTS.livereload
-}));
+if  (process.env.NODE_ENV != "production") {
+	app.use(require('connect-livereload')({
+		port: PORTS.livereload
+	}));
+}
 
 
 app.use("/", express.static(path.join(__dirname, "dist")));

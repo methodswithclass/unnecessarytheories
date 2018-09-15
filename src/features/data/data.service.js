@@ -174,7 +174,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", function (
 
 
 	var writeBlog = new Blog();
-	writeBlog.setDate(new Date(2016, 09, 01, 6, 0, 0));
+	writeBlog.setDate(new Date(2016, 9, 1, 6, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("online_dating");
 	writeBlog.setGenre(genres.poetry);
@@ -193,7 +193,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", function (
 
 
 	var writeBlog = new Blog();
-	writeBlog.setDate(new Date(2016, 09, 30, 6, 0, 0));
+	writeBlog.setDate(new Date(2016, 9, 30, 6, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("girl");
 	writeBlog.setGenre(genres.poetry);
@@ -249,7 +249,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", function (
 
 
 	var writeBlog = new Blog();
-	writeBlog.setDate(new Date(2016, 05, 01, 6, 0, 0));
+	writeBlog.setDate(new Date(2016, 5,  1, 6, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("meaning_god");
 	writeBlog.setGenre(genres.nonFict);

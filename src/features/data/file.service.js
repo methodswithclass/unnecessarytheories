@@ -18,7 +18,7 @@ dataModule.factory("file.service", ['$http', function ($http) {
 		var k = 0;
 		var list = false;
 
-		for (i in array) {
+		for (var i in array) {
 			// console.log(array[i], array[i].match(/\./));
 			if (array[i].match(/\./) && array[i].match(/\./).index == 0) {
 				
