@@ -27,7 +27,7 @@ app.config(['runtime.stateProvider', '$locationProvider', function (runtimeProvi
 	// forceMobile();
 
 
-	$window.fbAsyncInit = function () {
+	window.fbAsyncInit = function () {
 
 		console.log("load facebook sdk");
 
@@ -35,13 +35,20 @@ app.config(['runtime.stateProvider', '$locationProvider', function (runtimeProvi
 
 		try {
 
-			FB.init({
-				appId: env.id,
-				status: true, 
-				cookie: true, 
-				xfbml: true,
-				version: 'v3.0'
-			});
+			// FB.init({
+			// 	appId: env.id,
+			// 	status: true, 
+			// 	cookie: true, 
+			// 	xfbml: true,
+			// 	version: 'v3.0'
+			// });
+
+		    FB.init({
+		      appId            : env.id,
+		      autoLogAppEvents : true,
+		      xfbml            : true,
+		      version          : 'v3.1'
+		    });
 
 			console.log("facebook sdk loaded");
 
@@ -51,26 +58,6 @@ app.config(['runtime.stateProvider', '$locationProvider', function (runtimeProvi
 		}
 	}
 
-	// $window.asyncFBInit();
 
-	// (function(d){
- //    // load the Facebook javascript SDK
-
-	//     var js,
-	//     id = 'facebook-jssdk',
-	//     ref = d.getElementsByTagName('script')[0];
-
-	//     if (d.getElementById(id)) {
-	//       return;
-	//     }
-
-	//     js = d.createElement('script');
-	//     js.id = id;
-	//     js.async = true;
-	//     js.src = "https://connect.facebook.net/en_US/sdk.js";
-
-	//     ref.parentNode.insertBefore(js, ref);
-
-	// }(document));
 
 }]);
