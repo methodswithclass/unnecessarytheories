@@ -1,6 +1,6 @@
-dataModule.factory("data.service", ['global', 'file.service', "Blog", function (g, file, Blog) {
+dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location",function (g, file, Blog, $location) {
 
-	var testOverride = true;
+	var testOverride = false;
 
 	var dev = {
 		test:true,
@@ -17,7 +17,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", function (
 
 	var env = function (_test) {
 
-		return _test !== undefined ? (_test ? dev : prod) : (testOverride ? dev : prod);
+		return _test !== undefined ? (_test ? dev : prod) : (testOverride ? dev : ($location.absUrl() == prod.url ? prod : dev));
 	}
 
 	var genres = {
