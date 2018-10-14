@@ -34,7 +34,7 @@ badgesModule.directive("share", ['$window', 'data.service', 'global', function (
 			var share = {icon:"", hover:"", size:""};
 
 			if ($scope.type == 'fb') {
-				share.icon = 'fa-facebook';
+				share.icon = 'fa-facebook-f';
 				if (!g.isMobile()) share.hover = 'fb';
 			}
 			else {
@@ -49,7 +49,7 @@ badgesModule.directive("share", ['$window', 'data.service', 'global', function (
 				share.size = "fa-3x";
 			}
 
-			var img = "<div class='absolute center white "+ share.hover +"'><i class='fa " + share.size + " " + share.icon + "'></i></div>";
+			var img = "<div class='absolute center white "+ share.hover +"'><i class='fab " + share.size + " " + share.icon + "'></i></div>";
 
 
 
