@@ -80,14 +80,15 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 
 	var allblogs = [];
 
+	var writeBlog;
 
 
-	var writeBlog = new Blog();
+	writeBlog = new Blog();
 	writeBlog.setDate(new Date(2016, 10, 15, 6, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("contact");
 	writeBlog.setGenre(genres.nonFict);
-	writeBlog.setShortTitle("the impossibility of alien contact");
+	writeBlog.setShortTitle("challenges for alien contact");
 	writeBlog.setLongTitle("The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible. What's wrong is that it has affected real scientific research endeavors.");
 	writeBlog.setShortTitleFont({button:{d:"font-15"}});
 	writeBlog.setImage("img/contact");
@@ -101,12 +102,12 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 	writeBlog = null;
 
 
-	var writeBlog = new Blog();
+	writeBlog = new Blog();
 	writeBlog.setDate(new Date(2018, 2, 11, 12, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("evolution");
 	writeBlog.setGenre(genres.nonFict);
-	writeBlog.setShortTitle("There's no 'selection' in Evolution");
+	writeBlog.setShortTitle("The misunderstanding of 'natural selection' and it's repercussions");
 	writeBlog.setLongTitle("There's no 'selection' in Evolution, you've been mislead, and now it's time to know what's more accurate");
 	writeBlog.setImage("img/evolution2");
 	writeBlog.setFile("files/evolution.txt");
@@ -119,12 +120,12 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 	writeBlog = null;
 
 
-	var writeBlog = new Blog();
+	writeBlog = new Blog();
 	writeBlog.setDate(new Date(2018, 0, 23, 12, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("extraterrestrial_life");
 	writeBlog.setGenre(genres.nonFict);
-	writeBlog.setShortTitle("extraterrestrial life");
+	writeBlog.setShortTitle("misconceptions of extraterrestrial life");
 	writeBlog.setLongTitle("Do you image aliens as our counterparts, but just slightly different? Think again. The differences are most probably so basic and fundamental that they will make you question your own existence");
 	writeBlog.setImage("img/extraterrestrial-life5");
 	writeBlog.setFile("files/extraterrestrial-life2.txt");
@@ -138,17 +139,17 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 
 
 
-	var writeBlog = new Blog();
+	writeBlog = new Blog();
 	writeBlog.setDate(new Date(2016, 0, 7, 12, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("intelligence");
 	writeBlog.setGenre(genres.nonFict);
-	writeBlog.setShortTitle("intellegence is a myth");
-	writeBlog.setLongTitle("How can we, as humans, be so intelligent when we can't define intelligence?");
+	writeBlog.setShortTitle("the myth of intelligence");
+	writeBlog.setLongTitle("How can we, as humans, be so intelligent when we can't really define it?");
 	writeBlog.setImage("img/machine");
 	writeBlog.setFile("files/intelligence2.txt");
 	writeBlog.setPublished(published.intelligence);
-	writeBlog.setTwitter("It's a good thing we are smart enough to make up something like intelligence.");
+	writeBlog.setTwitter("It's a good thing we can think up something as sophisticated as intelligence or we'd be in trouble");
 	writeBlog.setFacebook(env().url + genres.nonFict + "/intelligence");
 	
 	allblogs.push(writeBlog);
@@ -156,7 +157,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 	writeBlog = null;
 
 
-	var writeBlog = new Blog();
+	writeBlog = new Blog();
 	writeBlog.setDate(new Date(2016, 7, 21, 6, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("vase");
@@ -175,7 +176,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 
 
 
-	var writeBlog = new Blog();
+	writeBlog = new Blog();
 	writeBlog.setDate(new Date(2016, 9, 1, 6, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("online_dating");
@@ -194,7 +195,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 
 
 
-	var writeBlog = new Blog();
+	writeBlog = new Blog();
 	writeBlog.setDate(new Date(2016, 9, 30, 6, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("girl");
@@ -212,7 +213,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 	writeBlog = null;
 
 
-	var writeBlog = new Blog();
+	writeBlog = new Blog();
 	writeBlog.setDate(new Date(2016, 10, 16, 6, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("perspective");
@@ -231,7 +232,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 
 
 
-	var writeBlog = new Blog();
+	writeBlog = new Blog();
 	writeBlog.setDate(new Date(2015, 11, 22, 12, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("prison");
@@ -250,7 +251,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 
 
 
-	var writeBlog = new Blog();
+	writeBlog = new Blog();
 	writeBlog.setDate(new Date(2016, 5,  1, 6, 0, 0));
 	writeBlog.setBy("Christopher Polito");
 	writeBlog.setName("meaning_god");
