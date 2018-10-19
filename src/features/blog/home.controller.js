@@ -34,6 +34,9 @@ blogModule.controller("home.controller", ['$scope', 'data.service', 'runtime.sta
 		$window.open(link, "_blank");
 	}
 
+
+	
+
 	// $window.asyncFBInit = function () {
 
 	// 	console.log("home load facebook sdk");

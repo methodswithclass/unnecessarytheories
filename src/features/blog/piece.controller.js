@@ -24,6 +24,14 @@ blogModule.controller("piece.controller", ['$scope', 'data.service', 'runtime.st
 
 	console.log("blog in controller is:", $scope.blog);
 
+	var disqus_config = function () {
+
+		var env = data.env();
+
+
+        this.page.url = env.url;  // Replace PAGE_URL with your page's canonical URL variable
+       	this.page.identifier = blogname + "identifier";
+    }
 
 	// $window.fbAsyncInit();
 
