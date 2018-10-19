@@ -4,7 +4,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 
 	var dev = {
 		test:true,
-		name:"unecessary-theories-dev",
+		name:"unnecessary-theories-dev",
 		url:'https://unnecessarytheories-dev.herokuapp.com/',
 		// url:"localhost:3300",
 		id:'725062234262184'
