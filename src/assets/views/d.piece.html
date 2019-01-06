@@ -3,19 +3,23 @@
 	<div class="relative width height-600 cutoff" parallax name="{{'blog-page_' + blog.meta.name}}" scroll="body" top="true" inner="splash">
 
 
-		<div class="absolute width height" id="splash">
-			<img class="absolute width height-auto opacity70" ng-src="{{blog.meta.image + '.jpg'}}" id="banner">
+		<div class="absolute width120 height hcenter" id="splash">
+			<img class="absolute width height-auto vcenter" ng-src="{{blog.meta.image + '.jpg'}}" id="banner">
 		</div>
 
 		<div class="absolute width height-300 left0 bottom0">
 
-			<div class="absolute width-300 height-50 left-minus-20">
+			<div class="absolute width-300 height-70 bottom-400 left-minus-20">
 				<back font="font-30"></back>
 			</div>
 
-			<div class="absolute width50 height-100 vcenter left-minus-20">
+			<div class="absolute width50 height-200 bottom-50 left-minus-20">
 				<div class="absolute width height rounded10 black-back opacity80 border-white"></div>
-				<div class="absolute center beige dearjoe {{blog.meta.title.s.font.blog.d}}">{{blog.meta.title.s.text}}</div>
+				<div class="absolute width80 height80 center">
+					<div class="absolute center text-center beige dearjoe {{blog.meta.title.s.font.button.d}}">
+						{{blog.meta.title.s.text}}
+					</div>
+				</div>
 			</div>
 			
 			<div class="absolute width30 height-100 right0 vcenter">
@@ -62,9 +66,9 @@
 	</div>
 	
 
-	<div class="relative width80 hcenter">
+	<!-- <div class="relative width80 hcenter">
 		<div id="disqus_thread"></div>
-	</div>
+	</div> -->
 
 	
 	<!-- <div class="relative width60 height-200 hcenter margin-v-200">

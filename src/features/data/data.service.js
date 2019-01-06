@@ -66,7 +66,8 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 		contact:true,
 		perspective:true,
 		extraterrestrial_life:true,
-		evolution:true
+		evolution:true,
+		sexuality:true
 	}
 
 	var home = {
@@ -84,6 +85,24 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 
 	var writeBlog;
 
+	writeBlog = new Blog();
+	writeBlog.setDate(new Date(2019, 0, 5, 6, 0, 0));
+	writeBlog.setBy("Christopher Polito");
+	writeBlog.setName("sexuality");
+	writeBlog.setGenre(genres.nonFict);
+	writeBlog.setShortTitle("on sexuality");
+	writeBlog.setLongTitle("We need to talk about sex. You are not a man or a woman, you are not straight or gay. Sorry, not sorry.");
+	writeBlog.setShortTitleFont({button:{d:"font-30", m:"font-30"}});
+	writeBlog.setImage("img/gender");
+	writeBlog.setFile("files/sexuality.txt");
+	writeBlog.setPublished(published.sexuality);
+	writeBlog.setTwitter("Your penis is not that big o' deal. Your vagina doesn't matter. Just do your personality.");
+	writeBlog.setFacebook(env().url + genres.nonFict + "/sexuality");
+	
+	allblogs.push(writeBlog);
+
+	writeBlog = null;
+
 
 	writeBlog = new Blog();
 	writeBlog.setDate(new Date(2016, 10, 15, 6, 0, 0));
@@ -92,7 +111,7 @@ dataModule.factory("data.service", ['global', 'file.service', "Blog", "$location
 	writeBlog.setGenre(genres.nonFict);
 	writeBlog.setShortTitle("challenges for alien contact");
 	writeBlog.setLongTitle("The science fiction community has done our culture an immense disservice by making possible what is perfectly implausible. What's wrong is that it has affected real scientific research endeavors.");
-	writeBlog.setShortTitleFont({button:{d:"font-15"}});
+	writeBlog.setShortTitleFont({button:{d:"font-15", m:"font-15"}});
 	writeBlog.setImage("img/contact");
 	writeBlog.setFile("files/alien-contact3.txt");
 	writeBlog.setPublished(published.contact);
